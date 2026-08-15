@@ -107,7 +107,7 @@ const jsonLdData = {
       '@id': 'https://onlywayonline.com/#organization',
       name: 'OnlyWayOnline',
       url: 'https://onlywayonline.com',
-      logo: 'https://onlywayonline.com/logo.png',
+      logo: 'https://onlywayonline.com/assets/logo.png',
       description:
         'Enterprise web engineering and growth agency delivering Zero-Defect full-stack applications, sub-millisecond Core Web Vitals, and compound acquisition systems.',
       slogan: 'Only means Strategy · Way means Impact · Online means Growth',
