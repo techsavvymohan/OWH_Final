@@ -1,0 +1,7 @@
+{
+  "name": "OnlyWayOnline",
+  "description": "We don't just launch websites. We launch growth systems that don't break. Zero-bug web development, SEO-native architecture, social media management, and performance marketing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
