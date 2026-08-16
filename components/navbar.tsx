@@ -144,7 +144,7 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                   aria-label="OnlyWayOnline Home"
                 >
                   <Image
-                    src="/assets/Main_logo.png"
+                    src="/assets/Main_logo.webp"
                     alt="OnlyWayOnline Logo"
                     width={28}
                     height={28}
@@ -484,7 +484,7 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                 <div className="flex items-center justify-between pb-6 border-b border-slate-100">
                   <div className="flex items-center gap-2">
                     <Image
-                      src="/assets/Main_logo.png"
+                      src="/assets/Main_logo.webp"
                       alt="OnlyWayOnline Logo"
                       width={24}
                       height={24}

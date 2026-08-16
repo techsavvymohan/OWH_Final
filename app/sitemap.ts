@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1.0,
       images: [
-        'https://onlywayonline.com/assets/logo.png',
+        'https://onlywayonline.com/assets/logo.webp',
       ],
     },
     {

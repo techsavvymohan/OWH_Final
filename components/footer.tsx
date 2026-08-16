@@ -29,7 +29,7 @@ export function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <Image
-                src="/assets/logo_white.png"
+                src="/assets/logo_white.webp"
                 alt="OnlyWayOnline"
                 width={440}
                 height={312}

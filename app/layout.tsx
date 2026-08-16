@@ -100,12 +100,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
-      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/favicon-32x32.webp', type: 'image/webp', sizes: '32x32' },
+      { url: '/favicon-16x16.webp', type: 'image/webp', sizes: '16x16' },
+      { url: '/icon-192.webp', type: 'image/webp', sizes: '192x192' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.webp', sizes: '180x180', type: 'image/webp' },
     ],
   },
   other: {
@@ -129,7 +129,7 @@ const jsonLdData = {
       url: 'https://onlywayonline.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://onlywayonline.com/assets/logo.png',
+        url: 'https://onlywayonline.com/assets/logo.webp',
         caption: 'OnlyWayOnline Logo',
       },
       description:
