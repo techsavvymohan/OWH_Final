@@ -55,9 +55,8 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center"
         >
-          <a
-            href="#about"
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-[10px] sm:text-xs font-mono font-medium text-slate-200 hover:border-blue-500/60 hover:text-white transition-all group cursor-pointer shadow-md"
+          <div
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-[10px] sm:text-xs font-mono font-medium text-slate-200 shadow-md select-none"
           >
             <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
@@ -68,8 +67,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
               <strong className="font-bold text-white">Way</strong> = Velocity ·{' '}
               <strong className="font-bold text-slate-300">Online</strong> = Growth
             </span>
-            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1 text-slate-400 group-hover:text-blue-400 shrink-0" />
-          </a>
+          </div>
         </motion.div>
 
         {/* Main SEO-Optimized Headline with BlurText Reveal */}
