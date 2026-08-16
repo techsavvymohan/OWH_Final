@@ -19,7 +19,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate-200 bg-white py-14 sm:py-16 text-slate-600">
+    <footer className="border-t border-slate-200 bg-slate-50/90 py-14 sm:py-16 text-slate-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Top Grid */}
@@ -42,11 +42,11 @@ export function Footer() {
             </p>
 
             <div className="text-xs font-mono space-y-1 text-slate-500">
-              <p><strong className="text-blue-600">Only</strong> means Strategy · <strong className="text-slate-800">Way</strong> means Velocity · <strong className="text-emerald-700">Online</strong> means Compound Growth</p>
+              <p><strong className="text-blue-600">Only</strong> means Strategy · <strong className="text-slate-900">Way</strong> means Velocity · <strong className="text-slate-800">Online</strong> means Compound Growth</p>
             </div>
 
             <div className="pt-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-slate-800 text-xs font-mono font-bold border border-slate-300 shadow-2xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span>All Client Systems 100% Operational</span>
               </div>

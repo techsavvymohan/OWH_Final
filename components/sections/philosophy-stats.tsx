@@ -161,13 +161,13 @@ export function PhilosophyStats() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-3xl mx-auto mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full neo-pill text-blue-700 text-xs font-mono font-bold border border-blue-200/90 mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-mono font-bold mb-3 shadow-2xs">
             <span>ABOUT ONLYWAYONLINE</span>
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
             Only Means Strategy.{' '}
             <span className="text-blue-600">Way Means Velocity.</span>{' '}
-            <span className="text-emerald-700">Online Means Compound Growth.</span>
+            <span className="text-slate-700">Online Means Compound Growth.</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed">
             OnlyWayOnline was founded to replace traditional agencies that build a site and disappear. We combine custom high-speed web design with monthly marketing operations to deliver predictable, ongoing business growth.

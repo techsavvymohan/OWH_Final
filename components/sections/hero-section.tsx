@@ -36,15 +36,15 @@ const CAPABILITY_PILLS = [
 
 export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
   return (
-    <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 overflow-hidden bg-gradient-to-b from-white via-blue-50/40 to-slate-50/80">
-      {/* Background Decorative Gradients for Pure Light Theme */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[950px] h-[350px] sm:h-[450px] bg-gradient-to-tr from-blue-200/60 via-sky-200/50 to-emerald-200/50 blur-[110px] rounded-full pointer-events-none -z-10 animate-pulse-slow" />
-      <div className="absolute top-1/3 left-10 w-80 h-80 bg-blue-200/60 blur-[100px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-80 h-80 bg-emerald-200/60 blur-[100px] rounded-full pointer-events-none -z-10" />
+    <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-slate-100/60">
+      {/* Background Decorative Gradients for White + Black + Blue + Grey Luxury Theme */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[950px] h-[350px] sm:h-[450px] bg-gradient-to-tr from-blue-200/40 via-slate-200/50 to-slate-300/40 blur-[120px] rounded-full pointer-events-none -z-10 animate-pulse-slow" />
+      <div className="absolute top-1/3 left-10 w-80 h-80 bg-slate-200/60 blur-[100px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-80 h-80 bg-blue-100/50 blur-[100px] rounded-full pointer-events-none -z-10" />
 
-      {/* Subtle Grid Pattern */}
+      {/* Subtle Precision Grid Pattern */}
       <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10" 
+        className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10 opacity-60" 
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
@@ -57,15 +57,15 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
         >
           <a
             href="#about"
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full neo-pill text-xs font-mono font-medium text-slate-700 hover:border-blue-500/40 hover:text-blue-600 transition-all group cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100/90 border border-slate-300/80 text-xs font-mono font-medium text-slate-800 hover:border-blue-500/60 hover:text-blue-600 transition-all group cursor-pointer shadow-2xs"
           >
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600" />
             </span>
             <span className="font-bold text-blue-700">Only</span> = Strategy ·{' '}
-            <span className="font-bold text-slate-900">Way</span> = Impact ·{' '}
-            <span className="font-bold text-emerald-700">Online</span> = Growth
+            <span className="font-bold text-slate-900">Way</span> = Velocity ·{' '}
+            <span className="font-bold text-slate-700">Online</span> = Compound Growth
             <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1 text-slate-400 group-hover:text-blue-600" />
           </a>
         </motion.div>
@@ -76,7 +76,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
             text="We don't just launch websites. We engineer conversions."
             wordDelay={0.06}
             highlightWords={['engineer', 'conversions.']}
-            highlightClass="bg-gradient-to-r from-blue-700 via-blue-600 to-emerald-600 bg-clip-text text-transparent"
+            highlightClass="bg-gradient-to-r from-blue-700 via-blue-600 to-slate-800 bg-clip-text text-transparent"
           />
         </h1>
 
@@ -89,7 +89,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
         >
           Most agencies build a website and walk away. We act as your complete growth partner — delivering{' '}
           <strong className="text-slate-900 font-semibold">stunning, ultra-fast websites</strong> that rank on Google,{' '}
-          bring in active customer leads, and <strong className="text-emerald-700 font-semibold">never break or slow down</strong>. No coding or tech knowledge needed.
+          bring in active customer leads, and <strong className="text-slate-900 font-semibold">never break or slow down</strong>. No coding or tech knowledge needed.
         </motion.p>
 
         {/* Action CTAs with MagneticButton */}
@@ -114,7 +114,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           <MagneticButton strength={10}>
             <a
               href="#services"
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full neo-pill text-slate-800 font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-slate-50 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white border border-slate-300 text-slate-800 font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-slate-50 transition-all cursor-pointer shadow-xs"
             >
               <span>See Our Services & Guarantee</span>
             </a>
@@ -126,25 +126,25 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-8 inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-5 py-2.5 rounded-full glass-panel-subtle text-xs text-slate-600 font-medium"
+          className="mt-8 inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-5 py-2.5 rounded-full bg-white/90 border border-slate-200 shadow-sm text-xs text-slate-600 font-medium"
         >
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-blue-600" />
             <span className="font-bold text-slate-900">Zero-Defect QA Protocol</span>
-            <span className="text-slate-400">(Multi-Device Tested)</span>
+            <span className="text-slate-500">(Multi-Device Tested)</span>
           </div>
 
           <div className="hidden sm:block text-slate-300">•</div>
 
           <div className="flex items-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-indigo-600" />
+            <Sparkles className="w-4 h-4 text-slate-700" />
             <span className="font-bold text-slate-900">Monitored 90-Day Quality SLA</span>
           </div>
 
           <div className="hidden sm:block text-slate-300">•</div>
 
           <div className="flex items-center gap-1.5">
-            <Zap className="w-4 h-4 text-emerald-600" />
+            <Zap className="w-4 h-4 text-blue-600" />
             <span className="font-bold text-slate-900">Sub-Second Edge Delivery Target</span>
           </div>
         </motion.div>
@@ -154,7 +154,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-12 sm:mt-16 pt-6 border-t border-slate-200/80"
+          className="mt-12 sm:mt-16 pt-6 border-t border-slate-200"
         >
           <div className="text-[11px] font-mono uppercase tracking-widest text-slate-500 mb-4 font-semibold">
             Unified Dual-Engine Architecture · Engineering Rigor & Compound Distribution
@@ -165,18 +165,14 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
               return (
                 <div
                   key={tile.label}
-                  className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all hover:scale-105 ${
-                    tile.type === 'growth'
-                      ? 'glass-panel text-emerald-950 border-emerald-200/80 hover:border-emerald-300'
-                      : 'glass-card text-slate-800 hover:border-slate-300'
-                  }`}
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 text-slate-800 shadow-2xs hover:border-slate-400 hover:shadow-xs transition-all hover:scale-105"
                 >
-                  <div className="p-1 rounded-md neo-pill">
+                  <div className="p-1 rounded-md bg-slate-100 text-slate-700">
                     <Icon className={`w-3.5 h-3.5 ${tile.color}`} />
                   </div>
                   <span>{tile.label}</span>
                   {tile.type === 'growth' && (
-                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-600 text-white font-bold">
+                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-900 text-white font-bold">
                       GROW
                     </span>
                   )}

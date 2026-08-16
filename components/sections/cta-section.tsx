@@ -38,7 +38,7 @@ export function CtaSection({ onOpenProjectModal }: CtaSectionProps) {
               </span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed">
-              Eliminate fragile agency handoffs once and for all. Launch a high-converting web platform backed by our contractual Zero-Bug protocol and dedicated growth engineering team.
+              No confusing tech jargon, no hidden fees. Connect with our team for a free 15-minute strategy call on Google Meet or a quick phone call.
             </p>
           </div>
 
@@ -46,11 +46,11 @@ export function CtaSection({ onOpenProjectModal }: CtaSectionProps) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 relative z-10">
             <button
               id="cta-discuss-project-btn"
-              onClick={() => onOpenProjectModal('90-Day Launch & Growth Sprint')}
+              onClick={() => onOpenProjectModal('15-Minute Free Consultation')}
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-blue-700 font-extrabold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-xl shadow-slate-900/20 hover:scale-105 transition-all cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-amber-500 fill-amber-400" />
-              <span>Commission Your Growth Sprint</span>
+              <span>Discuss Your Project (Free 15-Min Call)</span>
               <ArrowRight className="w-4 h-4 text-blue-600" />
             </button>
 
