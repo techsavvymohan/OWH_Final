@@ -99,13 +99,14 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(idx)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                    className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all cursor-pointer ${
                       isCurrent
                         ? 'bg-blue-600 text-white shadow-md font-bold'
                         : 'text-slate-300 hover:text-white hover:bg-slate-700/60'
                     }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
+                    <span className="sm:hidden">{tab.shortLabel}</span>
                     <span className="hidden sm:inline">{tab.label}</span>
                   </button>
                 );

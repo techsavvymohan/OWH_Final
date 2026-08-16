@@ -57,16 +57,18 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
         >
           <a
             href="#about"
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono font-medium text-slate-200 hover:border-blue-500/60 hover:text-white transition-all group cursor-pointer shadow-md"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-[10px] sm:text-xs font-mono font-medium text-slate-200 hover:border-blue-500/60 hover:text-white transition-all group cursor-pointer shadow-md"
           >
-            <span className="flex h-2 w-2 relative">
+            <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
             </span>
-            <span className="font-bold text-blue-400">Only</span> = Strategy ·{' '}
-            <span className="font-bold text-white">Way</span> = Velocity ·{' '}
-            <span className="font-bold text-slate-300">Online</span> = Compound Growth
-            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1 text-slate-400 group-hover:text-blue-400" />
+            <span>
+              <strong className="font-bold text-blue-400">Only</strong> = Strategy ·{' '}
+              <strong className="font-bold text-white">Way</strong> = Velocity ·{' '}
+              <strong className="font-bold text-slate-300">Online</strong> = Growth
+            </span>
+            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1 text-slate-400 group-hover:text-blue-400 shrink-0" />
           </a>
         </motion.div>
 

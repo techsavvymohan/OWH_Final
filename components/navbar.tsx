@@ -412,11 +412,11 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                 </button>
               )}
 
-              {/* Primary CTA */}
+              {/* Primary CTA (Desktop & Tablet) */}
               <button
                 id="discuss-project-nav-btn"
                 onClick={() => onOpenProjectModal()}
-                className="relative inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-md shadow-blue-600/20 hover:shadow-blue-600/35 transition-all duration-200 cursor-pointer group"
+                className="hidden sm:inline-flex relative items-center justify-center gap-1.5 px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-md shadow-blue-600/20 hover:shadow-blue-600/35 transition-all duration-200 cursor-pointer group"
               >
                 <Sparkles className="w-3.5 h-3.5 text-blue-200" />
                 <span>Discuss Project</span>
@@ -437,6 +437,27 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
         </div>
       </div>
     </motion.header>
+
+      {/* Floating Bottom-Right "Discuss Project" FAB (Mobile Screen Only) */}
+      <div className="fixed bottom-5 right-4 z-40 sm:hidden">
+        <motion.button
+          id="mobile-fab-discuss-btn"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => onOpenProjectModal()}
+          className="flex items-center gap-2 px-4 py-3 rounded-full bg-blue-600 text-white font-bold text-xs shadow-2xl shadow-blue-600/50 border border-blue-400/40 cursor-pointer backdrop-blur-md active:bg-blue-700"
+          aria-label="Discuss Project"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+          </span>
+          <Sparkles className="w-3.5 h-3.5 text-blue-200" />
+          <span>Discuss Project</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </motion.button>
+      </div>
 
       {/* Mobile Slide-in Drawer */}
       <AnimatePresence>

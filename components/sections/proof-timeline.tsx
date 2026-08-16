@@ -126,18 +126,18 @@ export function ProofTimeline({ onOpenProjectModal }: ProofTimelineProps) {
         </motion.div>
 
         {/* Scroll-Driven Dynamic 90-Day Sprint Progress Bar */}
-        <div className="mb-8 p-4 rounded-2xl neo-card">
-          <div className="flex items-center justify-between text-xs font-mono mb-2">
+        <div className="mb-8 p-3.5 sm:p-4 rounded-2xl neo-card">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono mb-2.5 gap-2">
             <div className="flex items-center gap-2 text-slate-700 font-bold">
-              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse shrink-0" />
               <span>Sprint Velocity Timeline:</span>
             </div>
-            <div className="flex items-center gap-4 text-[11px] text-slate-500 font-semibold">
-              <span className={activePhaseIndex === 0 ? 'text-blue-600 font-bold' : ''}>Day 1: Architecture</span>
-              <span>→</span>
-              <span className={activePhaseIndex === 1 ? 'text-emerald-600 font-bold' : ''}>Day 30: Growth Live</span>
-              <span>→</span>
-              <span className={activePhaseIndex === 2 ? 'text-emerald-700 font-bold' : ''}>Day 90: Scale Verified</span>
+            <div className="flex items-center justify-between sm:justify-end gap-2 text-[10px] sm:text-[11px] text-slate-500 font-semibold overflow-x-auto pb-0.5 sm:pb-0">
+              <span className={`shrink-0 ${activePhaseIndex === 0 ? 'text-blue-600 font-bold' : ''}`}>Day 1: Build</span>
+              <span className="shrink-0 text-slate-400">→</span>
+              <span className={`shrink-0 ${activePhaseIndex === 1 ? 'text-emerald-600 font-bold' : ''}`}>Day 30: Growth</span>
+              <span className="shrink-0 text-slate-400">→</span>
+              <span className={`shrink-0 ${activePhaseIndex === 2 ? 'text-emerald-700 font-bold' : ''}`}>Day 90: Scale</span>
             </div>
           </div>
 
