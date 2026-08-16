@@ -26,12 +26,12 @@ interface HeroSectionProps {
 }
 
 const CAPABILITY_PILLS = [
-  { icon: Code2, label: 'Next.js 15 & React 19 Full-Stack', type: 'tech', color: 'text-blue-600', bg: 'bg-blue-50 border-blue-200' },
-  { icon: Search, label: 'Programmatic B2B SEO Engine', type: 'growth', color: 'text-emerald-600', bg: 'bg-emerald-50 border-emerald-200' },
-  { icon: BarChart3, label: 'High-ROAS Paid Media (Google & Meta)', type: 'growth', color: 'text-emerald-600', bg: 'bg-emerald-50 border-emerald-200' },
-  { icon: Palette, label: 'Enterprise Design Systems & CRO', type: 'tech', color: 'text-indigo-600', bg: 'bg-indigo-50 border-indigo-200' },
-  { icon: Share2, label: 'Multi-Channel Brand Distribution', type: 'growth', color: 'text-emerald-600', bg: 'bg-emerald-50 border-emerald-200' },
-  { icon: ShieldCheck, label: 'Contractual 90-Day Zero-Bug SLA', type: 'tech', color: 'text-blue-700', bg: 'bg-blue-50 border-blue-200' },
+  { icon: Code2, label: 'Modern Website Technology', type: 'tech', color: 'text-blue-600', bg: 'bg-blue-50 border-blue-200' },
+  { icon: Search, label: 'Get Found on Google Search', type: 'growth', color: 'text-emerald-600', bg: 'bg-emerald-50 border-emerald-200' },
+  { icon: BarChart3, label: 'Google & Facebook Ads That Pay Back', type: 'growth', color: 'text-emerald-600', bg: 'bg-emerald-50 border-emerald-200' },
+  { icon: Palette, label: 'Beautiful Designs That Convert Visitors', type: 'tech', color: 'text-indigo-600', bg: 'bg-indigo-50 border-indigo-200' },
+  { icon: Share2, label: 'Social Media & Brand Building', type: 'growth', color: 'text-emerald-600', bg: 'bg-emerald-50 border-emerald-200' },
+  { icon: ShieldCheck, label: '90-Day Free Fix Guarantee', type: 'tech', color: 'text-blue-700', bg: 'bg-blue-50 border-blue-200' },
 ];
 
 export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
@@ -75,9 +75,9 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
         {/* Main SEO-Optimized Headline with BlurText Reveal */}
         <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold tracking-tight text-slate-900 max-w-4xl mx-auto leading-[1.12]">
           <BlurText 
-            text="We don't just launch websites. We engineer conversions."
+            text="We Build Websites That Actually Bring You Customers."
             wordDelay={0.06}
-            highlightWords={['engineer', 'conversions.']}
+            highlightWords={['Bring', 'Customers.']}
             highlightClass="bg-gradient-to-r from-blue-700 via-blue-600 to-slate-800 bg-clip-text text-transparent"
           />
         </h1>
@@ -89,9 +89,9 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
         >
-          Most agencies build a website and walk away. We act as your complete growth partner — delivering{' '}
-          <strong className="text-slate-900 font-semibold">stunning, ultra-fast websites</strong> that rank on Google,{' '}
-          bring in active customer leads, and <strong className="text-slate-900 font-semibold">never break or slow down</strong>. No coding or tech knowledge needed.
+          Most agencies just build a website and disappear. We stay with you — building a{' '}
+          <strong className="text-slate-900 font-semibold">beautiful, lightning-fast website</strong> that shows up on Google,{' '}
+          brings real customers to your door, and <strong className="text-slate-900 font-semibold">never crashes or slows down</strong>. You don&apos;t need to know anything about technology.
         </motion.p>
 
         {/* Action CTAs with MagneticButton */}
@@ -132,22 +132,21 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
         >
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-blue-600" />
-            <span className="font-bold text-slate-900">Zero-Defect QA Protocol</span>
-            <span className="text-slate-500">(Multi-Device Tested)</span>
+            <span className="font-bold text-slate-900">Tested on Every Device Before Launch</span>
           </div>
 
           <div className="hidden sm:block text-slate-300">•</div>
 
           <div className="flex items-center gap-1.5">
             <Sparkles className="w-4 h-4 text-slate-700" />
-            <span className="font-bold text-slate-900">Monitored 90-Day Quality SLA</span>
+            <span className="font-bold text-slate-900">90-Day Free Fix Guarantee</span>
           </div>
 
           <div className="hidden sm:block text-slate-300">•</div>
 
           <div className="flex items-center gap-1.5">
             <Zap className="w-4 h-4 text-blue-600" />
-            <span className="font-bold text-slate-900">Sub-Second Edge Delivery Target</span>
+            <span className="font-bold text-slate-900">Website Loads in Under 1 Second</span>
           </div>
         </motion.div>
 
@@ -159,7 +158,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           className="mt-12 sm:mt-16 pt-6 border-t border-slate-200"
         >
           <div className="text-[11px] font-mono uppercase tracking-widest text-slate-500 mb-4 font-semibold">
-            Unified Dual-Engine Architecture · Engineering Rigor & Compound Distribution
+            Everything Your Business Needs — Website + Marketing Under One Roof
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-4xl mx-auto">
             {CAPABILITY_PILLS.map((tile) => {

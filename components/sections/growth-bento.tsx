@@ -65,43 +65,43 @@ interface GrowthBentoProps {
 }
 
 const KEYWORD_RANKINGS = [
-  { keyword: 'zero-bug web engineering agency', rank: 'Top 3 Focus', change: '+14 ranks', volume: '3.2k/mo' },
-  { keyword: 'next.js 15 enterprise developers', rank: 'Page 1 Target', change: '+22 ranks', volume: '6.4k/mo' },
-  { keyword: 'b2b conversion rate optimization agency', rank: 'Top 3 Focus', change: '+18 ranks', volume: '4.1k/mo' },
-  { keyword: 'high roas paid media engineering', rank: 'Page 1 Target', change: '+9 ranks', volume: '2.8k/mo' },
+  { keyword: 'best website design company near me', rank: 'Top 3 Focus', change: '+14 ranks', volume: '3.2k/mo' },
+  { keyword: 'custom website developer for business', rank: 'Page 1 Target', change: '+22 ranks', volume: '6.4k/mo' },
+  { keyword: 'website that gets more customers', rank: 'Top 3 Focus', change: '+18 ranks', volume: '4.1k/mo' },
+  { keyword: 'google ads agency with guaranteed results', rank: 'Page 1 Target', change: '+9 ranks', volume: '2.8k/mo' },
 ];
 
 const SOCIAL_POSTS = [
   {
     platform: 'LinkedIn',
     icon: LinkedInIcon,
-    tag: 'B2B Thought Leadership',
+    tag: 'Industry Expert Post',
     reach: '28.4K',
     engagement: '5.6%',
-    text: 'Why high-growth SaaS companies fail their launches: The architecture was built in isolation from the paid acquisition funnel 🧵...',
+    text: 'Why most businesses fail online: They build a website without a plan to get customers 🧵...',
   },
   {
     platform: 'Instagram',
     icon: InstagramIcon,
-    tag: 'Visual Brand Case Study',
+    tag: 'Visual Success Story',
     reach: '34.2K',
     engagement: '7.1%',
-    text: 'Zero-Bug Handover Protocol: Inside our 4-stage automated QA and stability verification gate.',
+    text: 'Behind the scenes: How we test every website on 18 different screens before launching.',
   },
   {
     platform: 'X / Twitter',
     icon: XTwitterIcon,
-    tag: 'Technical Breakdown',
+    tag: 'How-We-Did-It Thread',
     reach: '42.8K',
     engagement: '4.8%',
-    text: 'How we achieved 100/100 Core Web Vitals and 18ms INP across 24 dynamic server-action routes in Next.js 15 👇',
+    text: 'We built a website that loads faster than you can blink — here\'s how we did it 👇',
   },
 ];
 
 const CREATIVE_DECKS = [
-  { title: 'Brand Identity Systems & Design Tokens', color: 'from-blue-600 to-indigo-600', icon: Palette },
-  { title: 'High-Converting Multi-Format Ad Collateral', color: 'from-emerald-600 to-teal-600', icon: Flame },
-  { title: 'Investor Pitch Decks & Sales Enablement', color: 'from-purple-600 to-pink-600', icon: Layers },
+  { title: 'Logo, Colors & Brand Guidelines', color: 'from-blue-600 to-indigo-600', icon: Palette },
+  { title: 'Ad Banners & Social Media Graphics', color: 'from-emerald-600 to-teal-600', icon: Flame },
+  { title: 'Business Presentations & Pitch Decks', color: 'from-purple-600 to-pink-600', icon: Layers },
 ];
 
 export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
@@ -124,7 +124,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-bold border border-emerald-200">
               <TrendingUp className="w-3.5 h-3.5" />
-              <span>MARKETING & CLIENT ACQUISITION WING</span>
+              <span>MARKETING & GETTING YOU CUSTOMERS</span>
             </div>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
               Google SEO, Social Media, & Paid Ads.{' '}
@@ -167,7 +167,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                   <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
                     Target: Compounding Organic Growth
                   </span>
-                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Programmatic SEO · Dynamic Schema</span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">So customers find you on Google</span>
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
@@ -181,23 +181,23 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 text-[11px] font-mono">
                 <div className="flex items-center gap-2 p-2 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
-                  <span>1. Technical SEO & Schema</span>
+                  <span>1. Website Speed & Google Setup</span>
                 </div>
                 <div className="flex items-center gap-2 p-2 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
-                  <span>2. Programmatic Content Engine</span>
+                  <span>2. Pages That Rank on Google</span>
                 </div>
                 <div className="flex items-center gap-2 p-2 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
-                  <span>3. Partnerships & Backlinks</span>
+                  <span>3. Getting Other Sites to Link to You</span>
                 </div>
                 <div className="flex items-center gap-2 p-2 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
-                  <span>4. Conversion Analytics (CRO)</span>
+                  <span>4. Tracking What Works & What Doesn’t</span>
                 </div>
                 <div className="sm:col-span-2 flex items-center gap-2 p-2 rounded-xl bg-emerald-100/70 text-emerald-950 font-bold border border-emerald-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 shrink-0 animate-pulse" />
-                  <span>5. AI-Search Readiness (ChatGPT, Perplexity & SearchGPT Optimization)</span>
+                  <span>5. Ready for AI Search (ChatGPT, Google AI)</span>
                 </div>
               </div>
             </div>
@@ -205,8 +205,8 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
             {/* Keyword Ranking Tracker */}
             <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2.5">
               <div className="flex items-center justify-between text-xs font-mono text-slate-500 pb-1 border-b border-slate-200">
-                <span>Target High-Intent Commercial Keyword</span>
-                <span>SERP Target</span>
+                <span>What People Search For</span>
+                <span>Google Goal</span>
               </div>
               {KEYWORD_RANKINGS.map(item => (
                 <div
@@ -270,10 +270,10 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                Consistent Social Content That Builds Real Authority
+                Social Media Posts That Build Your Reputation
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                Platform-native thought-leadership copywriting, high-engagement creative carousels, and targeted audience nurturing across LinkedIn, X, and Instagram.
+                We write professional posts, design eye-catching graphics, and grow your followers on LinkedIn, X (Twitter), and Instagram — so people trust your brand.
               </p>
             </div>
 
@@ -323,14 +323,14 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                   <Palette className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
-                  Design System Synergy
+                  Your Complete Brand Look
                 </span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
                 Brand Identity & Performance Design Studio
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                Brand architecture guidelines, high-converting ad variations, pitch decks, and digital collateral that reuse your exact website design tokens for unified authority.
+                Your logo, colors, fonts, business cards, social media templates, ad banners, and presentations — all matching your website's look for a professional brand.
               </p>
             </div>
 
@@ -382,16 +382,16 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 </div>
                 <div className="flex flex-col items-end">
                   <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
-                    Target Benchmark: 3x–5x+ ROAS
+                    Goal: ₹3–₹5 Back for Every ₹1 Spent
                   </span>
-                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Meta CAPI · Google Ads Conversion Funnel</span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Google Ads · Facebook & Instagram Ads</span>
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
                 Every Ad Rupee Tracked to a Real Lead, Not a Guess
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                Full-funnel Google, Meta, and LinkedIn ad campaigns connected directly to high-converting landing pages with server-side lead tracking so you know your exact customer acquisition cost.
+                We run Google, Facebook, Instagram, and LinkedIn ads that bring real customers — not just clicks. Every rupee is tracked so you know exactly what you’re getting back.
               </p>
             </div>
 
@@ -417,13 +417,13 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
 
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <div className="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-2xs">
-                  <span className="text-[10px] font-mono text-slate-500 block">Target Pipeline Revenue (Model)</span>
+                  <span className="text-[10px] font-mono text-slate-500 block">Expected Revenue You Could Earn</span>
                   <span className="text-lg sm:text-xl font-bold font-mono text-emerald-700">
                     ${estimatedRevenue.toLocaleString()}
                   </span>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-2xs">
-                  <span className="text-[10px] font-mono text-slate-500 block">Estimated Qualified Inquiries</span>
+                  <span className="text-[10px] font-mono text-slate-500 block">Estimated Customer Enquiries</span>
                   <span className="text-lg sm:text-xl font-bold font-mono text-slate-900">
                     ~{estimatedLeads} target
                   </span>

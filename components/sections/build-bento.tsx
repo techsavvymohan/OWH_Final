@@ -44,11 +44,11 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200">
               <Code2 className="w-3.5 h-3.5" />
-              <span>WEB DESIGN & DEVELOPMENT WING</span>
+              <span>WEBSITE DESIGN & DEVELOPMENT</span>
             </div>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-              High-Converting Web Systems.{' '}
-              <span className="text-blue-600">Built to Scale Your Business.</span>
+              Websites That Look Amazing &{' '}
+              <span className="text-blue-600">Bring You Business.</span>
             </h2>
             <p className="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
               We replace slow, fragile websites with lightning-fast, custom-engineered web platforms designed to capture leads, rank on search engines, and maximize your revenue — with zero technical stress.
@@ -84,9 +84,9 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 </div>
                 <div className="flex flex-col items-end">
                   <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
-                    Instant Speed · Zero Layout Shift
+                    Loads Fast · Looks Perfect
                   </span>
-                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">INP &lt; 20ms · 0.2s TTFB</span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Opens instantly on any phone</span>
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
@@ -203,9 +203,9 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 </div>
                 <div className="flex flex-col items-end">
                   <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200">
-                    Automated Quality Gate
+                    Built Right, No Shortcuts
                   </span>
-                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Continuous CI/CD Pipeline</span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Automatic quality checks</span>
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
@@ -343,10 +343,10 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 </div>
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Custom High-Conversion Components
+                Custom Buttons & Forms That Get You Leads
               </h3>
               <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                Interactive, accessible user interface elements engineered to turn website visitors into phone calls, booked meetings, and purchases.
+                Every button, form, and section on your website is designed to turn visitors into actual phone calls, WhatsApp messages, and paying customers.
               </p>
             </div>
 
@@ -354,16 +354,16 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
             <div className="h-44 rounded-2xl bg-slate-50 border border-slate-200 p-3 overflow-hidden flex flex-col justify-center">
               {activeCodeTab === 'preview' ? (
                 <div className="p-3.5 rounded-xl bg-white border border-slate-200 space-y-2.5 shadow-xs text-center">
-                  <span className="text-[11px] font-mono text-slate-500 font-semibold uppercase">Lead Engine Component</span>
+                  <span className="text-[11px] font-mono text-slate-500 font-semibold uppercase">Lead Capture Widget</span>
                   <div className="flex items-center justify-between text-xs font-semibold text-slate-900">
-                    <span>Active Sprint Capacity:</span>
+                    <span>Available Slots This Month:</span>
                     <span className="text-blue-600 font-mono font-bold">{demoBookingCount} Slots</span>
                   </div>
                   <button
                     onClick={() => setDemoBookingCount(prev => (prev > 1 ? prev - 1 : 14))}
                     className="w-full py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors cursor-pointer shadow-xs"
                   >
-                    Reserve Instant Discovery Slot
+                    Book a Free Consultation
                   </button>
                 </div>
               ) : (
@@ -373,7 +373,7 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
   return (
     <Button onClick={() => setSlots(s => s - 1)}
       className="bg-blue-600 text-white rounded-xl">
-      Reserve Instant Discovery Slot
+      Book a Free Consultation
     </Button>
   );
 }`}
@@ -400,7 +400,7 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                   <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
                     Target 100/100 Vitals
                   </span>
-                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Google Lighthouse Standard</span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Google's Official Speed Test</span>
                 </div>
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">

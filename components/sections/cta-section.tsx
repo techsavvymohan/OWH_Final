@@ -27,7 +27,7 @@ export function CtaSection({ onOpenProjectModal }: CtaSectionProps) {
           {/* Top Status Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold text-blue-100 shadow-sm relative z-10">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Accepting Q3/Q4 Project Sprints & Growth Retainers</span>
+            <span>Now Accepting New Projects — Limited Slots Available</span>
           </div>
 
           <div className="space-y-4 max-w-3xl mx-auto relative z-10">
@@ -67,15 +67,15 @@ export function CtaSection({ onOpenProjectModal }: CtaSectionProps) {
           <div className="pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono text-blue-100 relative z-10">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
-              <span className="font-semibold">Zero-Bug Handover Protocol™</span>
+              <span className="font-semibold">Zero-Error Website Guarantee</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-sky-300" />
-              <span className="font-semibold">90-Day Monitored SLA Window</span>
+              <span className="font-semibold">90-Day Free Fix Promise</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-300" />
-              <span className="font-semibold">100/100 Core Web Vitals Pass</span>
+              <span className="font-semibold">Perfect Google Speed Score</span>
             </div>
           </div>
         </div>

@@ -28,11 +28,11 @@ interface NavbarProps {
 }
 
 const NAV_LINKS = [
-  { name: 'Engineering', href: '#services', badge: 'Build' },
-  { name: 'Growth Systems', href: '#growth', badge: 'Scale', isNew: true },
-  { name: 'Telemetry', href: '#dashboard' },
-  { name: '90-Day Sprint', href: '#timeline' },
-  { name: 'Pricing & Plans', href: '#pricing' },
+  { name: 'Solutions', href: '#services', badge: 'Build' },
+  { name: 'Marketing', href: '#growth', badge: 'Scale', isNew: true },
+  { name: 'Results Dashboard', href: '#dashboard' },
+  { name: 'How It Works', href: '#timeline' },
+  { name: 'Pricing', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
 ];
 
