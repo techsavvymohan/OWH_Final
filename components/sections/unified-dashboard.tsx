@@ -23,10 +23,10 @@ interface UnifiedDashboardProps {
 }
 
 const DASHBOARD_TABS = [
-  { id: 'uptime', label: 'Site Uptime & Vitals', icon: Activity, metric: '99.99% Up', color: 'text-blue-600' },
-  { id: 'seo', label: 'SEO Rank Trend', icon: Search, metric: '14 Top-3 Keywords', color: 'text-emerald-700' },
-  { id: 'social', label: 'Social Engagement', icon: Share2, metric: '73.8K Reach', color: 'text-purple-600' },
-  { id: 'ads', label: 'Ad Spend & ROAS', icon: DollarSign, metric: '5.2x Blended ROAS', color: 'text-emerald-700' },
+  { id: 'uptime', label: 'Is my site working right now?', shortLabel: 'Site Health', icon: Activity, metric: 'Target 99.9%+', color: 'text-blue-600' },
+  { id: 'seo', label: 'Am I ranking on Google?', shortLabel: 'Google SEO', icon: Search, metric: 'Target SERP Growth', color: 'text-emerald-700' },
+  { id: 'social', label: 'Is social media growing?', shortLabel: 'Social Reach', icon: Share2, metric: '73.8K Reach', color: 'text-purple-600' },
+  { id: 'ads', label: 'Are ads making me money?', shortLabel: 'Ad Revenue', icon: DollarSign, metric: 'Targeting 3x-5x+ ROAS', color: 'text-emerald-700' },
 ];
 
 export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) {
@@ -126,10 +126,10 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
                     <div>
                       <h4 className="text-lg font-bold text-slate-900">
-                        Infrastructure Health & Edge Stability
+                        Is My Website Fast, Protected, and Working Right Now?
                       </h4>
                       <p className="text-xs text-slate-500">
-                        Zero-Bug telemetry, real-time response time, and global edge cache status.
+                        Live site health, instant page response speed, and zero broken links.
                       </p>
                     </div>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-mono font-bold border border-emerald-200">
@@ -140,22 +140,22 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono">
                     <div className="p-4 rounded-2xl neo-card">
-                      <span className="text-[11px] text-slate-500 block">Global Uptime</span>
-                      <span className="text-2xl font-bold text-emerald-700">99.99%</span>
-                      <span className="text-[10px] text-slate-500 block mt-1">Past 90 days SLA</span>
+                      <span className="text-[11px] text-slate-500 block">Uptime Target</span>
+                      <span className="text-2xl font-bold text-emerald-700">99.9%+</span>
+                      <span className="text-[10px] text-slate-500 block mt-1">Monitored SLA target</span>
                     </div>
                     <div className="p-4 rounded-2xl neo-card">
-                      <span className="text-[11px] text-slate-500 block">Server TTFB Latency</span>
-                      <span className="text-2xl font-bold text-blue-700">138ms</span>
+                      <span className="text-[11px] text-slate-500 block">Page Load Latency</span>
+                      <span className="text-2xl font-bold text-blue-700">&lt; 200ms</span>
                       <span className="text-[10px] text-slate-500 block mt-1">Global edge CDN</span>
                     </div>
                     <div className="p-4 rounded-2xl neo-card">
-                      <span className="text-[11px] text-slate-500 block">Console Errors</span>
+                      <span className="text-[11px] text-slate-500 block">Broken Links</span>
                       <span className="text-2xl font-bold text-emerald-700">0 Faults</span>
                       <span className="text-[10px] text-slate-500 block mt-1">Strict typed QA</span>
                     </div>
                     <div className="p-4 rounded-2xl neo-card">
-                      <span className="text-[11px] text-slate-500 block">Lighthouse Score</span>
+                      <span className="text-[11px] text-slate-500 block">Speed Benchmark</span>
                       <span className="text-2xl font-bold text-emerald-700">100/100</span>
                       <span className="text-[10px] text-slate-500 block mt-1">Core Web Vitals Pass</span>
                     </div>
@@ -185,44 +185,44 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
                     <div>
                       <h4 className="text-lg font-bold text-slate-900">
-                        SEO Keyword Visibility & Organic Traction
+                        Am I Ranking on Google and Getting Found by Buyers?
                       </h4>
                       <p className="text-xs text-slate-500">
-                        Organic impressions, top SERP rankings, and high-intent commercial queries.
+                        Organic search impressions, Page 1 positions, and high-intent commercial buyer queries.
                       </p>
                     </div>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-mono font-bold border border-emerald-200">
                       <TrendingUp className="w-3.5 h-3.5" />
-                      +340% Organic Influx
+                      Compounding Organic Growth
                     </span>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono">
                     <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                      <span className="text-[11px] text-slate-500 block">Top-3 Positions</span>
-                      <span className="text-2xl font-bold text-emerald-700">14 keywords</span>
-                      <span className="text-[10px] text-emerald-700 block mt-1">↑ +9 this quarter</span>
+                      <span className="text-[11px] text-slate-500 block">Target SERP Positions</span>
+                      <span className="text-2xl font-bold text-emerald-700">Page 1 Target</span>
+                      <span className="text-[10px] text-emerald-700 block mt-1">High commercial intent</span>
                     </div>
                     <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                       <span className="text-[11px] text-slate-500 block">Monthly Organic Clicks</span>
                       <span className="text-2xl font-bold text-slate-900">22,480</span>
-                      <span className="text-[10px] text-emerald-700 block mt-1">+41.2% MoM</span>
+                      <span className="text-[10px] text-emerald-700 block mt-1">+41.2% MoM growth</span>
                     </div>
                     <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                      <span className="text-[11px] text-slate-500 block">Domain Authority</span>
+                      <span className="text-[11px] text-slate-500 block">Domain Trust Score</span>
                       <span className="text-2xl font-bold text-blue-700">58 / 100</span>
-                      <span className="text-[10px] text-blue-600 block mt-1">High-trust authority</span>
+                      <span className="text-[10px] text-blue-600 block mt-1">High search equity</span>
                     </div>
                   </div>
 
                   <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-2">
                     <div className="flex justify-between text-slate-500 text-[11px]">
-                      <span>Top Indexed Route</span>
-                      <span>Weekly Impressions</span>
+                      <span>Target Indexed Route</span>
+                      <span>Estimated Impressions</span>
                     </div>
                     <div className="flex justify-between text-slate-800">
                       <span>/services/headless-web-dev</span>
-                      <span className="font-bold text-emerald-700">11,240 views (Rank #1)</span>
+                      <span className="font-bold text-emerald-700">11,240 views (Top SERP Target)</span>
                     </div>
                   </div>
                 </motion.div>
@@ -240,7 +240,7 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
                     <div>
                       <h4 className="text-lg font-bold text-slate-900">
-                        Multi-Platform Brand Velocity & Social Reach
+                        Is My Social Media Audience Growing and Building Trust?
                       </h4>
                       <p className="text-xs text-slate-500">
                         Content calendar synchronization across LinkedIn, X, and Instagram.
@@ -261,10 +261,10 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                     <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                       <span className="text-[11px] text-slate-500 block">Engagement Rate</span>
                       <span className="text-2xl font-bold text-slate-900">5.6%</span>
-                      <span className="text-[10px] text-slate-500 block mt-1">2.5x industry standard</span>
+                      <span className="text-[10px] text-slate-500 block mt-1">High audience engagement</span>
                     </div>
                     <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                      <span className="text-[11px] text-slate-500 block">Organic Referral Inquiries</span>
+                      <span className="text-[11px] text-slate-500 block">Inbound Inquiries</span>
                       <span className="text-2xl font-bold text-blue-700">96 leads</span>
                       <span className="text-[10px] text-blue-600 block mt-1">Direct from thought-leadership</span>
                     </div>
@@ -284,15 +284,15 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
                     <div>
                       <h4 className="text-lg font-bold text-slate-900">
-                        Paid Performance & Multi-Touch ROAS
+                        Are My Paid Ads Delivering Qualified Leads and Revenue?
                       </h4>
                       <p className="text-xs text-slate-500">
-                        Meta, Google & LinkedIn Ads alignment driving into high-converting landing pages.
+                        Meta, Google & LinkedIn Ads tracked back to real customer leads and conversion funnels.
                       </p>
                     </div>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-mono font-bold border border-emerald-200">
                       <Flame className="w-3.5 h-3.5" />
-                      5.12x Verified Blended ROAS
+                      Target-Driven Multi-Touch ROAS
                     </span>
                   </div>
 
@@ -303,18 +303,18 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                       <span className="text-[10px] text-slate-500 block mt-1">Meta & Google Search</span>
                     </div>
                     <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                      <span className="text-[11px] text-slate-500 block">Attributed Revenue</span>
-                      <span className="text-2xl font-bold text-emerald-700">$25,600</span>
-                      <span className="text-[10px] text-emerald-700 block mt-1">5.12x multiplier</span>
+                      <span className="text-[11px] text-slate-500 block">Target Attributed Pipeline</span>
+                      <span className="text-2xl font-bold text-emerald-700">$20,000+</span>
+                      <span className="text-[10px] text-emerald-700 block mt-1">Target benchmark model</span>
                     </div>
                     <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                       <span className="text-[11px] text-slate-500 block">Cost Per Lead (CPL)</span>
-                      <span className="text-2xl font-bold text-blue-700">$38.00</span>
-                      <span className="text-[10px] text-emerald-700 block mt-1">-32% vs industry benchmark</span>
+                      <span className="text-2xl font-bold text-blue-700">Target Low CPL</span>
+                      <span className="text-[10px] text-emerald-700 block mt-1">Funnel optimization</span>
                     </div>
                     <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                       <span className="text-[11px] text-slate-500 block">Landing Page Conv.</span>
-                      <span className="text-2xl font-bold text-emerald-700">8.9%</span>
+                      <span className="text-2xl font-bold text-emerald-700">Target 5-10%</span>
                       <span className="text-[10px] text-slate-500 block mt-1">Optimized checkout funnel</span>
                     </div>
                   </div>

@@ -80,7 +80,7 @@ const TRACKS: {
     id: 'growth-engine',
     title: 'Full-Funnel B2B SEO & Paid Acquisition',
     subtitle: 'Programmatic SEO, multi-channel ad scaling, attribution, and CRO pipelines.',
-    badge: '5.12x Avg ROAS',
+    badge: 'Target-Driven ROAS',
     icon: TrendingUp,
     tagColor: 'bg-emerald-100 text-emerald-900 border-emerald-200',
   },
@@ -366,7 +366,7 @@ function ModalInnerForm({
               </span>
             </div>
             <p className="text-[11px] text-slate-500">
-              Contractual zero-defect delivery · 100/100 Core Web Vitals guarantee
+              Targeted zero-defect QA · Optimized Core Web Vitals standard
             </p>
           </div>
         </div>
@@ -616,13 +616,13 @@ function ModalInnerForm({
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   </div>
                   <p className="text-xs text-slate-700 mt-0.5">
-                    Pre-qualified for <strong>{formData.slaWindow.toUpperCase()} Monitored Stability SLA</strong> with guaranteed zero critical defects.
+                    Pre-qualified for <strong>{formData.slaWindow.toUpperCase()} Monitored Stability SLA</strong> with rigorous regression testing.
                   </p>
                 </div>
               </div>
               <div className="text-right sm:shrink-0">
                 <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white border border-blue-200 text-blue-800 font-bold shadow-xs">
-                  100/100 CWV Guaranteed
+                  Target 100/100 CWV Benchmark
                 </span>
               </div>
             </div>
@@ -842,9 +842,9 @@ function ModalInnerForm({
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-slate-500">Stability Guarantee:</span>
+                <span className="text-slate-500">Stability Protocol:</span>
                 <span className="text-emerald-700 font-bold">
-                  {formData.slaWindow.toUpperCase()} Monitored SLA (0 Defect Handover)
+                  {formData.slaWindow.toUpperCase()} Monitored Quality Window
                 </span>
               </div>
             </div>
@@ -1003,7 +1003,7 @@ function ModalInnerForm({
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-slate-500">Core Web Vitals SLA:</span>
-                <span className="text-emerald-700 font-bold">100/100 Guaranteed</span>
+                <span className="text-emerald-700 font-bold">Target 100/100 Benchmark</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-slate-500">Post-Launch Protection:</span>

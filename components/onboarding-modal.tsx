@@ -327,19 +327,19 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                       id: 'redesign' as const,
                       title: 'High-Conversion Redesign',
                       desc: 'Overhaul sluggish websites into 100/100 Core Web Vitals conversion engines.',
-                      badge: '0.18s TTFB',
+                      badge: 'Sub-Second Speed',
                     },
                     {
                       id: 'seo_growth' as const,
                       title: 'SEO Domination & Clusters',
-                      desc: 'Programmatic landing pages, technical site audits, high-intent commercial rank domination.',
-                      badge: '+340% Traffic',
+                      desc: 'Programmatic landing pages, technical site audits, high-intent commercial rank growth.',
+                      badge: 'Compounding SEO',
                     },
                     {
                       id: 'paid_roas' as const,
                       title: 'High-ROAS Paid Ads & Social',
                       desc: 'Targeted Google Ads, Meta funnels, conversion copywriting, LinkedIn audience scaling.',
-                      badge: '5.12x ROAS',
+                      badge: 'Target-Driven ROAS',
                     },
                   ].map(g => (
                     <div
@@ -543,9 +543,9 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                       Every pull request is automatically tested against 100+ viewport variations, accessibility standards (WCAG AA), and sub-millisecond Core Web Vitals checks. If anything breaks, our lead engineers remediate within 24 hours under contractual SLA.
                     </p>
                     <div className="p-3 rounded-xl bg-white border border-slate-200 font-mono text-[11px] text-slate-800 space-y-1">
-                      <div className="text-emerald-700 font-bold">✓ Lighthouse Score: 100/100 Performance</div>
-                      <div className="text-blue-700 font-bold">✓ Global Edge Latency: 0.18s TTFB</div>
-                      <div className="text-indigo-700 font-bold">✓ Zero Regression Guarantee Window: Active (90 Days)</div>
+                      <div className="text-emerald-700 font-bold">✓ Lighthouse Score: Target 100/100 Performance</div>
+                      <div className="text-blue-700 font-bold">✓ Sub-Second Global Edge Latency</div>
+                      <div className="text-indigo-700 font-bold">✓ Monitored Quality SLA Window: Active (90 Days)</div>
                     </div>
                   </div>
                 )}
@@ -590,7 +590,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                       Actionable Alerts Directly in Your Navigation Bar
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
-                      Receive instant chimes when high-intent leads submit inquiries, when SEO rankings reach #1, or when new sprint deliverables pass automated QA verification.
+                      Receive instant chimes when high-intent leads submit inquiries, when SEO keyword positions climb into Page 1, or when new sprint deliverables pass automated QA verification.
                     </p>
                   </div>
                 )}

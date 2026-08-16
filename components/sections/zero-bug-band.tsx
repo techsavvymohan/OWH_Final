@@ -44,8 +44,8 @@ const PROTOCOL_STEPS = [
   },
   {
     phase: 'Phase 4 · 90-Day Monitored Peace-of-Mind Window',
-    title: 'Contractual 90-Day Stability Warranty',
-    desc: 'Real-time 24/7 uptime monitoring. If any bug or layout issue occurs within 90 days after launch, our engineering team fixes it within 24 hours at zero cost to you.',
+    title: 'Monitored 90-Day Stability Window',
+    desc: 'Real-time 24/7 uptime monitoring. If any bug or layout issue occurs within 90 days after launch, rapid engineering remediation is included in your monitored stability window.',
   },
 ];
 
@@ -89,7 +89,7 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
                   </span>
                 </div>
                 <p className="text-xs text-slate-500">
-                  No broken links, zero console warnings, guaranteed post-launch stability.
+                  We test every button, form, and page across 18 screen sizes before launch so nothing breaks.
                 </p>
               </div>
             </div>

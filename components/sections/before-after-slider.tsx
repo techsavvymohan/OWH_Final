@@ -38,13 +38,13 @@ export function BeforeAfterSlider() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200 mb-3">
             <ArrowLeftRight className="w-3.5 h-3.5" />
-            <span>MEASURABLE REDESIGN IMPACT</span>
+            <span>ILLUSTRATIVE COMPARISON MODEL</span>
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
             Before vs. After OnlyWayOnline
           </h2>
           <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
-            Drag the interactive slider to compare fragile legacy agency templates with our zero-defect, high-speed growth architecture.
+            Drag the interactive slider to see an illustrative comparison of typical gains when upgrading from fragile agency templates to our clean, high-speed growth architecture.
           </p>
         </div>
 
@@ -65,11 +65,11 @@ export function BeforeAfterSlider() {
             <div className="flex items-center justify-between">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel text-emerald-800 text-xs font-mono font-bold border-emerald-300">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-                AFTER · OnlyWayOnline Unified Architecture
+                ILLUSTRATIVE AFTER · OnlyWayOnline Architecture
               </span>
               <div className="text-right font-mono glass-panel-subtle px-3 py-1 rounded-xl">
                 <span className="text-emerald-700 font-bold text-lg">100 / 100</span>
-                <span className="text-[10px] text-slate-500 block">Lighthouse Verified SLA</span>
+                <span className="text-[10px] text-slate-500 block">Target Lighthouse Standard</span>
               </div>
             </div>
 
@@ -77,29 +77,32 @@ export function BeforeAfterSlider() {
             <div className="max-w-md space-y-4 my-auto">
               <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg neo-pill text-blue-800 text-xs font-mono font-bold">
                 <Zap className="w-3.5 h-3.5 text-blue-600" />
-                0.2s TTFB · Next.js 15 App Router
+                Sub-Second TTFB · Next.js 15 App Router
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 leading-tight">
                 High-Conversion Growth System With Zero Broken Links
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Clean, typed design tokens, sub-second edge caching, structured SEO schema, and integrated lead funnels generating +340% qualified pipeline.
+                Clean, typed design tokens, sub-second edge caching, structured SEO schema, and integrated lead funnels engineered for compounding qualified pipeline.
               </p>
               <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
                 <div className="p-3 rounded-2xl neo-card">
                   <span className="text-slate-500 text-[10px] block">Lead Conversion</span>
-                  <span className="text-emerald-700 font-bold text-base">+3.4x higher</span>
+                  <span className="text-emerald-700 font-bold text-base">Optimizing 2-3x+</span>
                 </div>
                 <div className="p-3 rounded-2xl neo-card">
-                  <span className="text-slate-500 text-[10px] block">Stability SLA</span>
+                  <span className="text-slate-500 text-[10px] block">Stability Warranty</span>
                   <span className="text-blue-700 font-bold text-base">90-Day Monitored</span>
                 </div>
               </div>
             </div>
 
-            <div className="text-xs font-mono text-slate-600 flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Zero-Bug Protocol Verified & Active</span>
+            <div className="text-xs font-mono text-slate-600 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <span>Zero-Bug Protocol Verified & Active</span>
+              </div>
+              <span className="text-[10px] text-slate-400 italic hidden sm:inline">*Illustrative benchmark model</span>
             </div>
           </div>
 
@@ -111,7 +114,7 @@ export function BeforeAfterSlider() {
             <div className="flex items-center justify-between">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100/90 backdrop-blur-md text-rose-800 text-xs font-mono font-bold border border-rose-300">
                 <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
-                BEFORE · Fragmented Agency Deliverable
+                ILLUSTRATIVE BEFORE · Fragmented Legacy Build
               </span>
               <div className="text-right font-mono bg-white/70 backdrop-blur-sm px-3 py-1 rounded-xl">
                 <span className="text-rose-700 font-bold text-lg">42 / 100</span>
@@ -133,7 +136,7 @@ export function BeforeAfterSlider() {
               <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
                 <div className="p-3 rounded-2xl bg-white/80 border border-slate-300">
                   <span className="text-slate-600 text-[10px] block">Bounce Rate</span>
-                  <span className="text-rose-700 font-bold text-base">68.2% (High)</span>
+                  <span className="text-rose-700 font-bold text-base">High Drop-off</span>
                 </div>
                 <div className="p-3 rounded-2xl bg-white/80 border border-slate-300">
                   <span className="text-slate-600 text-[10px] block">Post-Launch Support</span>

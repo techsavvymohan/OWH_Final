@@ -121,7 +121,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           </MagneticButton>
         </motion.div>
 
-        {/* Live Social Proof Stats in Light Luxury Styling */}
+        {/* Process-Driven Quality Standards in Light Luxury Styling */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,27 +129,23 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           className="mt-8 inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-5 py-2.5 rounded-full glass-panel-subtle text-xs text-slate-600 font-medium"
         >
           <div className="flex items-center gap-1.5">
-            <div className="flex text-amber-500">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-            <span className="font-bold text-slate-900">5.0 / 5.0 Rating</span>
-            <span className="text-slate-400">(64+ Verified Client Audits)</span>
+            <ShieldCheck className="w-4 h-4 text-blue-600" />
+            <span className="font-bold text-slate-900">Zero-Defect QA Protocol</span>
+            <span className="text-slate-400">(Multi-Device Tested)</span>
           </div>
 
           <div className="hidden sm:block text-slate-300">•</div>
 
           <div className="flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-blue-600" />
-            <span className="font-bold text-slate-900">100% Zero-Defect Handover SLA</span>
+            <Sparkles className="w-4 h-4 text-indigo-600" />
+            <span className="font-bold text-slate-900">Monitored 90-Day Quality SLA</span>
           </div>
 
           <div className="hidden sm:block text-slate-300">•</div>
 
           <div className="flex items-center gap-1.5">
             <Zap className="w-4 h-4 text-emerald-600" />
-            <span className="font-bold text-slate-900">&lt; 0.2s Global Edge TTFB</span>
+            <span className="font-bold text-slate-900">Sub-Second Edge Delivery Target</span>
           </div>
         </motion.div>
 

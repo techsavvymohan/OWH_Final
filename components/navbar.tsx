@@ -32,7 +32,6 @@ const NAV_LINKS = [
   { name: 'Growth Systems', href: '#growth', badge: 'Scale', isNew: true },
   { name: 'Telemetry', href: '#dashboard' },
   { name: '90-Day Sprint', href: '#timeline' },
-  { name: 'Proof & Case Studies', href: '#testimonials', badge: '5.0★' },
   { name: 'Pricing & Plans', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
 ];
@@ -58,7 +57,7 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
       }
 
       // Track active section for smooth nav indicator
-      const sectionIds = ['services', 'growth', 'dashboard', 'timeline', 'testimonials', 'pricing', 'faq'];
+      const sectionIds = ['services', 'growth', 'dashboard', 'timeline', 'pricing', 'faq'];
       const scrollPosition = window.scrollY + 180;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -271,8 +270,7 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
 
               {/* Direct Links */}
               {[
-                { name: 'Proof & Case Studies', href: '#testimonials', badge: '5.0★' },
-                { name: 'Pricing', href: '#pricing' },
+                { name: 'Pricing & Plans', href: '#pricing' },
                 { name: 'FAQ', href: '#faq' },
               ].map(link => {
                 const isActive = activeSection === link.href;
@@ -286,11 +284,6 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                     }`}
                   >
                     <span>{link.name}</span>
-                    {link.badge && (
-                      <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-full font-bold bg-amber-50 text-amber-700 border border-amber-200">
-                        {link.badge}
-                      </span>
-                    )}
                   </a>
                 );
               })}
@@ -551,8 +544,6 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                           className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold ${
                             link.badge === 'Scale'
                               ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                              : link.badge === '5.0★'
-                              ? 'bg-amber-50 text-amber-700 border border-amber-200'
                               : 'bg-blue-50 text-blue-700 border border-blue-200'
                           }`}
                         >

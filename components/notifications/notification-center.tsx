@@ -108,10 +108,10 @@ export function NotificationCenter({ onOpenProjectModal, onNavigateToSection }: 
         badge: 'Zero-Bug SLA',
       },
       {
-        title: 'Organic Ranking Alert: #1 For Main Term',
-        message: 'Google algorithm updated SERP indexing: captured #1 rank for target commercial keywords.',
+        title: 'Organic Ranking Alert: Target SERP Ascending',
+        message: 'Google algorithm updated SERP indexing: target commercial keywords reached Page 1.',
         category: 'growth' as const,
-        badge: '+310% Impressions',
+        badge: 'SEO Growth',
       },
       {
         title: 'Sprint Deliverable: Edge Cache Active',

@@ -18,17 +18,17 @@ import {
 
 const ROW_1_FEATURES = [
   { label: 'Zero-Bug Handover Protocol™', icon: ShieldCheck, type: 'brand' },
-  { label: '100/100 Core Web Vitals Guaranteed', icon: Zap, type: 'growth' },
+  { label: 'Optimized for 100/100 Core Web Vitals', icon: Zap, type: 'growth' },
   { label: 'Next.js 15 App Router & React 19', icon: Code2, type: 'brand' },
   { label: 'Programmatic SEO & JSON-LD Schema', icon: Search, type: 'growth' },
   { label: 'Responsive Multi-Device Layouts', icon: Smartphone, type: 'brand' },
   { label: 'Strict Pure Light Luxury Palette', icon: Sparkles, type: 'brand' },
-  { label: 'Sub-200ms Global Edge TTFB', icon: Globe, type: 'growth' },
+  { label: 'Sub-Second Global Edge Delivery', icon: Globe, type: 'growth' },
 ];
 
 const ROW_2_FEATURES = [
   { label: '90-Day Monitored Stability SLA', icon: Clock, type: 'brand' },
-  { label: 'Paid Ads ROAS Conversion Funnel (5.12x)', icon: BarChart, type: 'growth' },
+  { label: 'Target-Driven Paid Media ROAS Funnels', icon: BarChart, type: 'growth' },
   { label: 'Social Content Velocity (LinkedIn/X/IG)', icon: Share2, type: 'growth' },
   { label: 'Accessible WCAG AA 2.1 Primitives', icon: Layers, type: 'brand' },
   { label: 'Zero-Trust Security & SSL Grade A+', icon: Lock, type: 'brand' },

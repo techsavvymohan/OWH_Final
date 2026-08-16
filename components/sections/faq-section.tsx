@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     q: 'Will my existing Google rankings be safe if I redesign my website with you?',
-    a: '100% guaranteed. During a website redesign, we map all your existing URLs with 301 redirects and preserve your search engine authority. By making your site 3x faster, your Google rankings typically rise significantly after launch.',
+    a: 'We prioritize preserving and growing your search equity. During a website redesign, we map all your existing URLs with comprehensive 301 redirects to protect your search engine authority. By making your site faster and Core Web Vitals compliant, we optimize toward stronger search ranking signals post-launch.',
   },
   {
     q: 'How fast can my new website or growth campaign go live?',

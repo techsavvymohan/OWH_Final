@@ -94,12 +94,12 @@ const DEFAULT_NOTIFICATIONS: NotificationItem[] = [
   },
   {
     id: 'notif-2',
-    title: 'SEO Surge: +18 High-Intent Rankings',
-    message: 'Primary commercial landing pages captured Top 3 SERP positions. Organic impression velocity +142%.',
+    title: 'SEO Traction: Target SERP Clusters',
+    message: 'Primary commercial landing pages captured Page 1 target positions. Organic impression velocity compounding.',
     category: 'growth',
     timestamp: '2 hours ago',
     read: false,
-    badge: '+142% Traffic',
+    badge: 'Compounding SEO',
     actionLabel: 'SERP Breakdown',
   },
   {

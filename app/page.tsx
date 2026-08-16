@@ -14,7 +14,6 @@ import { ProofTimeline } from '@/components/sections/proof-timeline';
 import { CoreCapabilities } from '@/components/sections/core-capabilities';
 import { BeforeAfterSlider } from '@/components/sections/before-after-slider';
 import { PhilosophyStats } from '@/components/sections/philosophy-stats';
-import { ClientTestimonials } from '@/components/sections/client-testimonials';
 import { GrowthStackSelector } from '@/components/sections/growth-stack-selector';
 import { FaqSection } from '@/components/sections/faq-section';
 import { CtaSection } from '@/components/sections/cta-section';
@@ -129,12 +128,7 @@ export default function HomePage() {
         <PhilosophyStats />
       </SectionReveal>
 
-      {/* 12. Dedicated Client Testimonials Section (Bento Grid with Metrics & Case Studies) */}
-      <SectionReveal>
-        <ClientTestimonials onOpenProjectModal={handleOpenProjectModal} />
-      </SectionReveal>
-
-      {/* 13. Growth Stack Selector (3-Way Segmented Control Pricing & Plans) */}
+      {/* 12. Growth Stack Selector (3-Way Segmented Control Pricing & Plans) */}
       <SectionReveal>
         <GrowthStackSelector onOpenProjectModal={handleOpenProjectModal} />
       </SectionReveal>

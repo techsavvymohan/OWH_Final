@@ -68,22 +68,25 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
         {/* 5-Card Asymmetric Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           
-          {/* Card 1 (Span 5/12): Mobile & Sub-Second Core Web Vitals */}
+          {/* Card 1 (Span 5/12): Mobile & Responsive Experience */}
           <div className="md:col-span-12 lg:col-span-5 rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-md transition-all duration-300">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
                   <Smartphone className="w-5 h-5" />
                 </div>
-                <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
-                  INP &lt; 20ms · 0.2s TTFB
-                </span>
+                <div className="flex flex-col items-end">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
+                    Instant Speed · Zero Layout Shift
+                  </span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">INP &lt; 20ms · 0.2s TTFB</span>
+                </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                Fluid Responsive & Touch Micro-Interactions
+                Loads Instantly, Works Flawlessly, on Every Device
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                Adaptive layout architectures with zero cumulative layout shifts (CLS: 0.00). Native hardware-accelerated gestures and sub-second paint benchmarks across all mobile devices.
+                Your site loads before someone finishes clicking. Nothing jumps around while reading, and buttons respond the instant you tap them across every phone, tablet, and laptop.
               </p>
             </div>
 
@@ -124,40 +127,49 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                   </div>
                   <span className="inline-flex items-center gap-1 text-[9px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    100% LIVE
+                    VERIFIED
                   </span>
                 </div>
 
                 {/* Score Gauge Highlight Box */}
                 <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50/80 via-white to-emerald-50/80 border border-slate-200 text-center shadow-2xs">
-                  <span className="text-[10px] text-slate-500 block font-sans font-medium">Google Core Web Vitals</span>
+                  <span className="text-[10px] text-slate-500 block font-sans font-medium">Google Core Web Vitals Benchmark</span>
                   <span className="text-2xl font-bold font-mono text-emerald-700 tracking-tight block my-0.5">
                     100 / 100
                   </span>
                   <span className="text-[9px] font-mono text-blue-700 font-bold bg-blue-100/70 px-2 py-0.5 rounded-full inline-block">
-                    ⚡ Sub-Second Mobile Paint
+                    ⚡ Instant Sub-Second Load
                   </span>
                 </div>
 
                 {/* Performance Metrics Breakdown */}
                 <div className="space-y-1.5 text-[10px]">
                   <div className="flex items-center justify-between p-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">
-                    <span className="text-slate-500">LCP (Largest Paint)</span>
-                    <span className="text-emerald-700 font-bold">0.52s ✓</span>
+                    <div>
+                      <span className="text-slate-900 font-semibold block font-sans">Page Load Speed</span>
+                      <span className="text-[8px] text-slate-400">LCP 0.52s · Instant Paint</span>
+                    </div>
+                    <span className="text-emerald-700 font-bold">Passed ✓</span>
                   </div>
                   <div className="flex items-center justify-between p-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">
-                    <span className="text-slate-500">CLS (Layout Shift)</span>
-                    <span className="text-emerald-700 font-bold">0.000 ✓</span>
+                    <div>
+                      <span className="text-slate-900 font-semibold block font-sans">Screen Stability</span>
+                      <span className="text-[8px] text-slate-400">CLS 0.000 · No accidental taps</span>
+                    </div>
+                    <span className="text-emerald-700 font-bold">Zero Shift ✓</span>
                   </div>
                   <div className="flex items-center justify-between p-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">
-                    <span className="text-slate-500">INP (Touch Latency)</span>
-                    <span className="text-emerald-700 font-bold">14ms ✓</span>
+                    <div>
+                      <span className="text-slate-900 font-semibold block font-sans">Tap Response</span>
+                      <span className="text-[8px] text-slate-400">INP 14ms · Ultra-low latency</span>
+                    </div>
+                    <span className="text-emerald-700 font-bold">Instant ✓</span>
                   </div>
                 </div>
 
                 {/* Playwright QA & Stability Badge */}
                 <div className="p-2 rounded-xl bg-blue-50/80 border border-blue-200 text-[10px] text-center text-blue-800 font-sans font-semibold">
-                  ✓ Playwright QA: 18 Breakpoints Verified
+                  ✓ Tested on 18 screen sizes before launch
                 </div>
               </div>
 
@@ -175,15 +187,18 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
                   <Cpu className="w-5 h-5" />
                 </div>
-                <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200">
-                  Continuous CI/CD Gate
-                </span>
+                <div className="flex flex-col items-end">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 font-bold border border-blue-200">
+                    Automated Quality Gate
+                  </span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Continuous CI/CD Pipeline</span>
+                </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                Modern Full-Stack Execution Pipeline
+                From Design Straight to a Live, Working Website
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                Direct synthesis from typed Figma design tokens to global edge deployment. Strict TypeScript 5.9 typing, zero memory leaks, and enterprise-grade resilience.
+                Built the same way large-scale platforms like Netflix and Nike build theirs — so your website stays ultra-fast and won&apos;t slow down as your business grows. No delays and no miscommunication between design and code.
               </p>
             </div>
 
@@ -200,9 +215,9 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                   }`}
                 >
                   <Code2 className="w-5 h-5 mx-auto mb-1.5" />
-                  <div className="text-xs font-bold">Next.js 15 Server Actions</div>
+                  <div className="text-xs font-bold">Fast Modern Core</div>
                   <div className={`text-[10px] font-mono mt-1 ${activeNode === 1 ? 'text-blue-100' : 'text-slate-500'}`}>
-                    Server-First Core
+                    Next.js & React 19
                   </div>
                 </div>
 
@@ -216,9 +231,9 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                   }`}
                 >
                   <ShieldCheck className="w-5 h-5 mx-auto mb-1.5" />
-                  <div className="text-xs font-bold">Zero-Bug Gate</div>
+                  <div className="text-xs font-bold">Zero-Bug Testing</div>
                   <div className={`text-[10px] font-mono mt-1 ${activeNode === 2 ? 'text-blue-100' : 'text-slate-500'}`}>
-                    Automated Strict QA
+                    Multi-Device QA
                   </div>
                 </div>
 
@@ -232,18 +247,45 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                   }`}
                 >
                   <Globe className="w-5 h-5 mx-auto mb-1.5" />
-                  <div className="text-xs font-bold">Global Edge CDN</div>
+                  <div className="text-xs font-bold">Worldwide Fast Delivery</div>
                   <div className={`text-[10px] font-mono mt-1 ${activeNode === 3 ? 'text-blue-100' : 'text-slate-500'}`}>
-                    Sub-200ms Edge Cache
+                    Global Edge Network
                   </div>
                 </div>
               </div>
 
-              {/* Active node detail inspector */}
-              <div className="mt-4 p-3.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 font-mono shadow-2xs">
-                {activeNode === 1 && '→ Active Architecture: Next.js 15 App Router with TypeScript strict mode, React 19 concurrent hydration, and dynamic route streaming.'}
-                {activeNode === 2 && '→ Active Architecture: Automated Playwright end-to-end regression suites, Lighthouse 100 audits, and zero-console-warning gates.'}
-                {activeNode === 3 && '→ Active Architecture: Global multi-region edge delivery with automatic Brotli compression, smart cache invalidation, and DDoS mitigation.'}
+              {/* Active node detail inspector with Two-Layer explanation */}
+              <div className="mt-4 p-3.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 shadow-2xs space-y-1">
+                {activeNode === 1 && (
+                  <>
+                    <p className="font-semibold text-slate-900">
+                      → Server-First Speed: Dynamic routes built to load in milliseconds without sluggish page reloads.
+                    </p>
+                    <p className="text-[10px] font-mono text-slate-400">
+                      Technical Spec: Next.js 15 App Router with TypeScript strict mode, React 19 concurrent hydration, and dynamic route streaming.
+                    </p>
+                  </>
+                )}
+                {activeNode === 2 && (
+                  <>
+                    <p className="font-semibold text-slate-900">
+                      → Zero-Bug Quality Gate: Automated tests ensure forms, links, and buttons never break on release.
+                    </p>
+                    <p className="text-[10px] font-mono text-slate-400">
+                      Technical Spec: Automated Playwright end-to-end regression suites, Lighthouse 100 audits, and zero-console-warning gates.
+                    </p>
+                  </>
+                )}
+                {activeNode === 3 && (
+                  <>
+                    <p className="font-semibold text-slate-900">
+                      → Worldwide Delivery: Fast for every visitor, everywhere in the world, not just near your server.
+                    </p>
+                    <p className="text-[10px] font-mono text-slate-400">
+                      Technical Spec: Global multi-region edge delivery with automatic Brotli compression, smart cache invalidation, and DDoS mitigation.
+                    </p>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -275,15 +317,15 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                         : 'text-slate-600'
                     }`}
                   >
-                    TSX Code
+                    Code
                   </button>
                 </div>
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Type-Safe Component Systems
+                Custom High-Conversion Components
               </h3>
               <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                Modular design tokens, fully accessible ARIA patterns, and seamless UI primitives.
+                Interactive, accessible user interface elements engineered to turn website visitors into phone calls, booked meetings, and purchases.
               </p>
             </div>
 
@@ -326,25 +368,28 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-200">
                   <Gauge className="w-5 h-5" />
                 </div>
-                <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
-                  Google Lighthouse SLA
-                </span>
+                <div className="flex flex-col items-end">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
+                    Target 100/100 Vitals
+                  </span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Google Lighthouse Standard</span>
+                </div>
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                SEO-Native Engineering
+                Built So Google Can Actually Find You
               </h3>
               <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                Structured Schema.org JSON-LD microdata, dynamic OpenGraph assets, and canonical routing.
+                Structured so Google understands exactly what your business does — this is what gets you found in search from Day 1.
               </p>
             </div>
 
             {/* 4x 100 Grid */}
             <div className="grid grid-cols-2 gap-2.5">
               {[
-                { label: 'Performance', score: '100' },
+                { label: 'Speed & Vitals', score: '100' },
                 { label: 'Accessibility', score: '100' },
-                { label: 'Best Practices', score: '100' },
-                { label: 'SEO Engine', score: '100' },
+                { label: 'Code Quality', score: '100' },
+                { label: 'Search Ready', score: '100' },
               ].map(m => (
                 <div
                   key={m.label}
@@ -353,7 +398,7 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                   <div className="text-xl font-bold font-mono text-emerald-700">
                     {m.score}
                   </div>
-                  <div className="text-[10px] text-slate-700 font-semibold truncate">
+                  <div className="text-[10px] text-slate-700 font-semibold truncate font-sans">
                     {m.label}
                   </div>
                 </div>
@@ -361,7 +406,7 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
             </div>
           </div>
 
-          {/* Card 5 (Span 4/12): Security & 99.99% Uptime */}
+          {/* Card 5 (Span 4/12): Security & High Uptime Architecture */}
           <div className="md:col-span-12 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-md transition-all duration-300">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -370,29 +415,29 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 </div>
                 <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-700 font-bold">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>99.99% GUARANTEED</span>
+                  <span>TARGET 99.9%+ UPTIME</span>
                 </div>
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Security & Uptime Stability
+                Your Website Stays Online & Protected, 24/7
               </h3>
               <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                Zero-trust headers, SSL Grade A+, automated edge failovers, and real-time error telemetry.
+                Bank-level security protection against hacking and data theft, with automated edge failovers and live health checks.
               </p>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 font-mono text-xs text-slate-700">
+            <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs text-slate-700">
               <div className="flex items-center justify-between">
-                <span className="text-slate-500">SSL Certificate:</span>
-                <span className="text-blue-700 font-bold">Grade A+ (HSTS Strict)</span>
+                <span className="text-slate-600 font-sans">Bank-Grade Encryption:</span>
+                <span className="text-blue-700 font-bold font-mono">Grade A+ (SSL Strict)</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-slate-500">Security Headers:</span>
-                <span className="text-emerald-700 font-bold">CSP & CORS Gated</span>
+                <span className="text-slate-600 font-sans">Threat Defense:</span>
+                <span className="text-emerald-700 font-bold font-mono">Hacker & Spam Gated</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-slate-500">Stability Watch:</span>
-                <span className="text-slate-900 font-bold">24/7 Automated Heartbeat</span>
+                <span className="text-slate-600 font-sans">Live Health Watch:</span>
+                <span className="text-slate-900 font-bold font-mono">24/7 Monitored Ping</span>
               </div>
             </div>
           </div>

@@ -130,13 +130,6 @@ const jsonLdData = {
       parentOrganization: { '@id': 'https://onlywayonline.com/#organization' },
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80',
       priceRange: '$$$$',
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        reviewCount: '64',
-        bestRating: '5',
-        worstRating: '1',
-      },
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Zero-Bug Development & Growth Capabilities',

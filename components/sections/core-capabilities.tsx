@@ -25,7 +25,7 @@ const CORE_SERVICES = [
     title: 'Custom Corporate Websites & Digital Flagships',
     category: 'Build',
     desc: 'Stunning corporate websites designed to build instant trust with high-value clients, showcase your portfolio, and generate consistent qualified inquiries.',
-    features: ['100% Bespoke Design — No Templates', 'Sub-Second Page Delivery (<1s)', 'Contractual Zero-Bug Guarantee'],
+    features: ['100% Bespoke Design — No Templates', 'Sub-Second Page Delivery (<1s)', 'Monitored Zero-Bug QA Standards'],
     icon: Building2,
   },
   {
@@ -49,7 +49,7 @@ const CORE_SERVICES = [
     title: 'Website Redesign & Speed Overhaul',
     category: 'Build',
     desc: 'Upgrade your outdated, slow, or fragile website into a modern lead-generation engine with zero loss in your existing Google rankings.',
-    features: ['Zero Google Ranking Loss Guarantee', 'Sub-Second Speed Boost', 'Modern Mobile-First Layout'],
+    features: ['Comprehensive 301 Redirect & Authority Migration', 'Sub-Second Speed Boost', 'Modern Mobile-First Layout'],
     icon: RefreshCw,
   },
   {
@@ -64,8 +64,8 @@ const CORE_SERVICES = [
     id: 'security-builds',
     title: 'Bank-Grade Security & 24/7 Reliability',
     category: 'Build',
-    desc: 'Keep your website 100% secure from hackers, spam, and downtime with enterprise SSL encryption, daily backups, and malware protection.',
-    features: ['Enterprise SSL & Threat Shield', 'Daily Automated Site Backups', '99.9% Guaranteed Uptime'],
+    desc: 'Keep your website secure from vulnerabilities, spam, and downtime with enterprise SSL encryption, daily backups, and malware protection.',
+    features: ['Enterprise SSL & Threat Shield', 'Daily Automated Site Backups', 'Target 99.9%+ Uptime Standards'],
     icon: ShieldCheck,
   },
   {

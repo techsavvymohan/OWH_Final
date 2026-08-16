@@ -21,10 +21,10 @@ interface GrowthBentoProps {
 }
 
 const KEYWORD_RANKINGS = [
-  { keyword: 'zero-bug web engineering agency', rank: '#1', change: '+14', volume: '3.2k/mo' },
-  { keyword: 'next.js 15 enterprise developers', rank: '#1', change: '+22', volume: '6.4k/mo' },
-  { keyword: 'b2b conversion rate optimization agency', rank: '#2', change: '+18', volume: '4.1k/mo' },
-  { keyword: 'high roas paid media engineering', rank: '#1', change: '+9', volume: '2.8k/mo' },
+  { keyword: 'zero-bug web engineering agency', rank: 'Top 3 Focus', change: '+14 ranks', volume: '3.2k/mo' },
+  { keyword: 'next.js 15 enterprise developers', rank: 'Page 1 Target', change: '+22 ranks', volume: '6.4k/mo' },
+  { keyword: 'b2b conversion rate optimization agency', rank: 'Top 3 Focus', change: '+18 ranks', volume: '4.1k/mo' },
+  { keyword: 'high roas paid media engineering', rank: 'Page 1 Target', change: '+9 ranks', volume: '2.8k/mo' },
 ];
 
 const SOCIAL_POSTS = [
@@ -62,8 +62,8 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
   const [adSpend, setAdSpend] = React.useState(5000);
   const [activeCreativeDeck, setActiveCreativeDeck] = React.useState(0);
 
-  // Dynamic ROAS calculation: ~5.12x average return
-  const estimatedRevenue = Math.round(adSpend * 5.12);
+  // Dynamic ROAS calculation: ~4.2x target benchmark model
+  const estimatedRevenue = Math.round(adSpend * 4.2);
   const estimatedLeads = Math.round(adSpend / 38);
 
   return (
@@ -109,17 +109,18 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200">
                   <Search className="w-5 h-5" />
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-col items-end">
                   <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
-                    +340% Organic Traffic Growth
+                    Target: Compounding Organic Growth
                   </span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Programmatic SEO · Dynamic Schema</span>
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                SaaS & B2B Programmatic SEO Retainer Stack
+                Built to Get Found — on Google Today & AI Search Tomorrow
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
-                SEO built from day one — not bolted on at the end. We deliver a complete 5-service SaaS SEO retainer stack designed for high commercial intent and bottom-of-funnel customer acquisition.
+                SEO built from day one, not bolted on after. We create structured topic clusters and search architecture so buyers searching for your exact products and services find your business first.
               </p>
 
               {/* 5 SaaS SEO Retainer Pillars */}
@@ -151,7 +152,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
             <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2.5">
               <div className="flex items-center justify-between text-xs font-mono text-slate-500 pb-1 border-b border-slate-200">
                 <span>Target High-Intent Commercial Keyword</span>
-                <span>SERP Rank</span>
+                <span>SERP Target</span>
               </div>
               {KEYWORD_RANKINGS.map(item => (
                 <div
@@ -203,7 +204,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                Multi-Channel Brand Velocity & Social Authority
+                Consistent Social Content That Builds Real Authority
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
                 Platform-native thought-leadership copywriting, high-engagement creative carousels, and targeted audience nurturing across LinkedIn, X, and Instagram.
@@ -231,7 +232,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                   </span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
-                  <span className="text-slate-500 block text-[10px]">Verified Interaction Rate</span>
+                  <span className="text-slate-500 block text-[10px]">Engagement Rate</span>
                   <span className="text-emerald-700 font-bold text-sm">
                     {SOCIAL_POSTS[activeSocialIndex].engagement}
                   </span>
@@ -298,15 +299,18 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200">
                   <Target className="w-5 h-5" />
                 </div>
-                <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
-                  5.12x Verified ROAS Multiplier
-                </span>
+                <div className="flex flex-col items-end">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
+                    Target Benchmark: 3x–5x+ ROAS
+                  </span>
+                  <span className="text-[9px] font-mono text-slate-400 mt-0.5">Meta CAPI · Google Ads Conversion Funnel</span>
+                </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                Paid Ads Optimization (Google, Meta, & LinkedIn)
+                Every Ad Rupee Tracked to a Real Lead, Not a Guess
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                Seamless alignment between ad creatives, server-side conversion tracking (CAPI), and bespoke landing page funnels to maximize return on ad spend.
+                Full-funnel Google, Meta, and LinkedIn ad campaigns connected directly to high-converting landing pages with server-side lead tracking so you know your exact customer acquisition cost.
               </p>
             </div>
 
@@ -332,15 +336,15 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
 
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <div className="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-2xs">
-                  <span className="text-[10px] font-mono text-slate-500 block">Attributed Pipeline Revenue</span>
+                  <span className="text-[10px] font-mono text-slate-500 block">Target Pipeline Revenue (Model)</span>
                   <span className="text-lg sm:text-xl font-bold font-mono text-emerald-700">
                     ${estimatedRevenue.toLocaleString()}
                   </span>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-2xs">
-                  <span className="text-[10px] font-mono text-slate-500 block">High-Intent B2B Inquiries</span>
+                  <span className="text-[10px] font-mono text-slate-500 block">Estimated Qualified Inquiries</span>
                   <span className="text-lg sm:text-xl font-bold font-mono text-slate-900">
-                    ~{estimatedLeads} qualified
+                    ~{estimatedLeads} target
                   </span>
                 </div>
               </div>
