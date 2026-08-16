@@ -248,20 +248,21 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200">
                   <Share2 className="w-5 h-5" />
                 </div>
-                <div className="flex gap-1.5 flex-wrap">
+                <div className="flex gap-2 flex-wrap">
                   {SOCIAL_POSTS.map((post, idx) => {
                     const PostIcon = post.icon;
+                    const isSelected = activeSocialIndex === idx;
                     return (
                       <button
                         key={post.platform}
                         onClick={() => setActiveSocialIndex(idx)}
-                        className={`inline-flex items-center gap-1.5 text-xs font-mono px-2.5 py-1.5 rounded-lg transition-all cursor-pointer ${
-                          activeSocialIndex === idx
-                            ? 'bg-emerald-600 text-white font-bold shadow-xs'
-                            : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                        className={`inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-xl transition-all cursor-pointer border ${
+                          isSelected
+                            ? 'bg-slate-900 text-white font-bold border-slate-900 shadow-sm'
+                            : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 hover:border-slate-300'
                         }`}
                       >
-                        <PostIcon className="w-3.5 h-3.5" />
+                        <PostIcon className="w-4 h-4" />
                         <span>{post.platform}</span>
                       </button>
                     );
