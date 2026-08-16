@@ -58,12 +58,12 @@ export default function HomePage() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="relative min-h-screen bg-[var(--background)] text-[var(--foreground)] selection:bg-blue-600 selection:text-white"
     >
-      {/* Dynamic Ambient Gradient Backdrop Layer */}
+      {/* Dynamic Ambient Gradient Backdrop Layer for White + Black + Blue + Grey Luxury Theme */}
       <div className="fixed inset-0 pointer-events-none -z-50 overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/20 via-sky-300/15 to-transparent rounded-full blur-[140px] animate-float-slow" />
-        <div className="absolute top-1/3 -right-40 w-[650px] h-[650px] bg-gradient-to-bl from-emerald-400/18 via-teal-300/12 to-transparent rounded-full blur-[150px] animate-float" />
-        <div className="absolute bottom-1/4 -left-40 w-[700px] h-[700px] bg-gradient-to-tr from-indigo-400/18 via-blue-300/15 to-transparent rounded-full blur-[160px] animate-float-slow" />
-        <div className="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-gradient-to-tl from-cyan-400/18 via-emerald-300/15 to-transparent rounded-full blur-[140px] animate-float" />
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/15 via-slate-300/20 to-transparent rounded-full blur-[140px] animate-float-slow" />
+        <div className="absolute top-1/3 -right-40 w-[650px] h-[650px] bg-gradient-to-bl from-slate-200/40 via-blue-100/20 to-transparent rounded-full blur-[150px] animate-float" />
+        <div className="absolute bottom-1/4 -left-40 w-[700px] h-[700px] bg-gradient-to-tr from-slate-300/25 via-blue-200/15 to-transparent rounded-full blur-[160px] animate-float-slow" />
+        <div className="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-gradient-to-tl from-blue-400/12 via-slate-200/30 to-transparent rounded-full blur-[140px] animate-float" />
       </div>
       {/* Top Page Scroll Indicator with Framer Motion Spring */}
       <PageScrollProgress />

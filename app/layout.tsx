@@ -32,28 +32,28 @@ export const metadata: Metadata = {
     template: '%s | OnlyWayOnline',
   },
   description:
-    'We engineer high-performance web applications, custom SaaS platforms, and enterprise digital ecosystems with an uncompromising Zero-Bug SLA, 100/100 Core Web Vitals, and compound organic SEO & paid acquisition systems.',
+    'We engineer ultra-fast websites, custom SaaS platforms, and enterprise web systems backed by a 90-day monitored stability warranty, 100/100 Core Web Vitals, and compound organic SEO & paid acquisition funnels.',
   keywords: [
     'Zero-Bug Web Development',
     'Next.js 15 Full-Stack Agency',
     'SaaS Engineering Studio',
-    'Core Web Vitals Optimization',
-    'B2B Growth Systems',
-    'High ROAS Paid Media',
+    'Google Core Web Vitals Optimization',
+    'B2B Growth Engine',
+    'Programmatic SEO Agency',
+    'High ROAS Paid Media Management',
     'Technical SEO Architecture',
-    'Automated QA Testing',
     'Conversion Rate Optimization CRO',
-    'Custom Web App Development',
-    'Enterprise Frontend Architecture',
+    'E-Commerce Development Delhi',
+    'Custom Web Design Agency India',
     'OnlyWayOnline Growth Stack',
   ],
-  authors: [{ name: 'OnlyWayOnline Engineering Team', url: 'https://onlywayonline.com' }],
+  authors: [{ name: 'OnlyWayOnline Engineering & Strategy Team', url: 'https://onlywayonline.com' }],
   creator: 'OnlyWayOnline',
   publisher: 'OnlyWayOnline Studio',
   formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+    email: true,
+    address: true,
+    telephone: true,
   },
   alternates: {
     canonical: 'https://onlywayonline.com',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'OnlyWayOnline — Zero-Defect Web Systems & Full-Funnel B2B Growth Engine',
     description:
-      'We engineer high-performance web applications and run the SEO, paid ads, and social growth that turn visitors into predictable recurring revenue.',
+      'We replace slow, fragile websites with custom-engineered web platforms designed to capture leads, rank on Google, and maximize revenue with zero technical stress.',
     url: 'https://onlywayonline.com',
     siteName: 'OnlyWayOnline',
     locale: 'en_US',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
         url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80',
         width: 1200,
         height: 630,
-        alt: 'OnlyWayOnline Zero-Bug Web Development and Growth Telemetry Platform',
+        alt: 'OnlyWayOnline Web Systems and Growth Platform',
       },
     ],
   },
@@ -97,65 +97,151 @@ export const metadata: Metadata = {
     },
   },
   category: 'technology',
+  other: {
+    'geo.region': 'IN-DL',
+    'geo.placename': 'New Delhi, Pitampura',
+    'geo.position': '28.6924;77.1517',
+    'ICBM': '28.6924, 77.1517',
+  },
 };
 
+// Comprehensive Structured Graph for SEO, GEO, AEO, and E-E-A-T
 const jsonLdData = {
   '@context': 'https://schema.org',
   '@graph': [
+    // 1. Organization & E-E-A-T Entity
     {
       '@type': 'Organization',
       '@id': 'https://onlywayonline.com/#organization',
       name: 'OnlyWayOnline',
+      alternateName: ['OWO', 'OnlyWay Online Studio'],
       url: 'https://onlywayonline.com',
-      logo: 'https://onlywayonline.com/assets/logo.png',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://onlywayonline.com/assets/logo.png',
+        caption: 'OnlyWayOnline Logo',
+      },
       description:
-        'Enterprise web engineering and growth agency delivering Zero-Defect full-stack applications, sub-millisecond Core Web Vitals, and compound acquisition systems.',
-      slogan: 'Only means Strategy · Way means Impact · Online means Growth',
+        'Enterprise web engineering and digital growth agency delivering Zero-Defect full-stack applications, sub-second Core Web Vitals, and compound acquisition systems.',
+      slogan: 'Only means Strategy · Way means Velocity · Online means Compound Growth',
+      foundingLocation: {
+        '@type': 'Place',
+        name: 'New Delhi, India',
+      },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Unit 971, 9th Floor, Aggarwal Millenium Tower 2, Netaji Subhash Place',
+        addressLocality: 'Pitampura, Delhi',
+        postalCode: '110034',
+        addressCountry: 'IN',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 28.6924,
+        longitude: 77.1517,
+      },
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          contactType: 'Customer Support & Project Discovery',
+          email: 'info@onlywayonline.com',
+          availableLanguage: ['English', 'Hindi'],
+          areaServed: ['Worldwide', 'IN', 'US', 'GB', 'CA', 'AU', 'AE', 'SG'],
+        },
+      ],
       sameAs: [
         'https://twitter.com/onlywayonline',
         'https://linkedin.com/company/onlywayonline',
         'https://github.com/onlywayonline',
       ],
-      contactPoint: {
-        '@type': 'ContactPoint',
-        contactType: 'Client Strategy & Engineering Desk',
-        email: 'hello@onlywayonline.com',
-        availableLanguage: ['English'],
-      },
+      knowsAbout: [
+        'Web Design & Full-Stack Development',
+        'Next.js 15 App Router & React 19',
+        'Programmatic SEO & Schema Architecture',
+        'Google Core Web Vitals Optimization',
+        'Conversion Rate Optimization (CRO)',
+        'Paid Media Strategy (Meta & Google Ads)',
+        'E-Commerce & Headless Storefronts',
+        'Automated End-to-End QA Testing',
+      ],
     },
+
+    // 2. ProfessionalService & LocalBusiness (GEO / Local SEO)
     {
       '@type': 'ProfessionalService',
       '@id': 'https://onlywayonline.com/#service',
       name: 'OnlyWayOnline Web Systems & Growth Agency',
       parentOrganization: { '@id': 'https://onlywayonline.com/#organization' },
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80',
+      telephone: '+91-11-49000000',
+      email: 'info@onlywayonline.com',
+      url: 'https://onlywayonline.com',
       priceRange: '$$$$',
+      currenciesAccepted: 'INR, USD, EUR, GBP, AED',
+      paymentAccepted: 'Wire Transfer, Credit Card, Stripe, Bank Transfer',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Unit 971, 9th Floor, Aggarwal Millenium Tower 2, Netaji Subhash Place',
+        addressLocality: 'Pitampura, Delhi',
+        postalCode: '110034',
+        addressCountry: 'IN',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 28.6924,
+        longitude: 77.1517,
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '09:00',
+          closes: '19:00',
+        },
+      ],
+      areaServed: [
+        { '@type': 'Country', name: 'India' },
+        { '@type': 'Country', name: 'United States' },
+        { '@type': 'Country', name: 'United Kingdom' },
+        { '@type': 'Country', name: 'Canada' },
+        { '@type': 'Country', name: 'Australia' },
+        { '@type': 'Country', name: 'United Arab Emirates' },
+        { '@type': 'Country', name: 'Singapore' },
+      ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name: 'Zero-Bug Development & Growth Capabilities',
+        name: 'Web Engineering & Digital Growth Services',
         itemListElement: [
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Zero-Defect Full-Stack Web Development',
-              description: 'Next.js 15, React 19, TypeScript, Playwright E2E testing with 100/100 Core Web Vitals guarantee.',
+              name: 'Custom Corporate Website & Digital Flagship Build',
+              description: 'Bespoke Figma design, Next.js 15 server-first build, 100/100 Core Web Vitals benchmark, and 30-day stability warranty.',
             },
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Programmatic SEO & High-Intent Search Architecture',
-              description: 'Semantic topic clustering, programmatic landing pages, and technical crawl optimization.',
+              name: 'SaaS Web Platform & Client Portal MVP',
+              description: 'Scalable frontend web application with secure authentication, real-time dashboards, and 60-day monitored stability SLA.',
             },
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'High-ROAS Paid Acquisition & Conversion Funnels',
-              description: 'Multi-channel Google Ads, Meta, and LinkedIn campaign scaling with real-time attribution.',
+              name: 'Programmatic SEO Growth Retainer',
+              description: 'Technical schema architecture, commercial keyword clusters, crawl optimization, and AI-search readiness for ChatGPT & Google.',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'High-ROAS Paid Ads Management (Google & Meta)',
+              description: 'Full-funnel paid media campaigns with server-side CAPI tracking, custom landing pages, and target 3x–5x+ ROAS benchmarks.',
             },
           },
           {
@@ -163,18 +249,145 @@ const jsonLdData = {
             itemOffered: {
               '@type': 'Service',
               name: '90-Day Rapid Launch & Growth Sprint',
-              description: 'Structured 3-phase roadmap from foundational architecture to verified multi-vector growth.',
+              description: 'Complete 3-phase transformation: Days 1–30 Build, Days 31–60 Traffic & Indexing, Days 61–90 Conversion Optimization.',
             },
           },
         ],
       },
     },
+
+    // 3. WebSite with Search / Identity
     {
       '@type': 'WebSite',
       '@id': 'https://onlywayonline.com/#website',
       url: 'https://onlywayonline.com',
       name: 'OnlyWayOnline',
+      description: 'Zero-Defect Web Systems & Full-Funnel Growth Engineering',
       publisher: { '@id': 'https://onlywayonline.com/#organization' },
+    },
+
+    // 4. FAQPage Schema for Direct Answer Engine Optimization (AEO & AI Search)
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://onlywayonline.com/#faq',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Do I need technical skills or coding knowledge to work with OnlyWayOnline?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'None at all. We handle all technical maintenance, hosting, updates, security, and coding for you. You receive a simple dashboard to view your leads and can request content updates or edits anytime with one click.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does your Zero-Bug Handover Protocol™ protect my business?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Traditional web agencies build a site, collect their fee, and leave. When pages crash or load slowly, you are forced to pay another developer to fix it. We test every single page across 18 phone, tablet, and laptop screen sizes before launch. Plus, every site includes a 90-day stability guarantee: if any bug or issue occurs, we fix it within 24 hours at $0 cost to you.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can you handle marketing, Google SEO, and paid ads for our existing website?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. If you already have an active website, we can run our monthly Growth Retainers (Google Search SEO, Social Media Content, Paid Google/Meta Ads, and Lead Funnels) to drive consistent traffic and new customer inquiries.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Will my existing Google rankings be safe if I redesign my website with you?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We prioritize preserving and growing your search equity. During a website redesign, we map all your existing URLs with comprehensive 301 redirects to protect your search engine authority. By making your site faster and Core Web Vitals compliant, we optimize toward stronger search ranking signals post-launch.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How fast can my new website or growth campaign go live?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'A standard custom website redesign or corporate site takes 3 to 4 weeks from kick-off to launch. Full-scale e-commerce stores and software platforms typically take 4 to 8 weeks.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I track my website leads, traffic, and return on investment?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'You receive access to our Single Unified Client Dashboard. It shows live data on how many phone calls, contact forms, sales leads, and Google visits your site receives every month — presented in plain numbers with no confusing technical jargon.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can I start with just a website build and add marketing services later?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes! Many of our long-term clients start with a custom Website Build Sprint. Because every site we build is optimized for Google SEO from Day 1, adding monthly SEO or paid ads later is completely seamless.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What makes OnlyWayOnline different from other web agencies?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Most agencies view a website as a one-time graphic design project. We view your website as a 24/7 sales engine. We combine high-speed engineering with active monthly marketing so your website actively generates leads and revenue month after month.',
+          },
+        },
+      ],
+    },
+
+    // 5. Speakable Specification (for Voice Search: Siri, Alexa, Google Assistant)
+    {
+      '@type': 'WebPage',
+      '@id': 'https://onlywayonline.com/#webpage',
+      url: 'https://onlywayonline.com',
+      name: 'OnlyWayOnline — Zero-Defect Web Systems & Full-Funnel B2B Growth',
+      isPartOf: { '@id': 'https://onlywayonline.com/#website' },
+      about: { '@id': 'https://onlywayonline.com/#organization' },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'p.text-slate-600'],
+      },
+    },
+
+    // 6. BreadcrumbList
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://onlywayonline.com/#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://onlywayonline.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services & Build Wing',
+          item: 'https://onlywayonline.com/#services',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Growth Engine Retainers',
+          item: 'https://onlywayonline.com/#growth',
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          name: 'Pricing & Plans',
+          item: 'https://onlywayonline.com/#pricing',
+        },
+        {
+          '@type': 'ListItem',
+          position: 5,
+          name: 'Frequently Asked Questions',
+          item: 'https://onlywayonline.com/#faq',
+        },
+      ],
     },
   ],
 };
@@ -191,6 +404,7 @@ export default function RootLayout({
       style={{ colorScheme: 'light' }}
     >
       <head>
+        <link rel="alternate" type="text/plain" href="https://onlywayonline.com/llms.txt" title="LLM Knowledge Base" />
         <script
           id="window-fetch-safe-setter"
           dangerouslySetInnerHTML={{
