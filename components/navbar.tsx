@@ -157,10 +157,6 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                     OnlyWay<span className="text-blue-600">Online</span>
                   </span>
                 </a>
-                <span className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full neo-pill text-[10px] font-mono text-emerald-800 font-bold border border-emerald-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  ONLINE
-                </span>
               </div>
 
             {/* Desktop Navigation Links with Solutions Dropdown */}

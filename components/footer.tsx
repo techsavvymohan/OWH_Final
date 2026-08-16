@@ -31,9 +31,9 @@ export function Footer() {
               <Image
                 src="/assets/logo_white.png"
                 alt="OnlyWayOnline"
-                width={220}
-                height={156}
-                className="h-14 sm:h-16 w-auto object-contain"
+                width={440}
+                height={312}
+                className="h-28 sm:h-32 w-auto object-contain"
                 priority
               />
             </div>
