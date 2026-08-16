@@ -202,21 +202,21 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
               </p>
             </div>
 
-            {/* Interactive Node Graph */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            {/* Interactive Node Graph in Dark Graphite Console */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 text-white shadow-md">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 relative">
                 {/* Node 1 */}
                 <div
                   onClick={() => setActiveNode(1)}
                   className={`p-4 rounded-2xl border text-center transition-all cursor-pointer ${
                     activeNode === 1
-                      ? 'bg-blue-600 text-white border-blue-600 shadow-md scale-105'
-                      : 'bg-white text-slate-800 border-slate-200 hover:border-blue-300'
+                      ? 'bg-blue-600 text-white border-blue-500 shadow-lg shadow-blue-600/30 scale-105 font-bold'
+                      : 'bg-slate-800/90 text-slate-300 border-slate-700 hover:border-slate-600 hover:bg-slate-800'
                   }`}
                 >
-                  <Code2 className="w-5 h-5 mx-auto mb-1.5" />
+                  <Code2 className="w-5 h-5 mx-auto mb-1.5 text-blue-300" />
                   <div className="text-xs font-bold">Fast Modern Core</div>
-                  <div className={`text-[10px] font-mono mt-1 ${activeNode === 1 ? 'text-blue-100' : 'text-slate-500'}`}>
+                  <div className={`text-[10px] font-mono mt-1 ${activeNode === 1 ? 'text-blue-100' : 'text-slate-400'}`}>
                     Next.js & React 19
                   </div>
                 </div>
@@ -226,13 +226,13 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                   onClick={() => setActiveNode(2)}
                   className={`p-4 rounded-2xl border text-center transition-all cursor-pointer ${
                     activeNode === 2
-                      ? 'bg-blue-600 text-white border-blue-600 shadow-md scale-105'
-                      : 'bg-white text-slate-800 border-slate-200 hover:border-blue-300'
+                      ? 'bg-blue-600 text-white border-blue-500 shadow-lg shadow-blue-600/30 scale-105 font-bold'
+                      : 'bg-slate-800/90 text-slate-300 border-slate-700 hover:border-slate-600 hover:bg-slate-800'
                   }`}
                 >
-                  <ShieldCheck className="w-5 h-5 mx-auto mb-1.5" />
+                  <ShieldCheck className="w-5 h-5 mx-auto mb-1.5 text-emerald-400" />
                   <div className="text-xs font-bold">Zero-Bug Testing</div>
-                  <div className={`text-[10px] font-mono mt-1 ${activeNode === 2 ? 'text-blue-100' : 'text-slate-500'}`}>
+                  <div className={`text-[10px] font-mono mt-1 ${activeNode === 2 ? 'text-blue-100' : 'text-slate-400'}`}>
                     Multi-Device QA
                   </div>
                 </div>
@@ -242,23 +242,23 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                   onClick={() => setActiveNode(3)}
                   className={`p-4 rounded-2xl border text-center transition-all cursor-pointer ${
                     activeNode === 3
-                      ? 'bg-blue-600 text-white border-blue-600 shadow-md scale-105'
-                      : 'bg-white text-slate-800 border-slate-200 hover:border-blue-300'
+                      ? 'bg-blue-600 text-white border-blue-500 shadow-lg shadow-blue-600/30 scale-105 font-bold'
+                      : 'bg-slate-800/90 text-slate-300 border-slate-700 hover:border-slate-600 hover:bg-slate-800'
                   }`}
                 >
-                  <Globe className="w-5 h-5 mx-auto mb-1.5" />
-                  <div className="text-xs font-bold">Worldwide Fast Delivery</div>
-                  <div className={`text-[10px] font-mono mt-1 ${activeNode === 3 ? 'text-blue-100' : 'text-slate-500'}`}>
+                  <Globe className="w-5 h-5 mx-auto mb-1.5 text-sky-300" />
+                  <div className="text-xs font-bold">Worldwide Delivery</div>
+                  <div className={`text-[10px] font-mono mt-1 ${activeNode === 3 ? 'text-blue-100' : 'text-slate-400'}`}>
                     Global Edge Network
                   </div>
                 </div>
               </div>
 
               {/* Active node detail inspector with Two-Layer explanation */}
-              <div className="mt-4 p-3.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 shadow-2xs space-y-1">
+              <div className="mt-4 p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 shadow-inner space-y-1">
                 {activeNode === 1 && (
                   <>
-                    <p className="font-semibold text-slate-900">
+                    <p className="font-semibold text-white">
                       → Server-First Speed: Dynamic routes built to load in milliseconds without sluggish page reloads.
                     </p>
                     <p className="text-[10px] font-mono text-slate-400">
@@ -268,7 +268,7 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 )}
                 {activeNode === 2 && (
                   <>
-                    <p className="font-semibold text-slate-900">
+                    <p className="font-semibold text-white">
                       → Zero-Bug Quality Gate: Automated tests ensure forms, links, and buttons never break on release.
                     </p>
                     <p className="text-[10px] font-mono text-slate-400">
@@ -278,7 +278,7 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 )}
                 {activeNode === 3 && (
                   <>
-                    <p className="font-semibold text-slate-900">
+                    <p className="font-semibold text-white">
                       → Worldwide Delivery: Fast for every visitor, everywhere in the world, not just near your server.
                     </p>
                     <p className="text-[10px] font-mono text-slate-400">

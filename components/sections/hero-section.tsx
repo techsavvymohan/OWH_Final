@@ -48,7 +48,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-        {/* Top Philosophy Badge */}
+        {/* Top Philosophy Badge in Dark Graphite Luxury Pill */}
         <motion.div
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,16 +57,16 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
         >
           <a
             href="#about"
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100/90 border border-slate-300/80 text-xs font-mono font-medium text-slate-800 hover:border-blue-500/60 hover:text-blue-600 transition-all group cursor-pointer shadow-2xs"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono font-medium text-slate-200 hover:border-blue-500/60 hover:text-white transition-all group cursor-pointer shadow-md"
           >
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
             </span>
-            <span className="font-bold text-blue-700">Only</span> = Strategy ·{' '}
-            <span className="font-bold text-slate-900">Way</span> = Velocity ·{' '}
-            <span className="font-bold text-slate-700">Online</span> = Compound Growth
-            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1 text-slate-400 group-hover:text-blue-600" />
+            <span className="font-bold text-blue-400">Only</span> = Strategy ·{' '}
+            <span className="font-bold text-white">Way</span> = Velocity ·{' '}
+            <span className="font-bold text-slate-300">Online</span> = Compound Growth
+            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1 text-slate-400 group-hover:text-blue-400" />
           </a>
         </motion.div>
 

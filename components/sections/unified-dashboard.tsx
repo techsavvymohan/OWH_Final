@@ -67,21 +67,21 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
           onMouseLeave={() => setIsPaused(false)}
           className="relative rounded-3xl glass-card overflow-hidden transition-all shadow-xl"
         >
-          {/* Top Window Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between px-6 py-4 border-b border-slate-200/90 glass-panel-subtle gap-3">
+          {/* Top Window Bar in Luxury Dark Graphite */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900 text-white gap-3">
             <div className="flex items-center gap-2.5">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-rose-500 shadow-2xs" />
                 <div className="w-3 h-3 rounded-full bg-amber-500 shadow-2xs" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-2xs" />
               </div>
-              <span className="text-xs font-mono text-slate-500 ml-2">
+              <span className="text-xs font-mono text-slate-400 ml-2">
                 app.onlywayonline.com/growth-hub
               </span>
             </div>
 
-            {/* Tab Controls with Neumorphic Inset Track */}
-            <div className="flex items-center gap-1 sm:gap-1.5 p-1 rounded-2xl neo-inset flex-wrap">
+            {/* Tab Controls in Dark Graphite Pill Track */}
+            <div className="flex items-center gap-1 sm:gap-1.5 p-1 rounded-2xl bg-slate-800/90 border border-slate-700/80 flex-wrap">
               {DASHBOARD_TABS.map((tab, idx) => {
                 const Icon = tab.icon;
                 const isCurrent = activeTab === idx;
@@ -91,8 +91,8 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                     onClick={() => setActiveTab(idx)}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                       isCurrent
-                        ? 'bg-blue-600 text-white shadow-sm font-bold'
-                        : 'text-slate-700 hover:text-slate-950 hover:bg-white/70'
+                        ? 'bg-blue-600 text-white shadow-md font-bold'
+                        : 'text-slate-300 hover:text-white hover:bg-slate-700/60'
                     }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
@@ -103,7 +103,7 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
 
               <button
                 onClick={() => setIsPaused(!isPaused)}
-                className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-white transition-colors ml-1"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/80 transition-colors ml-1 cursor-pointer"
                 title={isPaused ? 'Resume auto-cycle' : 'Pause auto-cycle'}
               >
                 {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}

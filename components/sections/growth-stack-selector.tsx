@@ -230,15 +230,15 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
           </p>
         </div>
 
-        {/* 3-Way Segmented Control */}
+        {/* 3-Way Segmented Control in Luxury Dark Graphite */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1.5 rounded-2xl neo-inset">
+          <div className="inline-flex p-1.5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
             <button
               onClick={() => setSelectedMode('build')}
               className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
                 selectedMode === 'build'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-blue-600 text-white shadow-md font-bold'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
               }`}
             >
               <Code2 className="w-4 h-4" />
@@ -249,8 +249,8 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
               onClick={() => setSelectedMode('bundle')}
               className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 relative ${
                 selectedMode === 'bundle'
-                  ? 'bg-emerald-600 text-white shadow-md'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-blue-600 text-white shadow-md font-bold'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
               }`}
             >
               <Rocket className="w-4 h-4" />
@@ -264,8 +264,8 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
               onClick={() => setSelectedMode('grow')}
               className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
                 selectedMode === 'grow'
-                  ? 'bg-emerald-600 text-white shadow-md'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-blue-600 text-white shadow-md font-bold'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
               }`}
             >
               <TrendingUp className="w-4 h-4" />
