@@ -143,16 +143,14 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                   className="flex items-center gap-2.5 group cursor-pointer"
                   aria-label="OnlyWayOnline Home"
                 >
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-slate-950 flex items-center justify-center p-1.5 shadow-sm border border-slate-800">
-                    <Image
-                      src="/assets/Main_logo_white.png"
-                      alt="OnlyWayOnline Logo"
-                      width={44}
-                      height={44}
-                      className="h-full w-auto object-contain transition-transform group-hover:scale-105"
-                      priority
-                    />
-                  </div>
+                  <Image
+                    src="/assets/Main_logo.png"
+                    alt="OnlyWayOnline Logo"
+                    width={42}
+                    height={42}
+                    className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105"
+                    priority
+                  />
                   <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-900 font-sans">
                     OnlyWay<span className="text-blue-600">Online</span>
                   </span>
@@ -463,16 +461,14 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
             >
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-slate-100">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-slate-950 flex items-center justify-center p-1.5 shadow-sm border border-slate-800">
-                      <Image
-                        src="/assets/Main_logo_white.png"
-                        alt="OnlyWayOnline Logo"
-                        width={36}
-                        height={36}
-                        className="h-full w-auto object-contain"
-                      />
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <Image
+                      src="/assets/Main_logo.png"
+                      alt="OnlyWayOnline Logo"
+                      width={36}
+                      height={36}
+                      className="h-7 w-auto object-contain"
+                    />
                     <span className="font-bold text-base tracking-tight text-slate-900 font-sans">
                       OnlyWay<span className="text-blue-600">Online</span>
                     </span>
