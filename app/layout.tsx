@@ -28,26 +28,26 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://onlywayonline.com'),
   title: {
-    default: 'OnlyWayOnline — Zero-Defect Web Systems & Full-Funnel B2B Growth Engine',
+    default: 'OnlyWayOnline — Websites That Actually Bring You Customers',
     template: '%s | OnlyWayOnline',
   },
   description:
-    'We engineer ultra-fast websites, custom SaaS platforms, and enterprise web systems backed by a 90-day monitored stability warranty, 100/100 Core Web Vitals, and compound organic SEO & paid acquisition funnels.',
+    'We build beautiful, lightning-fast websites and complete marketing systems that rank on Google, bring real customer leads, and never crash — backed by a 90-day free fix guarantee.',
   keywords: [
-    'Zero-Bug Web Development',
-    'Next.js 15 Full-Stack Agency',
-    'SaaS Engineering Studio',
-    'Google Core Web Vitals Optimization',
-    'B2B Growth Engine',
-    'Programmatic SEO Agency',
-    'High ROAS Paid Media Management',
-    'Technical SEO Architecture',
-    'Conversion Rate Optimization CRO',
-    'E-Commerce Development Delhi',
-    'Custom Web Design Agency India',
-    'OnlyWayOnline Growth Stack',
+    'Website Design Company',
+    'Custom Web Development India',
+    'Fast Next.js Websites',
+    'Google SEO Agency',
+    'Google Ads Management',
+    'Facebook Ads Agency',
+    'E-Commerce Website Builder',
+    'High Speed Website Overhaul',
+    'Website Developer Delhi',
+    'OnlyWayOnline Growth Partner',
+    'Website Redesign Without Losing SEO',
+    'Mobile Friendly Web Development',
   ],
-  authors: [{ name: 'OnlyWayOnline Engineering & Strategy Team', url: 'https://onlywayonline.com' }],
+  authors: [{ name: 'OnlyWayOnline Team', url: 'https://onlywayonline.com' }],
   creator: 'OnlyWayOnline',
   publisher: 'OnlyWayOnline Studio',
   formatDetection: {
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
     canonical: 'https://onlywayonline.com',
   },
   openGraph: {
-    title: 'OnlyWayOnline — Zero-Defect Web Systems & Full-Funnel B2B Growth Engine',
+    title: 'OnlyWayOnline — Websites That Actually Bring You Customers',
     description:
-      'We replace slow, fragile websites with custom-engineered web platforms designed to capture leads, rank on Google, and maximize revenue with zero technical stress.',
+      'We replace slow, fragile websites with lightning-fast platforms designed to capture leads, rank on Google, and grow your business with zero technical stress.',
     url: 'https://onlywayonline.com',
     siteName: 'OnlyWayOnline',
     locale: 'en_US',
@@ -77,9 +77,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OnlyWayOnline — Zero-Defect Web Systems & B2B Growth',
+    title: 'OnlyWayOnline — Websites That Actually Bring You Customers',
     description:
-      'Zero-bug web development, sub-second Core Web Vitals, programmatic SEO, and high-ROAS paid media funnels.',
+      'Lightning-fast websites, Google search ranking, and high-return advertising funnels for your business.',
     creator: '@onlywayonline',
     images: [
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80',
