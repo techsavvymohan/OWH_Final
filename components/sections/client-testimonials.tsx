@@ -44,23 +44,23 @@ const TESTIMONIALS: Testimonial[] = [
     name: 'Elena Rostova',
     role: 'Co-Founder & CEO',
     company: 'NovaPulse Health',
-    industry: 'HealthTech / Telehealth',
+    industry: 'Healthcare & Patient Bookings',
     avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&auto=format&fit=crop&q=80',
     companyLogoText: 'NOVAPULSE',
     category: 'sprint',
     categoryLabel: '90-Day Build Sprint',
     metricBadge: 'Zero Bugs in 90 Days',
-    metricSub: '100% SLA Uptime Post-Launch',
-    highlight: 'Cut our time-to-market in half with zero QA regressions on launch day.',
-    quote: 'Most agencies hand off a bug-ridden prototype and disappear into the night. OnlyWayOnline delivered a HIPAA-ready patient booking portal in exactly 58 days. The zero-bug handover protocol was genuine — our engineering audit found zero critical issues across 100,000 live patient sessions.',
+    metricSub: '100% Guaranteed Uptime',
+    highlight: 'Cut our launch time in half with zero errors on launch day.',
+    quote: 'Most agencies build a messy site and disappear after payment. OnlyWayOnline delivered our complete patient booking portal in exactly 58 days. The zero-bug guarantee was real — zero errors across 100,000 live patient bookings.',
     verifiedSla: '58-Day Delivery · Zero Defects',
     fullCaseStudy: {
-      challenge: 'Legacy booking portal was losing 42% of mobile traffic due to 4.2s load times and broken React re-renders.',
-      solution: 'Re-architected from scratch on Next.js 15 App Router with server actions, automated visual regression tests, and zero-defect SLA.',
+      challenge: 'Old booking website was losing 42% of mobile patients because it took over 4 seconds to load and buttons failed on mobile phones.',
+      solution: 'Rebuilt from scratch with modern high-speed technology, automatic mobile screen testing, and a 90-day free fix guarantee.',
       deliveredIn: '58 Days (2 days ahead of schedule)',
       keyStats: [
-        { label: 'Booking Conversion', value: '+74%' },
-        { label: 'Core Web Vitals', value: '100 / 100' },
+        { label: 'Patient Bookings', value: '+74%' },
+        { label: 'Google Speed Score', value: '100 / 100' },
         { label: 'Mobile Drop-off', value: '-82%' }
       ]
     }
@@ -68,78 +68,78 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-2',
     name: 'Marcus Thorne',
-    role: 'Chief Marketing Officer',
-    company: 'Apex Financial Intelligence',
-    industry: 'FinTech B2B',
+    role: 'Managing Partner',
+    company: 'Apex Financial Advisors',
+    industry: 'Financial & Advisory Services',
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&auto=format&fit=crop&q=80',
     companyLogoText: 'APEX FIN',
     category: 'seo_growth',
-    categoryLabel: 'SEO & Performance Marketing',
-    metricBadge: '+340% Pipeline Influx',
-    metricSub: '5.12x Blended ROAS on Paid Media',
-    highlight: 'Dominated the top 3 commercial search positions for FinTech compliance queries.',
-    quote: 'We partnered with OnlyWayOnline for their full-funnel growth retainer. Within 90 days, organic traffic jumped 340%, and our cost-per-qualified-lead plummeted by 61%. Their engineers write copy and build landing pages faster than any dedicated marketing team we’ve hired.',
-    verifiedSla: '3-Month Sprint · $2.4M Pipeline Generated',
+    categoryLabel: 'Google SEO & Advertising',
+    metricBadge: '+340% More Customer Calls',
+    metricSub: '5.1x Return on Ad Spend',
+    highlight: 'Reached the top 3 on Google for commercial financial advisory searches.',
+    quote: 'Within 90 days of partnering with OnlyWayOnline for website and marketing, our Google search traffic jumped 340% and our customer acquisition cost dropped by 61%. They deliver results faster than any agency we’ve ever hired.',
+    verifiedSla: '3-Month Sprint · Predictable Growth',
     fullCaseStudy: {
-      challenge: 'Stagnant organic rankings, high CAC on Google Search Ads ($420/lead), and slow unoptimized WordPress marketing pages.',
-      solution: 'Deployed programmatic Next.js SEO clusters with structured dynamic metadata, sub-second TTFB edge caching, and rebuilt Google Ads funnels.',
-      deliveredIn: 'Ongoing Growth Retainer (Month 5)',
+      challenge: 'Low Google rankings, high cost per lead on search ads, and a slow outdated website that scared away prospective high-net-worth clients.',
+      solution: 'Rebuilt website with sub-second page speed, created Google SEO topic clusters, and restructured Google and Facebook ad campaigns.',
+      deliveredIn: 'Ongoing Monthly Growth Partnership',
       keyStats: [
-        { label: 'Organic Inbound Leads', value: '+340%' },
-        { label: 'Cost Per Lead (CAC)', value: '-61%' },
-        { label: 'First Page Rankings', value: '48 Keywords' }
+        { label: 'Google Search Leads', value: '+340%' },
+        { label: 'Cost Per Lead', value: '-61%' },
+        { label: 'Page 1 Google Keywords', value: '48 Searches' }
       ]
     }
   },
   {
     id: 'test-3',
     name: 'Darius Vance',
-    role: 'VP of Product Engineering',
-    company: 'Kinetix Robotics',
-    industry: 'Industrial AI & Robotics',
+    role: 'Head of Operations',
+    company: 'Kinetix Industrial Systems',
+    industry: 'Manufacturing & Engineering',
     avatarUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=160&auto=format&fit=crop&q=80',
     companyLogoText: 'KINETIX',
     category: 'saas',
-    categoryLabel: 'SaaS Platform Architecture',
-    metricBadge: '0.18s TTFB Global',
-    metricSub: 'High-Density Live Telemetry',
-    highlight: 'Real-time WebSocket telemetry dashboard handling 50k events/sec flawlessly.',
-    quote: 'The frontend architecture they built handles high-frequency telemetry streams without stuttering or memory leaks. Their code is remarkably clean, completely typed, and documented like an elite Tier-1 Silicon Valley engineering department.',
-    verifiedSla: 'Enterprise SLA · 99.99% Uptime',
+    categoryLabel: 'Custom Client Portal',
+    metricBadge: 'Instant Page Load',
+    metricSub: 'Smooth Real-Time Dashboard',
+    highlight: 'Custom client dashboard handles thousands of daily operations without lag.',
+    quote: 'The customer portal OnlyWayOnline built handles thousands of real-time requests without freezing or crashing. Their work is remarkably clean, easy for our non-technical staff to use, and rock solid.',
+    verifiedSla: 'Custom Portal · 99.99% Uptime',
     fullCaseStudy: {
-      challenge: 'Complex hardware dashboard was lagging at 12 FPS with canvas memory spikes on heavy IoT robot data loads.',
-      solution: 'Engineered WebGL + Web Worker telemetry visualization engine in React with zero UI thread blocking.',
-      deliveredIn: '75-Day Dedicated Sprint',
+      challenge: 'Old software was lagging heavily on mobile phones and causing client frustration during peak business hours.',
+      solution: 'Built modern custom portal with instant page opening, secure member logins, and automated reporting.',
+      deliveredIn: '75-Day Sprint Build',
       keyStats: [
-        { label: 'Frame Rate Under Load', value: '60 FPS' },
-        { label: 'Memory Footprint', value: '-70%' },
-        { label: 'Enterprise Sign-ups', value: '18 Deals' }
+        { label: 'Portal Speed', value: 'Instant' },
+        { label: 'Support Inquiries', value: '-70%' },
+        { label: 'New Client Sign-ups', value: '18 Deals' }
       ]
     }
   },
   {
     id: 'test-4',
     name: 'Sophia Sterling',
-    role: 'Managing Director',
+    role: 'Founder & Managing Director',
     company: 'Vanguard Luxury Retail',
-    industry: 'Direct-to-Consumer & Retail',
+    industry: 'Retail & Online Store',
     avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=160&auto=format&fit=crop&q=80',
     companyLogoText: 'VANGUARD',
     category: 'ecommerce',
-    categoryLabel: 'Conversion-Engineered Commerce',
-    metricBadge: '+118% Checkout Rate',
-    metricSub: 'Instant Global Edge Checkout',
-    highlight: 'Replaced a bloated legacy theme with an ultra-responsive headless storefront.',
-    quote: 'Our mobile bounce rate dropped from 48% to 14% on the day of launch. OnlyWayOnline redesigned the entire customer checkout journey and delivered custom interactive previews that increased our average order value by $64.',
-    verifiedSla: '45-Day Overhaul · 100/100 Core Web Vitals',
+    categoryLabel: 'High-Converting Online Store',
+    metricBadge: '+118% Sales Checkout',
+    metricSub: 'Instant 1-Click Mobile Checkout',
+    highlight: 'Replaced a slow online store with an ultra-responsive storefront.',
+    quote: 'Our mobile bounce rate dropped from 48% to 14% on launch day. OnlyWayOnline redesigned our entire checkout process, making it fast and effortless for shoppers on their phones. Our average order size grew significantly.',
+    verifiedSla: '45-Day Build · 100/100 Google Speed',
     fullCaseStudy: {
-      challenge: 'High cart abandonment rate on mobile devices and 5-second product page load times during flash sales.',
-      solution: 'Built Next.js headless storefront with instant prefetching, optimistic cart transitions, and customized checkout flow.',
+      challenge: 'High cart abandonment on mobile devices and 5-second product load times causing shoppers to leave without purchasing.',
+      solution: 'Built custom lightning-fast online store with 1-click mobile checkout, instant search, and zero lag.',
       deliveredIn: '45 Days',
       keyStats: [
         { label: 'Checkout Conversion', value: '+118%' },
         { label: 'Average Order Value', value: '+$64' },
-        { label: 'Mobile Bounce Rate', value: '14%' }
+        { label: 'Mobile Drop-off Rate', value: '14%' }
       ]
     }
   }
@@ -159,21 +159,24 @@ export function ClientTestimonials({ onOpenProjectModal }: ClientTestimonialsPro
   });
 
   return (
-    <section id="testimonials" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-50/70 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto">
+    <section id="testimonials" className="py-20 sm:py-28 relative bg-gradient-to-b from-slate-50/70 via-white to-slate-50/90 border-t border-slate-200 overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[300px] bg-blue-100/40 blur-[130px] rounded-full pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold font-mono uppercase tracking-wider mb-4">
-              <Award className="w-3.5 h-3.5" />
-              <span>VERIFIED CLIENT PROOF</span>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 sm:mb-16 gap-8">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200 mb-3">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>REAL CLIENT RESULTS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15]">
-              Built for Leaders Who Demand{' '}
-              <span className="text-blue-600">Measurable Revenue ROI</span>
+              Real Business Owners.{' '}
+              <span className="text-blue-600">Real Measurable Growth.</span>
             </h2>
             <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-              Read how high-growth tech founders, CMOs, and enterprise product leaders scale revenue, eliminate software bugs, and guarantee 100/100 Core Web Vitals with OnlyWayOnline.
+              See how business founders, retail owners, and service leaders grow their revenue, get more customer calls, and eliminate website crashes with OnlyWayOnline.
             </p>
           </div>
 

@@ -14,6 +14,7 @@ import { ProofTimeline } from '@/components/sections/proof-timeline';
 import { CoreCapabilities } from '@/components/sections/core-capabilities';
 import { BeforeAfterSlider } from '@/components/sections/before-after-slider';
 import { PhilosophyStats } from '@/components/sections/philosophy-stats';
+import { ClientTestimonials } from '@/components/sections/client-testimonials';
 import { GrowthStackSelector } from '@/components/sections/growth-stack-selector';
 import { FaqSection } from '@/components/sections/faq-section';
 import { CtaSection } from '@/components/sections/cta-section';
@@ -21,6 +22,7 @@ import { Footer } from '@/components/footer';
 import { ProjectModal } from '@/components/project-modal';
 import { AuthModal } from '@/components/auth/auth-modal';
 import { OnboardingModal } from '@/components/onboarding-modal';
+import { LiveStatusDock } from '@/components/ui/live-status-dock';
 import { SectionReveal, PageScrollProgress } from '@/components/ui/section-reveal';
 
 export default function HomePage() {
@@ -128,7 +130,12 @@ export default function HomePage() {
         <PhilosophyStats />
       </SectionReveal>
 
-      {/* 12. Growth Stack Selector (3-Way Segmented Control Pricing & Plans) */}
+      {/* 12. Client Success Stories & Verified Case Studies */}
+      <SectionReveal>
+        <ClientTestimonials onOpenProjectModal={handleOpenProjectModal} />
+      </SectionReveal>
+
+      {/* 13. Growth Stack Selector (3-Way Segmented Control Pricing & Plans) */}
       <SectionReveal>
         <GrowthStackSelector onOpenProjectModal={handleOpenProjectModal} />
       </SectionReveal>
@@ -145,6 +152,9 @@ export default function HomePage() {
 
       {/* 16. Footer */}
       <Footer />
+
+      {/* Floating Live System Performance & Quick Connect Dock */}
+      <LiveStatusDock onOpenProjectModal={handleOpenProjectModal} />
 
       {/* Interactive Project Inquiry & Proposal Modal */}
       <ProjectModal
