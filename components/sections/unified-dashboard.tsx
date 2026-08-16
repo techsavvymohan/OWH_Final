@@ -47,7 +47,13 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
       <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-sky-200/40 blur-[140px] rounded-full pointer-events-none -z-10" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200 mb-3">
             <Layers className="w-3.5 h-3.5" />
             <span>THE UNIFIED CONTROL TOWER</span>
@@ -59,10 +65,14 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
           <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed">
             Eliminate the confusion of logging into disjointed portals or chasing unaccountable contractors. Monitor infrastructure health, Google search rankings, multi-channel social impressions, and paid media ROI in a single live telemetry hub.
           </p>
-        </div>
+        </motion.div>
 
         {/* Unified Dashboard Container */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 45, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           className="relative rounded-3xl glass-card overflow-hidden transition-all shadow-xl"
@@ -337,7 +347,7 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
               <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

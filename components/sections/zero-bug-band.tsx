@@ -61,7 +61,13 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
   }, []);
 
   return (
-    <div className="relative -mt-4 mb-16 max-w-7xl mx-auto px-4 sm:px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 30, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className="relative -mt-4 mb-16 max-w-7xl mx-auto px-4 sm:px-6"
+    >
       {/* Outer Glow & Shimmer Container */}
       <div className="relative rounded-2xl p-[1px] bg-gradient-to-r from-blue-400/40 via-emerald-400/40 to-blue-400/40 shadow-xl shadow-slate-900/5">
         <div className="relative overflow-hidden rounded-2xl glass-panel px-5 py-4 sm:py-5 border border-slate-200/90 shadow-sm">
@@ -221,6 +227,6 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
           </div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }

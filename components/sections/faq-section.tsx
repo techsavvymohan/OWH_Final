@@ -92,14 +92,18 @@ export function FaqSection({ onOpenProjectModal }: FaqSectionProps) {
           </div>
         </div>
 
-        {/* Single-Expand Accordion List */}
+        {/* Single-Expand Accordion List with Scroll Stagger */}
         <div className="space-y-3.5">
           {filteredFaqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div
+              <motion.div
                 key={faq.q}
-                className="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-xs transition-all"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.45, delay: idx * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                className="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-xs transition-all hover:border-slate-300"
               >
                 <button
                   onClick={() => toggleFaq(idx)}
@@ -132,7 +136,7 @@ export function FaqSection({ onOpenProjectModal }: FaqSectionProps) {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             );
           })}
         </div>

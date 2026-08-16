@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { motion } from 'motion/react';
 import { 
   ArrowLeftRight, 
   Sparkles, 
@@ -35,7 +36,13 @@ export function BeforeAfterSlider() {
     <section className="py-20 sm:py-28 relative bg-white border-t border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200 mb-3">
             <ArrowLeftRight className="w-3.5 h-3.5" />
             <span>ILLUSTRATIVE COMPARISON MODEL</span>
@@ -46,10 +53,14 @@ export function BeforeAfterSlider() {
           <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
             Drag the interactive slider to see an illustrative comparison of typical gains when upgrading from fragile agency templates to our clean, high-speed growth architecture.
           </p>
-        </div>
+        </motion.div>
 
         {/* Interactive Comparison Container */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 45, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           ref={containerRef}
           onMouseDown={() => setIsDragging(true)}
           onMouseUp={() => setIsDragging(false)}
@@ -160,7 +171,7 @@ export function BeforeAfterSlider() {
               <ArrowLeftRight className="w-4 h-4" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

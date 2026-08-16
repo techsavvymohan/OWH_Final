@@ -99,11 +99,18 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
           </button>
         </div>
 
-        {/* 4-Card Bento Grid */}
+        {/* 4-Card Bento Grid with Scroll Transitions */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
 
           {/* Card 1 (Span 6/12): SEO Growth Retainer Ranking Trend */}
-          <div className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-md transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 45, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-all duration-300"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -178,10 +185,17 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2 (Span 6/12): Social Media Brand Dominance */}
-          <div className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-md transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 45, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-all duration-300"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -239,10 +253,17 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 3 (Span 6/12): Graphic Design Studio Deck Stack */}
-          <div className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-md transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 45, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-all duration-300"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -290,10 +311,17 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 );
               })}
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 4 (Span 6/12): Paid Ads Campaigns ROI Dashboard */}
-          <div className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-md transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 45, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-all duration-300"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -349,7 +377,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

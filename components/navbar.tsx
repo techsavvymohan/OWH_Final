@@ -140,17 +140,20 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                 <a
                   href="#"
                   onClick={e => handleLinkClick(e, '#')}
-                  className="flex items-center group cursor-pointer"
+                  className="flex items-center gap-2.5 group cursor-pointer"
                   aria-label="OnlyWayOnline Home"
                 >
                   <Image
                     src="/assets/Main_logo.png"
-                    alt="OnlyWayOnline"
-                    width={190}
-                    height={42}
-                    className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-102"
+                    alt="OnlyWayOnline Logo"
+                    width={44}
+                    height={44}
+                    className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105"
                     priority
                   />
+                  <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-900 font-sans">
+                    OnlyWay<span className="text-blue-600">Online</span>
+                  </span>
                 </a>
                 <span className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full neo-pill text-[10px] font-mono text-emerald-800 font-bold border border-emerald-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -462,13 +465,18 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
             >
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-slate-100">
-                  <Image
-                    src="/assets/Main_logo.png"
-                    alt="OnlyWayOnline"
-                    width={160}
-                    height={36}
-                    className="h-8 w-auto object-contain"
-                  />
+                  <div className="flex items-center gap-2">
+                    <Image
+                      src="/assets/Main_logo.png"
+                      alt="OnlyWayOnline"
+                      width={36}
+                      height={36}
+                      className="h-7 w-auto object-contain"
+                    />
+                    <span className="font-bold text-base tracking-tight text-slate-900 font-sans">
+                      OnlyWay<span className="text-blue-600">Online</span>
+                    </span>
+                  </div>
                   <button
                     id="close-mobile-menu-btn"
                     onClick={() => setMobileMenuOpen(false)}

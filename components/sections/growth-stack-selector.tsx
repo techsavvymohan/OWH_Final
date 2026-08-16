@@ -274,23 +274,25 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
           </div>
         </div>
 
-        {/* Morphing Plans Grid */}
+        {/* Morphing Plans Grid with Scroll-Triggered Entrance */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {activePlans.map(plan => {
+          {activePlans.map((plan, idx) => {
             const isHighlighted = plan.popular;
             return (
               <motion.div
                 key={plan.id}
                 layout
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.55, delay: idx * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -8, scale: 1.015, transition: { duration: 0.25 } }}
                 className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative transition-all ${
                   isHighlighted
                     ? plan.accent === 'emerald'
                       ? 'glass-card border-2 border-emerald-500 shadow-xl lg:-translate-y-2'
                       : 'glass-card border-2 border-blue-600 shadow-xl lg:-translate-y-2'
-                    : 'neo-card hover:border-slate-300'
+                    : 'neo-card hover:border-slate-300 shadow-sm hover:shadow-md'
                 }`}
               >
                 {/* Popular Pill Badge */}

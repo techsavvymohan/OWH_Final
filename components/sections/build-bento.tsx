@@ -65,11 +65,18 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
           </button>
         </div>
 
-        {/* 5-Card Asymmetric Bento Grid */}
+        {/* 5-Card Asymmetric Bento Grid with Scroll Transitions */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           
           {/* Card 1 (Span 5/12): Mobile & Responsive Experience */}
-          <div className="md:col-span-12 lg:col-span-5 rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-md transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 45, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="md:col-span-12 lg:col-span-5 rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
@@ -178,10 +185,17 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 <div className="w-24 h-1 bg-slate-400 rounded-full mx-auto" />
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2 (Span 7/12): Modern Stack Execution Pipeline */}
-          <div className="md:col-span-12 lg:col-span-7 rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-md transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 45, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="md:col-span-12 lg:col-span-7 rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
@@ -288,10 +302,17 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 3 (Span 4/12): Component Architecture Switcher */}
-          <div className="md:col-span-6 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-md transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 45, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="md:col-span-6 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
@@ -359,10 +380,17 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 </pre>
               )}
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 4 (Span 4/12): Technical SEO 4x100 Gauge Tiles */}
-          <div className="md:col-span-6 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-md transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 45, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="md:col-span-6 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-200">
@@ -404,10 +432,17 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 5 (Span 4/12): Security & High Uptime Architecture */}
-          <div className="md:col-span-12 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-md transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 45, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="md:col-span-12 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+          >
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
@@ -440,7 +475,7 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 <span className="text-slate-900 font-bold font-mono">24/7 Monitored Ping</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

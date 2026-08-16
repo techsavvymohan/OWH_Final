@@ -28,12 +28,13 @@ export function Footer() {
           {/* Col 1 & 2: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-blue-600/30">
-                OW
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight font-sans">
-                OnlyWayOnline
-              </span>
+              <Image
+                src="/assets/logo_white.png"
+                alt="OnlyWayOnline"
+                width={200}
+                height={52}
+                className="h-10 sm:h-11 w-auto object-contain"
+              />
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed">
