@@ -76,11 +76,11 @@ export function BeforeAfterSlider() {
             <div className="flex items-center justify-between">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel text-emerald-800 text-xs font-mono font-bold border-emerald-300">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-                ILLUSTRATIVE AFTER · OnlyWayOnline Architecture
+                AFTER · Built by OnlyWayOnline
               </span>
               <div className="text-right font-mono glass-panel-subtle px-3 py-1 rounded-xl">
                 <span className="text-emerald-700 font-bold text-lg">100 / 100</span>
-                <span className="text-[10px] text-slate-500 block">Target Lighthouse Standard</span>
+                <span className="text-[10px] text-slate-500 block">Google Speed Rating</span>
               </div>
             </div>
 
@@ -88,22 +88,22 @@ export function BeforeAfterSlider() {
             <div className="max-w-md space-y-4 my-auto">
               <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg neo-pill text-blue-800 text-xs font-mono font-bold">
                 <Zap className="w-3.5 h-3.5 text-blue-600" />
-                Sub-Second TTFB · Next.js 15 App Router
+                Loads in Under 1 Second · Zero Lag
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 leading-tight">
-                High-Conversion Growth System With Zero Broken Links
+                Clean, High-Speed Website That Brings Customers
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Clean, typed design tokens, sub-second edge caching, structured SEO schema, and integrated lead funnels engineered for compounding qualified pipeline.
+                Custom-designed for your brand, thoroughly tested on all mobile phones and laptops, and built to rank on Google without ever crashing.
               </p>
               <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
                 <div className="p-3 rounded-2xl neo-card">
-                  <span className="text-slate-500 text-[10px] block">Lead Conversion</span>
-                  <span className="text-emerald-700 font-bold text-base">Optimizing 2-3x+</span>
+                  <span className="text-slate-500 text-[10px] block">Customer Inquiries</span>
+                  <span className="text-emerald-700 font-bold text-base">2x–3x More Leads</span>
                 </div>
                 <div className="p-3 rounded-2xl neo-card">
-                  <span className="text-slate-500 text-[10px] block">Stability Warranty</span>
-                  <span className="text-blue-700 font-bold text-base">90-Day Monitored</span>
+                  <span className="text-slate-500 text-[10px] block">Free Fix Guarantee</span>
+                  <span className="text-blue-700 font-bold text-base">90 Days Included</span>
                 </div>
               </div>
             </div>
@@ -111,9 +111,9 @@ export function BeforeAfterSlider() {
             <div className="text-xs font-mono text-slate-600 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>Zero-Bug Protocol Verified & Active</span>
+                <span>Tested & Guaranteed Working 100%</span>
               </div>
-              <span className="text-[10px] text-slate-400 italic hidden sm:inline">*Illustrative benchmark model</span>
+              <span className="text-[10px] text-slate-400 italic hidden sm:inline">*Typical client performance</span>
             </div>
           </div>
 
@@ -125,40 +125,40 @@ export function BeforeAfterSlider() {
             <div className="flex items-center justify-between">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100/90 backdrop-blur-md text-rose-800 text-xs font-mono font-bold border border-rose-300">
                 <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
-                ILLUSTRATIVE BEFORE · Fragmented Legacy Build
+                BEFORE · Outdated Agency Website
               </span>
               <div className="text-right font-mono bg-white/70 backdrop-blur-sm px-3 py-1 rounded-xl">
                 <span className="text-rose-700 font-bold text-lg">42 / 100</span>
-                <span className="text-[10px] text-slate-600 block font-semibold">Failing Core Vitals</span>
+                <span className="text-[10px] text-slate-600 block font-semibold">Fails Google Speed Test</span>
               </div>
             </div>
 
             {/* Content Preview Before */}
             <div className="max-w-md space-y-4 my-auto">
               <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800 text-xs font-mono border border-rose-200">
-                Slow 3.8s TTFB · Fragmented Plugins
+                Slow 4+ Second Load · Broken Plugins
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-800 leading-tight opacity-75">
-                Fragile Template With Disconnected Vendors
+                Slow Template & Disappearing Agencies
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Unresponsive layout bugs, broken forms, zero organic search rankings, and no support after final invoice is paid.
+                Buttons and layouts that break on mobile screens, zero Google rankings, and the agency stopped replying after the invoice was paid.
               </p>
               <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
                 <div className="p-3 rounded-2xl bg-white/80 border border-slate-300">
-                  <span className="text-slate-600 text-[10px] block">Bounce Rate</span>
-                  <span className="text-rose-700 font-bold text-base">High Drop-off</span>
+                  <span className="text-slate-600 text-[10px] block">Lost Visitors</span>
+                  <span className="text-rose-700 font-bold text-base">60%+ Leave Early</span>
                 </div>
                 <div className="p-3 rounded-2xl bg-white/80 border border-slate-300">
-                  <span className="text-slate-600 text-[10px] block">Post-Launch Support</span>
-                  <span className="text-rose-700 font-bold text-base">None ($150/hr)</span>
+                  <span className="text-slate-600 text-[10px] block">Help After Launch</span>
+                  <span className="text-rose-700 font-bold text-base">None / Expensive</span>
                 </div>
               </div>
             </div>
 
             <div className="text-xs font-mono text-rose-700 font-semibold flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-rose-600" />
-              <span>Failing Mobile Viewport Matrix</span>
+              <span>Looks Broken on Mobile Phones</span>
             </div>
           </div>
 

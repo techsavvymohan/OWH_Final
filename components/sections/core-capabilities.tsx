@@ -14,7 +14,8 @@ import {
   ArrowRight,
   Check,
   Sparkles,
-  Zap
+  Zap,
+  ChevronDown
 } from 'lucide-react';
 
 interface CoreCapabilitiesProps {
@@ -234,6 +235,7 @@ function InteractiveCapabilityCard({
 export function CoreCapabilities({ onOpenProjectModal }: CoreCapabilitiesProps) {
   const sectionRef = React.useRef<HTMLElement>(null);
   const [filter, setFilter] = React.useState<'All' | 'Build' | 'Grow'>('All');
+  const [showAll, setShowAll] = React.useState(false);
 
   // Scroll Progress across this section for background parallax illumination
   const { scrollYProgress } = useScroll({
@@ -249,6 +251,11 @@ export function CoreCapabilities({ onOpenProjectModal }: CoreCapabilitiesProps) 
     if (filter === 'All') return true;
     return s.category === filter;
   });
+
+  // When 'All' is selected, show only 4 by default unless showAll is true
+  const displayedServices = filter === 'All' && !showAll 
+    ? filteredServices.slice(0, 4) 
+    : filteredServices;
 
   return (
     <section
@@ -285,13 +292,13 @@ export function CoreCapabilities({ onOpenProjectModal }: CoreCapabilitiesProps) 
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-blue-700 text-xs font-mono font-bold mb-3 shadow-2xs">
               <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              <span>FULL SPECTRUM EXECUTION</span>
+              <span>OUR FULL RANGE OF SERVICES</span>
             </div>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-              End-to-End Core Capabilities
+              Everything We Can Build & Grow For You
             </h2>
             <p className="text-sm sm:text-base text-slate-600 mt-2.5 max-w-2xl leading-relaxed">
-              Whether building an enterprise platform from scratch or scaling an existing system, our technical and QA standards never compromise.
+              From brand-new websites to custom portals, online stores, and Google ranking — pick what your business needs.
             </p>
           </div>
 
@@ -302,7 +309,10 @@ export function CoreCapabilities({ onOpenProjectModal }: CoreCapabilitiesProps) 
               return (
                 <button
                   key={tab}
-                  onClick={() => setFilter(tab)}
+                  onClick={() => {
+                    setFilter(tab);
+                    setShowAll(false);
+                  }}
                   className={`relative px-4 py-2 rounded-xl transition-all cursor-pointer font-semibold ${
                     isSelected ? 'text-white font-bold' : 'text-slate-600 hover:text-slate-900'
                   }`}
@@ -315,7 +325,7 @@ export function CoreCapabilities({ onOpenProjectModal }: CoreCapabilitiesProps) 
                     />
                   )}
                   <span className="relative z-10">
-                    {tab === 'All' ? 'All Capabilities (8)' : `${tab} Wing`}
+                    {tab === 'All' ? 'All Services (8)' : `${tab} Services`}
                   </span>
                 </button>
               );
@@ -329,7 +339,7 @@ export function CoreCapabilities({ onOpenProjectModal }: CoreCapabilitiesProps) 
             layout
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6"
           >
-            {filteredServices.map((service, index) => (
+            {displayedServices.map((service, index) => (
               <InteractiveCapabilityCard
                 key={service.id}
                 service={service}
@@ -339,6 +349,23 @@ export function CoreCapabilities({ onOpenProjectModal }: CoreCapabilitiesProps) 
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* Progressive Disclosure Toggle Button (When in 'All' view) */}
+        {filter === 'All' && (
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setShowAll(prev => !prev)}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-300 hover:border-blue-500 text-slate-800 hover:text-blue-600 font-bold text-xs sm:text-sm transition-all shadow-sm hover:shadow-md cursor-pointer group"
+            >
+              <span>{showAll ? 'Show Fewer Services' : `See All ${CORE_SERVICES.length} Services & Solutions`}</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  showAll ? 'rotate-180 text-blue-600' : 'group-hover:translate-y-0.5'
+                }`}
+              />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

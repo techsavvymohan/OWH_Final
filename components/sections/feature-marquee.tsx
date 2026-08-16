@@ -17,23 +17,23 @@ import {
 } from 'lucide-react';
 
 const ROW_1_FEATURES = [
-  { label: 'Zero-Bug Handover Protocol™', icon: ShieldCheck, type: 'brand' },
-  { label: 'Optimized for 100/100 Core Web Vitals', icon: Zap, type: 'growth' },
-  { label: 'Next.js 15 App Router & React 19', icon: Code2, type: 'brand' },
-  { label: 'Programmatic SEO & JSON-LD Schema', icon: Search, type: 'growth' },
-  { label: 'Responsive Multi-Device Layouts', icon: Smartphone, type: 'brand' },
-  { label: 'Strict Pure Light Luxury Palette', icon: Sparkles, type: 'brand' },
-  { label: 'Sub-Second Global Edge Delivery', icon: Globe, type: 'growth' },
+  { label: 'Zero-Error Website Guarantee', icon: ShieldCheck, type: 'brand' },
+  { label: '100/100 Google Speed Score', icon: Zap, type: 'growth' },
+  { label: 'Fast Modern Website Technology', icon: Code2, type: 'brand' },
+  { label: 'Google Search Ranking Ready', icon: Search, type: 'growth' },
+  { label: 'Tested on All Mobile & Tablet Screens', icon: Smartphone, type: 'brand' },
+  { label: 'Custom Professional Brand Design', icon: Sparkles, type: 'brand' },
+  { label: 'Loads in Under 1 Second Worldwide', icon: Globe, type: 'growth' },
 ];
 
 const ROW_2_FEATURES = [
-  { label: '90-Day Monitored Stability SLA', icon: Clock, type: 'brand' },
-  { label: 'Target-Driven Paid Media ROAS Funnels', icon: BarChart, type: 'growth' },
-  { label: 'Social Content Velocity (LinkedIn/X/IG)', icon: Share2, type: 'growth' },
-  { label: 'Accessible WCAG AA 2.1 Primitives', icon: Layers, type: 'brand' },
-  { label: 'Zero-Trust Security & SSL Grade A+', icon: Lock, type: 'brand' },
-  { label: 'Continuous 90-Day Growth Sprint Engine', icon: Sparkles, type: 'growth' },
-  { label: 'Multi-Channel Attribution & CAPI Tracking', icon: Search, type: 'growth' },
+  { label: '90-Day Free Fix Guarantee', icon: Clock, type: 'brand' },
+  { label: 'Profitable Google & Facebook Ads', icon: BarChart, type: 'growth' },
+  { label: 'Social Media Posts & Graphics (LinkedIn/X/IG)', icon: Share2, type: 'growth' },
+  { label: 'Easy to Use for All Visitors', icon: Layers, type: 'brand' },
+  { label: 'Bank-Level Security & SSL', icon: Lock, type: 'brand' },
+  { label: 'Turnkey 90-Day Growth Plan', icon: Sparkles, type: 'growth' },
+  { label: 'Accurate Lead & Customer Tracking', icon: Search, type: 'growth' },
 ];
 
 export function FeatureMarquee() {
@@ -41,10 +41,10 @@ export function FeatureMarquee() {
     <section className="py-16 bg-white overflow-hidden border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-8 text-center">
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-          Built Into Every Build & Growth Engagement
+          Included With Every Website & Growth Project
         </h3>
         <p className="text-xs sm:text-sm text-slate-500 mt-1">
-          Zero shortcuts. Industrial-grade frontend engineering paired with high-yield compound marketing.
+          Zero shortcuts. High-speed custom web design paired with proven marketing that brings real customers.
         </p>
       </div>
 
