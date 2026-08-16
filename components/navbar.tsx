@@ -140,18 +140,18 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                 <a
                   href="#"
                   onClick={e => handleLinkClick(e, '#')}
-                  className="flex items-center gap-2.5 group cursor-pointer"
+                  className="flex items-center gap-2 group cursor-pointer"
                   aria-label="OnlyWayOnline Home"
                 >
                   <Image
                     src="/assets/Main_logo.png"
                     alt="OnlyWayOnline Logo"
-                    width={42}
-                    height={42}
-                    className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105"
+                    width={28}
+                    height={28}
+                    className="h-5 sm:h-6 w-auto object-contain transition-transform group-hover:scale-105"
                     priority
                   />
-                  <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-900 font-sans">
+                  <span className="font-bold text-base sm:text-lg tracking-tight text-slate-900 font-sans">
                     OnlyWay<span className="text-blue-600">Online</span>
                   </span>
                 </a>
@@ -465,9 +465,9 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                     <Image
                       src="/assets/Main_logo.png"
                       alt="OnlyWayOnline Logo"
-                      width={36}
-                      height={36}
-                      className="h-7 w-auto object-contain"
+                      width={24}
+                      height={24}
+                      className="h-5 w-auto object-contain"
                     />
                     <span className="font-bold text-base tracking-tight text-slate-900 font-sans">
                       OnlyWay<span className="text-blue-600">Online</span>
