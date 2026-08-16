@@ -48,27 +48,48 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-        {/* Top Philosophy Badge in Dark Graphite Luxury Pill */}
+        {/* Top Philosophy Formula Capsule in Luxury Dark Graphite & Electric Accents */}
         <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: -16, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="inline-flex items-center"
         >
           <a
             href="#about"
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-[10px] sm:text-xs font-mono font-medium text-slate-200 hover:border-blue-500/60 hover:text-white transition-all group cursor-pointer shadow-md"
+            className="relative group inline-flex items-center gap-1 sm:gap-2 p-1 sm:p-1.5 pr-2.5 sm:pr-3.5 rounded-full bg-slate-950/95 hover:bg-slate-900 border border-slate-800/90 hover:border-blue-500/50 shadow-xl shadow-slate-950/30 hover:shadow-blue-500/10 backdrop-blur-xl transition-all duration-300 cursor-pointer overflow-hidden max-w-full"
+            aria-label="OnlyWayOnline Philosophy"
           >
-            <span className="flex h-2 w-2 relative shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
+            {/* Ambient Glow Background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/15 via-transparent to-cyan-500/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+            {/* Pillar 1: Only = Strategy */}
+            <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-[10px] sm:text-xs font-mono font-bold tracking-tight shadow-xs transition-transform group-hover:scale-[1.03]">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shrink-0" />
+              <span className="text-white font-extrabold">Only</span>
+              <span className="text-blue-400 font-normal">Strategy</span>
             </span>
-            <span>
-              <strong className="font-bold text-blue-400">Only</strong> = Strategy ·{' '}
-              <strong className="font-bold text-white">Way</strong> = Velocity ·{' '}
-              <strong className="font-bold text-slate-300">Online</strong> = Growth
+
+            <span className="text-slate-600 font-mono text-xs select-none">·</span>
+
+            {/* Pillar 2: Way = Velocity */}
+            <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-slate-800/90 border border-slate-700/70 text-[10px] sm:text-xs font-mono font-bold tracking-tight shadow-xs transition-transform group-hover:scale-[1.03]">
+              <Zap className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-amber-400 shrink-0" />
+              <span className="text-white font-extrabold">Way</span>
+              <span className="text-slate-300 font-normal">Velocity</span>
             </span>
-            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1 text-slate-400 group-hover:text-blue-400 shrink-0" />
+
+            <span className="text-slate-600 font-mono text-xs select-none">·</span>
+
+            {/* Pillar 3: Online = Growth */}
+            <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-[10px] sm:text-xs font-mono font-bold tracking-tight shadow-xs transition-transform group-hover:scale-[1.03]">
+              <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400 shrink-0" />
+              <span className="text-white font-extrabold">Online</span>
+              <span className="text-cyan-400 font-normal">Growth</span>
+            </span>
+
+            {/* Hover Interactive Arrow */}
+            <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-400 transition-all duration-300 group-hover:translate-x-0.5 ml-0.5 shrink-0" />
           </a>
         </motion.div>
 
