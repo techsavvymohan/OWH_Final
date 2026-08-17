@@ -20,7 +20,6 @@ import {
 } from 'lucide-react';
 import { WhatsAppIcon, PhoneCallIcon } from '@/components/ui/brand-icons';
 import { ThemeToggle } from './ui/theme-toggle';
-import { NotificationCenter } from './notifications/notification-center';
 import { useAuth } from '@/lib/auth-context';
 
 interface NavbarProps {
@@ -329,23 +328,20 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
 
             {/* Right Actions - Grouped for Maximum Elegance */}
             <div className="flex items-center gap-2">
-              {/* Grouped Utilities Pill (Notifications & Onboarding) */}
-              <div className="hidden sm:flex items-center gap-1 p-1 rounded-full bg-slate-100/80 border border-slate-200/90 shadow-2xs">
-                <NotificationCenter onOpenProjectModal={onOpenProjectModal} />
-                <button
-                  type="button"
-                  id="navbar-onboarding-trigger"
-                  onClick={onOpenOnboardingModal}
-                  className="p-1.5 rounded-full text-slate-600 hover:text-blue-600 hover:bg-white transition-all cursor-pointer relative"
-                  title="Client Onboarding Protocol"
-                  aria-label="Open client onboarding protocol"
-                >
-                  <Compass className="w-3.5 h-3.5 text-blue-600" />
-                  {!hasCompletedOnboarding && (
-                    <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  )}
-                </button>
-              </div>
+              {/* Client Onboarding Protocol Trigger */}
+              <button
+                type="button"
+                id="navbar-onboarding-trigger"
+                onClick={onOpenOnboardingModal}
+                className="hidden sm:flex items-center justify-center w-8 h-8 rounded-full bg-slate-100/80 border border-slate-200/90 hover:border-slate-300 text-slate-600 hover:text-blue-600 hover:bg-white transition-all cursor-pointer relative shadow-2xs"
+                title="Client Onboarding Protocol"
+                aria-label="Open client onboarding protocol"
+              >
+                <Compass className="w-4 h-4 text-blue-600" />
+                {!hasCompletedOnboarding && (
+                  <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                )}
+              </button>
 
               {/* User Authentication Menu / Sign In Button */}
               {isAuthenticated && user ? (
