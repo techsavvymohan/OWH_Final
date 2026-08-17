@@ -164,6 +164,9 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                 <button
                   type="button"
                   id="solutions-dropdown-btn"
+                  aria-expanded={solutionsDropdownOpen}
+                  aria-haspopup="true"
+                  aria-label="Toggle solutions navigation menu"
                   onClick={() => setSolutionsDropdownOpen(!solutionsDropdownOpen)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                     ['#services', '#growth', '#dashboard', '#timeline'].includes(activeSection)
@@ -299,6 +302,7 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                   onClick={onOpenOnboardingModal}
                   className="p-1.5 rounded-full text-slate-600 hover:text-blue-600 hover:bg-white transition-all cursor-pointer relative"
                   title="Client Onboarding Protocol"
+                  aria-label="Open client onboarding protocol"
                 >
                   <Compass className="w-3.5 h-3.5 text-blue-600" />
                   {!hasCompletedOnboarding && (

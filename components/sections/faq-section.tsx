@@ -79,11 +79,17 @@ export function FaqSection({ onOpenProjectModal }: FaqSectionProps) {
             Everything you need to know about our Zero-Bug handover protocol, build process, and growth retainers.
           </p>
 
-          {/* Search Filter */}
+          {/* Search Filter with Full Accessibility */}
           <div className="mt-6 max-w-md mx-auto relative">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <label htmlFor="faq-search-input" className="sr-only">
+              Search frequently asked questions
+            </label>
+            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" aria-hidden="true" />
             <input
+              id="faq-search-input"
+              name="faq_search"
               type="text"
+              aria-label="Search frequently asked questions"
               placeholder="Search answers (e.g. Zero-Bug, retainers, SEO, timeline)..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
@@ -92,38 +98,49 @@ export function FaqSection({ onOpenProjectModal }: FaqSectionProps) {
           </div>
         </div>
 
-        {/* Single-Expand Accordion List with Scroll Stagger */}
+        {/* Single-Expand Accordion List with Accessible Markup */}
         <div className="space-y-3.5">
           {filteredFaqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
+            const headingId = `faq-heading-${idx}`;
+            const answerId = `faq-answer-${idx}`;
+
             return (
               <motion.div
                 key={faq.q}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
-                transition={{ duration: 0.45, delay: idx * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.4, delay: idx * 0.05, ease: [0.22, 1, 0.36, 1] }}
                 className="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-xs transition-all hover:border-slate-300"
               >
-                <button
-                  onClick={() => toggleFaq(idx)}
-                  className="w-full px-6 py-4 sm:py-5 flex items-center justify-between text-left gap-4 cursor-pointer hover:bg-slate-50 transition-colors"
-                >
-                  <span className="text-sm sm:text-base font-bold text-slate-900">
-                    {faq.q}
-                  </span>
-                  <div
-                    className={`w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 bg-blue-50 text-blue-700 font-bold' : ''
-                    }`}
+                <h3 className="text-base font-normal m-0 p-0" id={headingId}>
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    aria-expanded={isOpen}
+                    aria-controls={answerId}
+                    className="w-full px-6 py-4 sm:py-5 flex items-center justify-between text-left gap-4 cursor-pointer hover:bg-slate-50 transition-colors"
                   >
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
+                    <span className="text-sm sm:text-base font-bold text-slate-900">
+                      {faq.q}
+                    </span>
+                    <div
+                      className={`w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 transition-transform duration-200 ${
+                        isOpen ? 'rotate-180 bg-blue-50 text-blue-700 font-bold' : ''
+                      }`}
+                    >
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </button>
+                </h3>
 
-                <AnimatePresence>
+                <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      id={answerId}
+                      role="region"
+                      aria-labelledby={headingId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -144,15 +161,16 @@ export function FaqSection({ onOpenProjectModal }: FaqSectionProps) {
         {/* Still have questions prompt */}
         <div className="mt-10 text-center p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-left">
-            <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <MessageCircle className="w-4 h-4 text-blue-600" />
               <span>Have a specific architectural or retainer question?</span>
-            </h4>
+            </h3>
             <p className="text-xs text-slate-500 mt-0.5">
               Talk directly with our lead engineer & growth strategist on a 15-minute introductory call.
             </p>
           </div>
           <button
+            type="button"
             onClick={() => onOpenProjectModal('General Inquiry')}
             className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors cursor-pointer shrink-0 shadow-xs"
           >

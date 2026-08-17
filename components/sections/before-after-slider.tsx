@@ -32,6 +32,14 @@ export function BeforeAfterSlider() {
     handleMove(e.clientX);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') {
+      setSliderPosition(prev => Math.max(5, prev - 5));
+    } else if (e.key === 'ArrowRight') {
+      setSliderPosition(prev => Math.min(95, prev + 5));
+    }
+  };
+
   return (
     <section className="py-20 sm:py-28 relative bg-white border-t border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -51,16 +59,16 @@ export function BeforeAfterSlider() {
             Before vs. After OnlyWayOnline
           </h2>
           <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
-            Drag the interactive slider to see an illustrative comparison of typical gains when upgrading from fragile agency templates to our clean, high-speed growth architecture.
+            Drag the interactive slider or use arrow keys to see an illustrative comparison of typical gains when upgrading from fragile agency templates to our clean, high-speed growth architecture.
           </p>
         </motion.div>
 
         {/* Interactive Comparison Container */}
         <motion.div
-          initial={{ opacity: 0, y: 45, scale: 0.96 }}
+          initial={{ opacity: 0, y: 35, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           ref={containerRef}
           onMouseDown={() => setIsDragging(true)}
           onMouseUp={() => setIsDragging(false)}
@@ -98,34 +106,31 @@ export function BeforeAfterSlider() {
               </p>
               <div className="grid grid-cols-2 gap-3 pt-2 font-mono text-xs">
                 <div className="p-3 rounded-2xl neo-card">
-                  <span className="text-slate-500 text-[10px] block">Customer Inquiries</span>
-                  <span className="text-emerald-700 font-bold text-base">2x–3x More Leads</span>
+                  <span className="text-slate-500 text-[10px] block">Customer Calls</span>
+                  <span className="text-emerald-700 font-bold text-base">+3x to +5x Leads</span>
                 </div>
                 <div className="p-3 rounded-2xl neo-card">
-                  <span className="text-slate-500 text-[10px] block">Free Fix Guarantee</span>
-                  <span className="text-blue-700 font-bold text-base">90 Days Included</span>
+                  <span className="text-slate-500 text-[10px] block">Stability Warranty</span>
+                  <span className="text-blue-700 font-bold text-base">90-Day Free Fix</span>
                 </div>
               </div>
             </div>
 
-            <div className="text-xs font-mono text-slate-600 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>Tested & Guaranteed Working 100%</span>
-              </div>
-              <span className="text-[10px] text-slate-400 italic hidden sm:inline">*Typical client performance</span>
+            <div className="text-xs font-mono text-emerald-700 font-semibold flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <span>Tested on 18 Screen Sizes · Zero Bugs</span>
             </div>
           </div>
 
-          {/* BEFORE SIDE (Clipped Overlay - Legacy Fragile Site) */}
+          {/* BEFORE SIDE (Clipped Overlay - Competitor / Legacy Website) */}
           <div
-            style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
-            className="absolute inset-0 bg-slate-200 text-slate-800 p-6 sm:p-10 flex flex-col justify-between border-r-2 border-rose-500"
+            style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
+            className="absolute inset-0 bg-slate-100 text-slate-700 p-6 sm:p-10 flex flex-col justify-between border-r border-slate-300"
           >
             <div className="flex items-center justify-between">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100/90 backdrop-blur-md text-rose-800 text-xs font-mono font-bold border border-rose-300">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-800 text-xs font-mono font-bold border border-rose-200">
                 <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
-                BEFORE · Outdated Agency Website
+                BEFORE · Typical Agency Site
               </span>
               <div className="text-right font-mono bg-white/70 backdrop-blur-sm px-3 py-1 rounded-xl">
                 <span className="text-rose-700 font-bold text-lg">42 / 100</span>
@@ -162,12 +167,21 @@ export function BeforeAfterSlider() {
             </div>
           </div>
 
-          {/* Slider Drag Line & Handle with Tactile Neumorphic Feel */}
+          {/* Slider Drag Line & Accessible Handle */}
           <div
             style={{ left: `${sliderPosition}%` }}
             className="absolute top-0 bottom-0 w-1 bg-white/90 shadow-2xl -ml-0.5 pointer-events-none flex items-center justify-center z-20"
           >
-            <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center neo-thumb border-2 border-white pointer-events-auto cursor-ew-resize hover:scale-110 transition-transform">
+            <div
+              role="slider"
+              tabIndex={0}
+              aria-label="Comparison slider position"
+              aria-valuenow={Math.round(sliderPosition)}
+              aria-valuemin={5}
+              aria-valuemax={95}
+              onKeyDown={handleKeyDown}
+              className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center neo-thumb border-2 border-white pointer-events-auto cursor-ew-resize hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-transform"
+            >
               <ArrowLeftRight className="w-4 h-4" />
             </div>
           </div>

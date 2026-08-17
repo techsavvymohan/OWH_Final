@@ -137,6 +137,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
 
           <button
             id="growth-bento-discuss-btn"
+            type="button"
             onClick={() => onOpenProjectModal('growth-sprint')}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shrink-0 cursor-pointer shadow-md hover:shadow-lg shadow-emerald-600/20"
           >
@@ -202,39 +203,31 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
               </div>
             </div>
 
-            {/* Keyword Ranking Tracker */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2.5">
-              <div className="flex items-center justify-between text-xs font-mono text-slate-500 pb-1 border-b border-slate-200">
-                <span>What People Search For</span>
-                <span>Google Goal</span>
+            {/* Keyword Performance Table */}
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 font-mono text-xs">
+              <div className="flex justify-between items-center pb-2.5 mb-2.5 border-b border-slate-200 text-slate-500 font-semibold text-[11px]">
+                <span>Commercial Target Keyword</span>
+                <span>SERP Position</span>
               </div>
-              {KEYWORD_RANKINGS.map(item => (
-                <div
-                  key={item.keyword}
-                  className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 text-xs shadow-2xs"
-                >
-                  <div className="flex flex-col">
-                    <span className="font-semibold text-slate-900">
+              <div className="space-y-2">
+                {KEYWORD_RANKINGS.map((item, idx) => (
+                  <div key={idx} className="flex justify-between items-center text-xs">
+                    <span className="text-slate-800 font-medium truncate max-w-[200px]">
                       {item.keyword}
                     </span>
-                    <span className="text-[10px] font-mono text-slate-500">
-                      Monthly search volume: {item.volume}
-                    </span>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="text-emerald-700 font-bold">{item.rank}</span>
+                      <span className="text-[10px] text-slate-500 bg-emerald-100/60 px-1.5 py-0.5 rounded">
+                        {item.change}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono text-emerald-700 font-bold">
-                      {item.change}
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 font-mono font-bold border border-emerald-200">
-                      {item.rank}
-                    </span>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </motion.div>
 
-          {/* Card 2 (Span 6/12): Social Media Brand Dominance */}
+          {/* Card 2 (Span 6/12): Social Media Presence & Brand Trust */}
           <motion.div
             initial={{ opacity: 0, y: 45, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -245,7 +238,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="p-2.5 rounded-2xl bg-slate-100 text-slate-700 border border-slate-200">
+                <div className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200">
                   <Share2 className="w-5 h-5" />
                 </div>
                 <div className="flex gap-2 flex-wrap">
@@ -254,6 +247,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                     const isSelected = activeSocialIndex === idx;
                     return (
                       <button
+                        type="button"
                         key={post.platform}
                         onClick={() => setActiveSocialIndex(idx)}
                         className={`inline-flex items-center gap-2 text-xs font-mono px-3.5 py-2 rounded-xl transition-all cursor-pointer border ${
@@ -330,7 +324,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 Brand Identity & Performance Design Studio
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                Your logo, colors, fonts, business cards, social media templates, ad banners, and presentations — all matching your website's look for a professional brand.
+                Your logo, colors, fonts, business cards, social media templates, ad banners, and presentations — all matching your website&apos;s look for a professional brand.
               </p>
             </div>
 
@@ -399,13 +393,18 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
             <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
               <div>
                 <div className="flex justify-between text-xs font-mono mb-2">
-                  <span className="text-slate-600 font-semibold">Monthly Media Budget:</span>
+                  <label htmlFor="growth-media-budget-slider" className="text-slate-600 font-semibold cursor-pointer">
+                    Monthly Media Budget:
+                  </label>
                   <span className="text-emerald-700 font-bold font-mono text-sm">
                     ${adSpend.toLocaleString()} / mo
                   </span>
                 </div>
                 <input
+                  id="growth-media-budget-slider"
+                  name="media_budget"
                   type="range"
+                  aria-label="Monthly Media Budget Slider"
                   min={1000}
                   max={25000}
                   step={500}
@@ -417,13 +416,13 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
 
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <div className="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-2xs">
-                  <span className="text-[10px] font-mono text-slate-500 block">Expected Revenue You Could Earn</span>
+                  <span className="text-[10px] font-mono text-slate-500 block">Expected Revenue [Modeled ~4.2x]</span>
                   <span className="text-lg sm:text-xl font-bold font-mono text-emerald-700">
                     ${estimatedRevenue.toLocaleString()}
                   </span>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-2xs">
-                  <span className="text-[10px] font-mono text-slate-500 block">Estimated Customer Enquiries</span>
+                  <span className="text-[10px] font-mono text-slate-500 block">Estimated Customer Inquiries</span>
                   <span className="text-lg sm:text-xl font-bold font-mono text-slate-900">
                     ~{estimatedLeads} target
                   </span>

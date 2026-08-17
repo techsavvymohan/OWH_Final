@@ -9,7 +9,11 @@ import {
   ArrowRight, 
   TrendingUp, 
   Code2, 
-  Rocket 
+  Rocket,
+  DollarSign,
+  Info,
+  Layers,
+  HelpCircle
 } from 'lucide-react';
 
 interface GrowthStackSelectorProps {
@@ -17,12 +21,15 @@ interface GrowthStackSelectorProps {
 }
 
 type StackMode = 'build' | 'bundle' | 'grow';
+type CurrencyMode = 'usd' | 'inr';
 
 interface PlanItem {
   id: string;
   name: string;
   badge?: string;
-  priceDesc: string;
+  priceUSD: string;
+  priceINR: string;
+  priceBilling: string;
   priceNote: string;
   description?: string;
   popular?: boolean;
@@ -38,26 +45,30 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'build-website',
       name: 'Custom Business Website',
       badge: 'Dedicated Sprint',
-      priceDesc: 'Fixed Milestone Pricing',
-      priceNote: 'Transparent milestone delivery',
+      priceUSD: 'From $2,450',
+      priceINR: 'From ₹1,85,000',
+      priceBilling: 'Fixed Milestone Delivery',
+      priceNote: 'Zero hidden fees · 3-4 week handover',
       description: 'You get a completely bespoke, ultra-fast website that loads in under 1 second, looks stunning on every phone and laptop, and ranks on Google — with 30 days of free fixes included.',
       slaDays: 30,
       accent: 'blue',
       ctaLabel: 'Discuss Website Build',
       deliverables: [
-        'Custom design tailored to your brand — no generic templates',
-        'Built with modern high-speed technology for instant page loads',
-        'Full Google SEO setup so customers find you easily',
+        'Custom Figma design tailored to your brand — no generic templates',
+        'Next.js 15 server-first stack for sub-second page loads',
+        'Full Google SEO & schema setup so customers find you easily',
         'Target 100/100 Google speed score on mobile & laptop',
-        '30-Day free fix guarantee & 24/7 uptime monitoring',
+        '30-Day free fix guarantee & 24/7 uptime telemetry',
       ],
     },
     {
       id: 'build-saas',
       name: 'Custom Software & Client Portal',
       badge: 'Most Comprehensive',
-      priceDesc: 'Sprint-Based Build',
-      priceNote: 'Fixed scope & clear timeline',
+      priceUSD: 'From $4,900',
+      priceINR: 'From ₹3,75,000',
+      priceBilling: 'Sprint-Based Architecture',
+      priceNote: 'Fixed scope · Full IP & code handover',
       description: 'You get a full-scale web application or customer portal with secure user logins, easy-to-use dashboards, and bank-level protection — built to grow smoothly with your business.',
       popular: true,
       slaDays: 60,
@@ -75,8 +86,10 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'build-ecommerce',
       name: 'High-Converting Online Store',
       badge: 'High Conversion',
-      priceDesc: 'Results-Focused Store',
-      priceNote: 'Fast checkout on all devices',
+      priceUSD: 'From $3,800',
+      priceINR: 'From ₹2,90,000',
+      priceBilling: 'Turnkey E-Commerce Store',
+      priceNote: '1-click checkout · Fast on mobile',
       description: 'You get a lightning-fast online store with 1-click checkout, zero cart lag, and product pages designed to turn visitors into buyers.',
       slaDays: 60,
       accent: 'blue',
@@ -95,8 +108,10 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'bundle-starter',
       name: 'Website + Growth Starter',
       badge: 'Website + Marketing',
-      priceDesc: 'Build + Monthly Marketing',
-      priceNote: 'New website + SEO or Social growth',
+      priceUSD: 'From $1,450',
+      priceINR: 'From ₹1,10,000',
+      priceBilling: '/ month (60-Day Sprint)',
+      priceNote: 'New site + SEO or Social growth',
       description: 'You get a custom high-speed website build plus ongoing monthly Google SEO or social media marketing to start driving customer inquiries right away.',
       slaDays: 60,
       accent: 'blue',
@@ -113,8 +128,10 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'bundle-fullstack',
       name: '90-Day Complete Launch & Growth',
       badge: 'RECOMMENDED · HIGHEST VALUE',
-      priceDesc: 'All-In-One Growth System',
-      priceNote: 'Website + Google SEO + Social + Ads',
+      priceUSD: 'From $2,850',
+      priceINR: 'From ₹2,15,000',
+      priceBilling: '/ month (90-Day Sprint)',
+      priceNote: 'Full-stack: Website + SEO + Social + Ads',
       popular: true,
       slaDays: 90,
       accent: 'emerald',
@@ -132,7 +149,9 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'bundle-enterprise',
       name: 'Full Dedicated Team Partner',
       badge: 'Dedicated Team',
-      priceDesc: 'Ongoing Dedicated Team',
+      priceUSD: 'From $5,500',
+      priceINR: 'From ₹4,20,000',
+      priceBilling: '/ month (Dedicated Squad)',
       priceNote: 'Continuous updates + multi-channel growth',
       description: 'You get our team acting as your full-time tech and marketing department — handling continuous website upgrades, advertising, and priority 24/7 support.',
       slaDays: 90,
@@ -152,8 +171,10 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'grow-seo',
       name: 'Monthly Google SEO Growth',
       badge: 'Google Rank Authority',
-      priceDesc: 'Monthly Service',
-      priceNote: 'No long contracts · Transparent reports',
+      priceUSD: 'From $1,250',
+      priceINR: 'From ₹95,000',
+      priceBilling: '/ month (Monthly Retainer)',
+      priceNote: 'No long lock-ins · Transparent reporting',
       description: 'For businesses with an existing website: we handle monthly keyword strategy, speed fixes, and content creation to steadily climb to Page 1 on Google.',
       slaDays: 30,
       accent: 'emerald',
@@ -170,7 +191,9 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'grow-social',
       name: 'Social Media Management',
       badge: 'Brand Reputation',
-      priceDesc: 'Monthly Service',
+      priceUSD: 'From $950',
+      priceINR: 'From ₹75,000',
+      priceBilling: '/ month (Monthly Retainer)',
       priceNote: 'LinkedIn, X & Instagram',
       description: 'For businesses with an existing website: we write professional posts and design eye-catching graphics for LinkedIn, X (Twitter), and Instagram to build your brand.',
       popular: true,
@@ -189,9 +212,11 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'grow-ads',
       name: 'Google & Facebook Ads Management',
       badge: 'Profitable Returns',
-      priceDesc: 'Monthly Management',
-      priceNote: 'Google + Meta ad campaigns',
-      description: 'For businesses with an existing website: we set up and manage Google and Facebook ad campaigns with lead tracking so every rupee spent brings real customer calls and orders.',
+      priceUSD: 'From $1,650',
+      priceINR: 'From ₹1,25,000',
+      priceBilling: '/ month + Media Spend',
+      priceNote: 'Targeting 3x–5x ROAS returns',
+      description: 'For businesses with an existing website: we set up and manage Google and Facebook ad campaigns with lead tracking so every dollar spent brings real customer calls and orders.',
       slaDays: 30,
       accent: 'emerald',
       ctaLabel: 'Activate Paid Ads Retainer',
@@ -208,6 +233,7 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
 
 export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorProps) {
   const [selectedMode, setSelectedMode] = React.useState<StackMode>('bundle');
+  const [currency, setCurrency] = React.useState<CurrencyMode>('usd');
 
   const activePlans = PLANS_DATA[selectedMode];
 
@@ -215,25 +241,51 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
     <section id="pricing" className="py-20 sm:py-28 relative bg-gradient-to-b from-slate-50/80 via-blue-50/30 to-emerald-50/20 border-t border-slate-200 overflow-hidden">
       {/* Ambient background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-100/50 via-indigo-100/30 to-emerald-100/50 blur-[130px] rounded-full pointer-events-none -z-10" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-mono font-bold border border-emerald-200 mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>TRANSPARENT PRICING & PACKAGES</span>
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-            Select Your Investment Plan
+            Clear Investment Models & Scopes
           </h2>
           <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
-            Choose the model that fits your business goals — whether you need a high-converting website build, monthly marketing & lead growth, or our turnkey 90-Day Launch & Growth Sprint.
+            No surprise add-ons, no hidden hosting lock-ins. Every engagement includes dedicated engineering, SLA peace-of-mind, and measurable business deliverables.
           </p>
+
+          {/* Currency Toggle */}
+          <div className="mt-6 inline-flex items-center gap-1.5 p-1 rounded-xl bg-white border border-slate-200 shadow-2xs">
+            <button
+              type="button"
+              onClick={() => setCurrency('usd')}
+              className={`px-3 py-1 rounded-lg text-xs font-bold font-mono transition-all cursor-pointer ${
+                currency === 'usd' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              $ USD
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrency('inr')}
+              className={`px-3 py-1 rounded-lg text-xs font-bold font-mono transition-all cursor-pointer ${
+                currency === 'inr' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              ₹ INR
+            </button>
+          </div>
         </div>
 
-        {/* 3-Way Segmented Control in Luxury Dark Graphite */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1.5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
+        {/* 3-Way Segmented Control */}
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex p-1.5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg" role="tablist">
             <button
+              type="button"
+              role="tab"
+              aria-selected={selectedMode === 'build'}
               onClick={() => setSelectedMode('build')}
               className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
                 selectedMode === 'build'
@@ -246,6 +298,9 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
             </button>
 
             <button
+              type="button"
+              role="tab"
+              aria-selected={selectedMode === 'bundle'}
               onClick={() => setSelectedMode('bundle')}
               className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 relative ${
                 selectedMode === 'bundle'
@@ -261,6 +316,9 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
             </button>
 
             <button
+              type="button"
+              role="tab"
+              aria-selected={selectedMode === 'grow'}
               onClick={() => setSelectedMode('grow')}
               className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
                 selectedMode === 'grow'
@@ -274,19 +332,20 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
           </div>
         </div>
 
-        {/* Morphing Plans Grid with Scroll-Triggered Entrance */}
+        {/* Morphing Plans Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {activePlans.map((plan, idx) => {
             const isHighlighted = plan.popular;
+            const price = currency === 'usd' ? plan.priceUSD : plan.priceINR;
+
             return (
               <motion.div
                 key={plan.id}
                 layout
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.55, delay: idx * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -8, scale: 1.015, transition: { duration: 0.25 } }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.45, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative transition-all ${
                   isHighlighted
                     ? plan.accent === 'emerald'
@@ -317,11 +376,17 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
                     {plan.name}
                   </h3>
 
-                  <div className="mb-4">
-                    <div className="text-lg font-bold font-mono text-slate-900">
-                      {plan.priceDesc}
+                  {/* Price Block */}
+                  <div className="mb-4 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900">
+                        {price}
+                      </span>
+                      <span className="text-xs text-slate-500 font-medium">
+                        {plan.priceBilling}
+                      </span>
                     </div>
-                    <div className="text-xs text-slate-500 font-mono mt-0.5">
+                    <div className="text-[11px] text-slate-500 font-mono mt-1">
                       {plan.priceNote}
                     </div>
                   </div>
@@ -335,8 +400,8 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
                     <span className="text-xs font-mono uppercase tracking-wider text-slate-500 block">
                       Scope Deliverables Included:
                     </span>
-                    {plan.deliverables.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 font-medium">
+                    {plan.deliverables.map((item, dIdx) => (
+                      <div key={dIdx} className="flex items-start gap-2.5 text-xs text-slate-700 font-medium">
                         <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </div>
@@ -345,6 +410,7 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
                 </div>
 
                 <button
+                  type="button"
                   onClick={() => onOpenProjectModal(plan.id)}
                   className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${
                     isHighlighted
@@ -360,6 +426,21 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Pricing Transparency & Methodology Note */}
+        <div className="mt-12 p-6 rounded-2xl bg-white border border-slate-200 shadow-xs max-w-4xl mx-auto flex flex-col sm:flex-row items-start gap-4">
+          <div className="p-2.5 rounded-xl bg-blue-50 text-blue-600 shrink-0">
+            <Info className="w-5 h-5" />
+          </div>
+          <div className="space-y-1 text-xs text-slate-600">
+            <h4 className="font-bold text-slate-900 text-sm">
+              How We Calculate Transparent Custom Scope
+            </h4>
+            <p className="leading-relaxed">
+              The starting ranges above reflect standard engineering and marketing scopes. Exact investment amounts are determined by: (1) total custom page templates, (2) third-party API and database integrations, (3) multilingual and regional SEO clusters, and (4) ad spend scale. You will receive an exact line-item proposal on our 15-minute introductory call before any commitment.
+            </p>
+          </div>
         </div>
       </div>
     </section>

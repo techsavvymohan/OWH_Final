@@ -60,6 +60,16 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
     return () => clearInterval(timer);
   }, []);
 
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && showProtocolModal) {
+        setShowProtocolModal(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showProtocolModal]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30, scale: 0.98 }}
@@ -130,6 +140,7 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
             {/* Protocol Deep-dive Trigger */}
             <button
               id="inspect-protocol-btn"
+              type="button"
               onClick={() => setShowProtocolModal(true)}
               className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 px-4 py-2 rounded-xl neo-button shrink-0 cursor-pointer"
             >
@@ -150,9 +161,13 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
               exit={{ opacity: 0 }}
               onClick={() => setShowProtocolModal(false)}
               className="fixed inset-0 bg-slate-950/40 backdrop-blur-sm"
+              aria-hidden="true"
             />
 
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="protocol-modal-heading"
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
@@ -164,7 +179,7 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
                     <FileCheck2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900">
+                    <h3 id="protocol-modal-heading" className="text-lg font-bold text-slate-900">
                       Zero-Bug Handover Protocol™
                     </h3>
                     <p className="text-xs text-slate-500 font-mono">
@@ -174,8 +189,10 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
                 </div>
                 <button
                   id="close-protocol-modal-btn"
+                  type="button"
                   onClick={() => setShowProtocolModal(false)}
-                  className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+                  className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+                  aria-label="Close protocol details modal"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -213,11 +230,12 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
                   <span>Backed by contractually defined stability SLA.</span>
                 </div>
                 <button
+                  type="button"
                   onClick={() => {
                     setShowProtocolModal(false);
                     onOpenProjectModal('Zero-Bug Web System');
                   }}
-                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-md shadow-blue-600/20"
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-md shadow-blue-600/20 cursor-pointer"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Commission a Zero-Bug Build</span>

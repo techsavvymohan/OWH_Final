@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import {
   X,
   Mail,
@@ -49,6 +49,16 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
       setResetSuccess(false);
     }
   }
+
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -140,10 +150,14 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
         exit={{ opacity: 0 }}
         onClick={onClose}
         className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs"
+        aria-hidden="true"
       />
 
       {/* Modal Card */}
       <motion.div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auth-modal-title"
         initial={{ opacity: 0, scale: 0.95, y: 15 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 15 }}
@@ -158,7 +172,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
           id="close-auth-modal-btn"
           onClick={onClose}
           className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
-          aria-label="Close modal"
+          aria-label="Close authentication modal"
         >
           <X className="w-5 h-5" />
         </button>
@@ -171,10 +185,10 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
                 OW
               </div>
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-700">
-                OnlyWayOnline Platform
+                OnlyWayOnline Platform Demo
               </span>
             </div>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            <h2 id="auth-modal-title" className="text-2xl font-bold tracking-tight text-slate-900">
               {mode === 'login' && 'Sign in to your Growth Portal'}
               {mode === 'signup' && 'Create your Partner Account'}
               {mode === 'reset' && 'Reset your Password'}
@@ -194,7 +208,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
                 Instant Demo Access (One-Click)
               </span>
               <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">
-                Pre-configured
+                Interactive Preview
               </span>
             </div>
             <div className="grid grid-cols-2 gap-2">
@@ -230,7 +244,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
                   disabled={loading}
                   className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs font-bold transition-colors shadow-2xs cursor-pointer"
                 >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       fill="#4285F4"
                       d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"
@@ -258,7 +272,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
                   disabled={loading}
                   className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs font-bold transition-colors shadow-2xs cursor-pointer"
                 >
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                   </svg>
                   <span>GitHub Dev</span>
@@ -276,7 +290,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
 
           {/* Error Message */}
           {errorMsg && (
-            <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 flex items-center gap-2.5 text-xs text-red-700">
+            <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 flex items-center gap-2.5 text-xs text-red-700" role="alert">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errorMsg}</span>
             </div>
@@ -312,17 +326,19 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
               {mode === 'login' && (
                 <form onSubmit={handleLoginSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                    <label htmlFor="login-email-input" className="block text-xs font-bold text-slate-700 mb-1.5">
                       Business Email
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                       <input
                         id="login-email-input"
+                        name="email"
                         type="email"
                         required
                         value={email}
                         onChange={e => setEmail(e.target.value)}
+                        autoComplete="email"
                         placeholder="you@company.com"
                         className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       />
@@ -331,7 +347,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
 
                   <div>
                     <div className="flex items-center justify-between mb-1.5">
-                      <label className="block text-xs font-bold text-slate-700">
+                      <label htmlFor="login-password-input" className="block text-xs font-bold text-slate-700">
                         Password
                       </label>
                       <button
@@ -347,10 +363,12 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
                       <Lock className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                       <input
                         id="login-password-input"
+                        name="password"
                         type="password"
                         required
                         value={password}
                         onChange={e => setPassword(e.target.value)}
+                        autoComplete="current-password"
                         placeholder="••••••••••••"
                         className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       />
@@ -380,34 +398,38 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
                 <form onSubmit={handleSignupSubmit} className="space-y-3.5">
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="signup-name-input" className="block text-xs font-bold text-slate-700 mb-1">
                         Full Name
                       </label>
                       <div className="relative">
                         <User className="absolute left-3 top-2.5 w-3.5 h-3.5 text-slate-400" />
                         <input
                           id="signup-name-input"
+                          name="name"
                           type="text"
                           required
                           value={name}
                           onChange={e => setName(e.target.value)}
-                          placeholder="Sarah Jenkins"
+                          autoComplete="name"
+                          placeholder="Alex Henderson"
                           className="w-full pl-8 pr-3 py-2 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="signup-company-input" className="block text-xs font-bold text-slate-700 mb-1">
                         Company Name
                       </label>
                       <div className="relative">
                         <Building className="absolute left-3 top-2.5 w-3.5 h-3.5 text-slate-400" />
                         <input
                           id="signup-company-input"
+                          name="company"
                           type="text"
                           required
                           value={company}
                           onChange={e => setCompany(e.target.value)}
+                          autoComplete="organization"
                           placeholder="Acme Growth Inc."
                           className="w-full pl-8 pr-3 py-2 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                         />
@@ -417,33 +439,37 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="signup-email-input" className="block text-xs font-bold text-slate-700 mb-1">
                         Work Email
                       </label>
                       <div className="relative">
                         <Mail className="absolute left-3 top-2.5 w-3.5 h-3.5 text-slate-400" />
                         <input
                           id="signup-email-input"
+                          name="email"
                           type="email"
                           required
                           value={email}
                           onChange={e => setEmail(e.target.value)}
-                          placeholder="sarah@acme.com"
+                          autoComplete="email"
+                          placeholder="alex@acme.com"
                           className="w-full pl-8 pr-3 py-2 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="signup-role-input" className="block text-xs font-bold text-slate-700 mb-1">
                         Your Role / Title
                       </label>
                       <div className="relative">
                         <Briefcase className="absolute left-3 top-2.5 w-3.5 h-3.5 text-slate-400" />
                         <input
                           id="signup-role-input"
+                          name="role"
                           type="text"
                           value={role}
                           onChange={e => setRole(e.target.value)}
+                          autoComplete="organization-title"
                           placeholder="VP Growth / Founder"
                           className="w-full pl-8 pr-3 py-2 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                         />
@@ -452,17 +478,19 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                    <label htmlFor="signup-password-input" className="block text-xs font-bold text-slate-700 mb-1">
                       Set Secure Password
                     </label>
                     <div className="relative">
                       <Lock className="absolute left-3 top-2.5 w-3.5 h-3.5 text-slate-400" />
                       <input
                         id="signup-password-input"
+                        name="password"
                         type="password"
                         required
                         value={password}
                         onChange={e => setPassword(e.target.value)}
+                        autoComplete="new-password"
                         placeholder="At least 8 characters"
                         className="w-full pl-8 pr-3 py-2 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                       />
@@ -496,17 +524,19 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
               {mode === 'reset' && (
                 <form onSubmit={handleResetSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                    <label htmlFor="reset-email-input" className="block text-xs font-bold text-slate-700 mb-1.5">
                       Registered Work Email
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                       <input
                         id="reset-email-input"
+                        name="email"
                         type="email"
                         required
                         value={email}
                         onChange={e => setEmail(e.target.value)}
+                        autoComplete="email"
                         placeholder="you@company.com"
                         className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 text-xs placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                       />

@@ -25,8 +25,10 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500', '600', '700'],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://onlywayonline.com';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://onlywayonline.com'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'OnlyWayOnline — Websites That Actually Bring You Customers',
     template: '%s | OnlyWayOnline',
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     'Website Redesign Without Losing SEO',
     'Mobile Friendly Web Development',
   ],
-  authors: [{ name: 'OnlyWayOnline Team', url: 'https://onlywayonline.com' }],
+  authors: [{ name: 'OnlyWayOnline Team', url: siteUrl }],
   creator: 'OnlyWayOnline',
   publisher: 'OnlyWayOnline Studio',
   formatDetection: {
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
     telephone: true,
   },
   alternates: {
-    canonical: 'https://onlywayonline.com',
+    canonical: siteUrl,
   },
   openGraph: {
     title: 'OnlyWayOnline — Websites That Actually Bring You Customers',

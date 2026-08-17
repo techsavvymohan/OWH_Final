@@ -40,12 +40,12 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
 
   const [currentStep, setCurrentStep] = React.useState(1);
 
-  // Form State initialized with user if available
-  const [fullName, setFullName] = React.useState(() => user?.name || 'Sarah Jenkins');
-  const [companyName, setCompanyName] = React.useState(() => user?.company || 'Apex Vector Labs');
+  // Form State initialized without dummy personas
+  const [fullName, setFullName] = React.useState(() => user?.name || '');
+  const [companyName, setCompanyName] = React.useState(() => user?.company || '');
   const [industry, setIndustry] = React.useState('SaaS & B2B Software');
-  const [teamSize, setTeamSize] = React.useState('11-50 employees');
-  const [websiteUrl, setWebsiteUrl] = React.useState('https://apexvector.io');
+  const [teamSize, setTeamSize] = React.useState('1-10 employees');
+  const [websiteUrl, setWebsiteUrl] = React.useState('');
 
   const [primaryGoal, setPrimaryGoal] = React.useState<'redesign' | 'saas_build' | 'seo_growth' | 'paid_roas' | 'enterprise_stack'>('saas_build');
   const [launchTimeline, setLaunchTimeline] = React.useState<'30_days' | '60_days' | '90_days' | 'ongoing'>('60_days');
@@ -60,6 +60,16 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
   // Tutorial active slide
   const [activeTutorialTab, setActiveTutorialTab] = React.useState<number>(0);
 
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const toggleIntegration = (name: string) => {
@@ -73,11 +83,11 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
       setCurrentStep(prev => prev + 1);
     } else {
       const finalData: OnboardingData = {
-        fullName,
-        companyName,
+        fullName: fullName || 'Guest Partner',
+        companyName: companyName || 'My Venture',
         industry,
         teamSize,
-        websiteUrl,
+        websiteUrl: websiteUrl || 'https://example.com',
         primaryGoal,
         launchTimeline,
         monthlyBudget,
@@ -105,10 +115,14 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
         exit={{ opacity: 0 }}
         onClick={onClose}
         className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs"
+        aria-hidden="true"
       />
 
       {/* Main Wizard Container */}
       <motion.div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="onboarding-modal-title"
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -116,6 +130,12 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
       >
         {/* Top Header */}
         <div className="p-6 sm:p-8 bg-slate-50 border-b border-slate-200">
+          {/* Demo Mode Notice */}
+          <div className="mb-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-[10px] font-mono font-bold">
+            <Sparkles className="w-3 h-3 text-blue-600" />
+            <span>INTERACTIVE ONBOARDING DEMO · Walk through our client blueprint system</span>
+          </div>
+
           <div className="flex items-center justify-between gap-4 mb-4">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-blue-500/20">
@@ -125,7 +145,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-700">
                   Client Onboarding Protocol
                 </span>
-                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+                <h2 id="onboarding-modal-title" className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
                   {STEPS[currentStep - 1].title}
                 </h2>
               </div>
@@ -135,6 +155,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
               id="close-onboarding-modal-btn"
               onClick={onClose}
               className="p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors cursor-pointer"
+              aria-label="Close onboarding wizard"
             >
               <X className="w-5 h-5" />
             </button>
@@ -201,9 +222,9 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
               <div className="p-4 rounded-2xl bg-blue-50 border border-blue-200 flex items-start gap-3">
                 <ShieldCheck className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-bold text-blue-900">
+                  <h3 className="text-xs font-bold text-blue-900">
                     Dedicated Principal Engineer & Growth Strategist Assigned
-                  </h4>
+                  </h3>
                   <p className="text-[11px] text-blue-700 mt-0.5">
                     Your venture profile initializes your personalized Zero-Bug handover protocol and Core Web Vitals telemetry guard.
                   </p>
@@ -212,7 +233,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                  <label htmlFor="onboarding-fullname" className="block text-xs font-bold text-slate-700 mb-1.5">
                     Your Name & Title
                   </label>
                   <div className="relative">
@@ -220,8 +241,10 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                     <input
                       type="text"
                       id="onboarding-fullname"
+                      name="fullname"
                       value={fullName}
                       onChange={e => setFullName(e.target.value)}
+                      autoComplete="name"
                       placeholder="e.g. Sarah Jenkins"
                       className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:ring-2 focus:ring-blue-500"
                     />
@@ -229,7 +252,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                  <label htmlFor="onboarding-company" className="block text-xs font-bold text-slate-700 mb-1.5">
                     Organization / Company Name
                   </label>
                   <div className="relative">
@@ -237,8 +260,10 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                     <input
                       type="text"
                       id="onboarding-company"
+                      name="company"
                       value={companyName}
                       onChange={e => setCompanyName(e.target.value)}
+                      autoComplete="organization"
                       placeholder="e.g. Acme Health Corp"
                       className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:ring-2 focus:ring-blue-500"
                     />
@@ -248,11 +273,12 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                  <label htmlFor="onboarding-industry" className="block text-xs font-bold text-slate-700 mb-1.5">
                     Industry Domain
                   </label>
                   <select
                     id="onboarding-industry"
+                    name="industry"
                     value={industry}
                     onChange={e => setIndustry(e.target.value)}
                     className="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:ring-2 focus:ring-blue-500"
@@ -267,11 +293,12 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                  <label htmlFor="onboarding-teamsize" className="block text-xs font-bold text-slate-700 mb-1.5">
                     Team Size
                   </label>
                   <select
                     id="onboarding-teamsize"
+                    name="teamsize"
                     value={teamSize}
                     onChange={e => setTeamSize(e.target.value)}
                     className="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:ring-2 focus:ring-blue-500"
@@ -284,7 +311,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                  <label htmlFor="onboarding-url" className="block text-xs font-bold text-slate-700 mb-1.5">
                     Current Website URL
                   </label>
                   <div className="relative">
@@ -292,8 +319,10 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                     <input
                       type="url"
                       id="onboarding-url"
+                      name="url"
                       value={websiteUrl}
                       onChange={e => setWebsiteUrl(e.target.value)}
+                      autoComplete="url"
                       placeholder="https://yoursite.com"
                       className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:ring-2 focus:ring-blue-500"
                     />
@@ -342,20 +371,21 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                       badge: 'Target-Driven ROAS',
                     },
                   ].map(g => (
-                    <div
+                    <button
+                      type="button"
                       key={g.id}
                       id={`goal-option-${g.id}`}
                       onClick={() => setPrimaryGoal(g.id)}
-                      className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
+                      className={`p-4 rounded-2xl border transition-all text-left cursor-pointer flex flex-col justify-between ${
                         primaryGoal === g.id
                           ? 'bg-blue-50 border-blue-500 ring-2 ring-blue-500/20'
                           : 'bg-slate-50 border-slate-200 hover:border-blue-300'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-xs font-bold text-slate-900">
+                        <h3 className="text-xs font-bold text-slate-900">
                           {g.title}
-                        </h4>
+                        </h3>
                         <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-bold">
                           {g.badge}
                         </span>
@@ -363,18 +393,19 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                       <p className="text-[11px] text-slate-600 leading-relaxed">
                         {g.desc}
                       </p>
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                  <label htmlFor="onboarding-timeline" className="block text-xs font-bold text-slate-700 mb-1.5">
                     Target Delivery Velocity
                   </label>
                   <select
                     id="onboarding-timeline"
+                    name="timeline"
                     value={launchTimeline}
                     onChange={e => setLaunchTimeline(e.target.value as any)}
                     className="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900"
@@ -387,11 +418,12 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                  <label htmlFor="onboarding-budget" className="block text-xs font-bold text-slate-700 mb-1.5">
                     Estimated Growth Allocation
                   </label>
                   <select
                     id="onboarding-budget"
+                    name="budget"
                     value={monthlyBudget}
                     onChange={e => setMonthlyBudget(e.target.value)}
                     className="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900"
@@ -455,39 +487,38 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                   return (
                     <div
                       key={tool.name}
-                      id={`integration-row-${tool.name.replace(/\s+/g, '-').toLowerCase()}`}
-                      className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-4"
+                      onClick={() => toggleIntegration(tool.name)}
+                      className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-4 ${
+                        isConnected
+                          ? 'bg-emerald-50/70 border-emerald-300 ring-1 ring-emerald-400/30'
+                          : 'bg-slate-50 border-slate-200 hover:border-slate-300'
+                      }`}
                     >
-                      <div className="flex items-start gap-3">
-                        <div className="p-2 rounded-xl bg-white border border-slate-200 shrink-0 mt-0.5">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-xl bg-white border border-slate-200 shadow-2xs">
                           {tool.icon}
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <h4 className="text-xs font-bold text-slate-900">
-                              {tool.name}
-                            </h4>
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 font-semibold">
+                            <h3 className="text-xs font-bold text-slate-900">{tool.name}</h3>
+                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-200 text-slate-700">
                               {tool.badge}
                             </span>
                           </div>
-                          <p className="text-[11px] text-slate-500 mt-0.5">
-                            {tool.desc}
-                          </p>
+                          <p className="text-[11px] text-slate-500 mt-0.5">{tool.desc}</p>
                         </div>
                       </div>
 
                       <button
                         type="button"
-                        id={`toggle-connect-${tool.name.replace(/\s+/g, '-').toLowerCase()}`}
-                        onClick={() => toggleIntegration(tool.name)}
-                        className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 cursor-pointer ${
+                        className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors cursor-pointer shrink-0 ${
                           isConnected
-                            ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
-                            : 'bg-white text-slate-700 border border-slate-300 hover:border-blue-500'
+                            ? 'bg-emerald-600 text-white'
+                            : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
                         }`}
+                        aria-label={`${isConnected ? 'Disconnect' : 'Connect'} ${tool.name}`}
                       >
-                        {isConnected ? '✓ Linked' : '+ Link Account'}
+                        {isConnected ? 'Connected ✓' : 'Connect +'}
                       </button>
                     </div>
                   );
@@ -496,7 +527,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
             </motion.div>
           )}
 
-          {/* STEP 4: Platform Walkthrough & Tutorial */}
+          {/* STEP 4: Platform Walkthrough */}
           {currentStep === 4 && (
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -504,49 +535,36 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
               exit={{ opacity: 0, x: -20 }}
               className="space-y-4"
             >
-              <div className="flex items-center justify-between gap-2 border-b border-slate-200 pb-3">
-                {[
-                  { title: 'Zero-Bug Telemetry', icon: <ShieldCheck className="w-3.5 h-3.5" /> },
-                  { title: 'Unified Dashboard', icon: <LayoutDashboard className="w-3.5 h-3.5" /> },
-                  { title: '90-Day Milestones', icon: <Clock className="w-3.5 h-3.5" /> },
-                  { title: 'Lead Inquiries', icon: <Zap className="w-3.5 h-3.5" /> },
-                ].map((tab, idx) => (
+              <div className="flex items-center gap-2 p-1 rounded-2xl bg-slate-100 border border-slate-200">
+                {['Zero-Bug SLA', 'Live Telemetry', '90-Day Roadmap', 'Notification Hub'].map((tab, idx) => (
                   <button
-                    key={tab.title}
+                    key={tab}
                     type="button"
-                    id={`tutorial-tab-${idx}`}
                     onClick={() => setActiveTutorialTab(idx)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                    className={`flex-1 py-1.5 text-xs font-semibold rounded-xl transition-all cursor-pointer ${
                       activeTutorialTab === idx
-                        ? 'bg-blue-600 text-white shadow-xs'
-                        : 'text-slate-600 hover:bg-slate-100'
+                        ? 'bg-white text-blue-700 shadow-xs font-bold'
+                        : 'text-slate-500 hover:text-slate-900'
                     }`}
                   >
-                    {tab.icon}
-                    <span>{tab.title}</span>
+                    {tab}
                   </button>
                 ))}
               </div>
 
-              {/* Tutorial Cards Display */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 min-h-[160px] flex flex-col justify-center">
                 {activeTutorialTab === 0 && (
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-blue-700 font-mono text-xs font-bold uppercase">
                       <ShieldCheck className="w-4 h-4" />
-                      <span>Feature 1: Zero-Defect Handover SLA</span>
+                      <span>Feature 1: Zero-Bug Handover Protocol™</span>
                     </div>
                     <h3 className="text-base font-bold text-slate-900">
-                      Automated CI/CD Quality Gating Before Any Production Cutover
+                      Cross-Device QA & Monitored 90-Day Stability
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
-                      Every pull request is automatically tested against 100+ viewport variations, accessibility standards (WCAG AA), and sub-millisecond Core Web Vitals checks. If anything breaks, our lead engineers remediate within 24 hours under contractual SLA.
+                      Every code deliverable is tested across 18 physical viewport breakpoints with sub-second execution thresholds. Post-launch, our automated 24/7 telemetry guarantees free engineering fixes within 24 hours.
                     </p>
-                    <div className="p-3 rounded-xl bg-white border border-slate-200 font-mono text-[11px] text-slate-800 space-y-1">
-                      <div className="text-emerald-700 font-bold">✓ Lighthouse Score: Target 100/100 Performance</div>
-                      <div className="text-blue-700 font-bold">✓ Sub-Second Global Edge Latency</div>
-                      <div className="text-indigo-700 font-bold">✓ Monitored Quality SLA Window: Active (90 Days)</div>
-                    </div>
                   </div>
                 )}
 
@@ -611,7 +629,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
 
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                  Growth Blueprint Generated for {companyName}
+                  Growth Blueprint Generated for {companyName || 'Your Venture'}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-md mx-auto">
                   Based on your {industry} sector and {launchTimeline.replace('_', '-')} timeline, we have tailored your initial sprint configuration.
@@ -622,7 +640,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
               <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-left grid grid-cols-2 gap-4 text-xs">
                 <div>
                   <span className="text-slate-500 block font-mono text-[10px] uppercase">Venture Lead</span>
-                  <span className="font-bold text-slate-900">{fullName}</span>
+                  <span className="font-bold text-slate-900">{fullName || 'Partner Lead'}</span>
                 </div>
                 <div>
                   <span className="text-slate-500 block font-mono text-[10px] uppercase">Primary Objective</span>

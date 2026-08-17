@@ -14,15 +14,17 @@ import {
   Share2, 
   CheckCircle2, 
   Cpu, 
-  Globe,
-  Palette,
-  Star
+  Globe, 
+  Palette, 
+  Star,
+  Info
 } from 'lucide-react';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { BlurText } from '@/components/ui/blur-text';
 
 interface HeroSectionProps {
   onOpenProjectModal: (service?: string) => void;
+  onOpenMethodology?: () => void;
 }
 
 const CAPABILITY_PILLS = [
@@ -34,7 +36,7 @@ const CAPABILITY_PILLS = [
   { icon: ShieldCheck, label: '90-Day Free Fix Guarantee', type: 'tech', color: 'text-blue-700', bg: 'bg-blue-50 border-blue-200' },
 ];
 
-export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
+export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSectionProps) {
   return (
     <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 overflow-hidden bg-gradient-to-b from-white via-slate-50/80 to-slate-100/60">
       {/* Background Decorative Gradients for White + Black + Blue + Grey Luxury Theme */}
@@ -80,7 +82,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           />
         </h1>
 
-        {/* High-Impact Sub-copy Tailored for Business Owners & Non-Techies */}
+        {/* High-Impact Sub-copy Tailored for Business Owners */}
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,6 +104,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           <MagneticButton strength={12}>
             <button
               id="hero-discuss-project-btn"
+              type="button"
               onClick={() => onOpenProjectModal()}
               className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/35 hover:scale-[1.02] transition-all cursor-pointer brand-glow"
             >
@@ -128,10 +131,16 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mt-8 inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-5 py-2.5 rounded-full bg-white/90 border border-slate-200 shadow-sm text-xs text-slate-600 font-medium"
         >
-          <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            onClick={onOpenMethodology}
+            className="flex items-center gap-1.5 hover:text-blue-600 transition-colors cursor-pointer text-left"
+            title="Click to view testing methodology"
+          >
             <ShieldCheck className="w-4 h-4 text-blue-600" />
-            <span className="font-bold text-slate-900">Tested on Every Device Before Launch</span>
-          </div>
+            <span className="font-bold text-slate-900">Tested on 18 Screen Sizes</span>
+            <Info className="w-3 h-3 text-slate-400" />
+          </button>
 
           <div className="hidden sm:block text-slate-300">•</div>
 
@@ -144,7 +153,7 @@ export function HeroSection({ onOpenProjectModal }: HeroSectionProps) {
 
           <div className="flex items-center gap-1.5">
             <Zap className="w-4 h-4 text-blue-600" />
-            <span className="font-bold text-slate-900">Website Loads in Under 1 Second</span>
+            <span className="font-bold text-slate-900">Sub-Second Page Delivery</span>
           </div>
         </motion.div>
 

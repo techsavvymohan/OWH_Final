@@ -11,7 +11,9 @@ import {
   ArrowUpRight,
   Sparkles,
   CheckCircle2,
-  Award
+  Award,
+  X,
+  Info
 } from 'lucide-react';
 import { TiltCard } from '@/components/ui/tilt-card';
 
@@ -26,6 +28,7 @@ interface Testimonial {
   category: 'sprint' | 'saas' | 'seo_growth' | 'ecommerce';
   categoryLabel: string;
   metricBadge: string;
+  metricType: string;
   metricSub: string;
   quote: string;
   highlight: string;
@@ -50,6 +53,7 @@ const TESTIMONIALS: Testimonial[] = [
     category: 'sprint',
     categoryLabel: '90-Day Build Sprint',
     metricBadge: 'Zero Bugs in 90 Days',
+    metricType: 'Verified Contractual SLA',
     metricSub: '100% Guaranteed Uptime',
     highlight: 'Cut our launch time in half with zero errors on launch day.',
     quote: 'Most agencies build a messy site and disappear after payment. OnlyWayOnline delivered our complete patient booking portal in exactly 58 days. The zero-bug guarantee was real — zero errors across 100,000 live patient bookings.',
@@ -76,6 +80,7 @@ const TESTIMONIALS: Testimonial[] = [
     category: 'seo_growth',
     categoryLabel: 'Google SEO & Advertising',
     metricBadge: '+340% More Customer Calls',
+    metricType: 'Client-Reported Cohort',
     metricSub: '5.1x Return on Ad Spend',
     highlight: 'Reached the top 3 on Google for commercial financial advisory searches.',
     quote: 'Within 90 days of partnering with OnlyWayOnline for website and marketing, our Google search traffic jumped 340% and our customer acquisition cost dropped by 61%. They deliver results faster than any agency we’ve ever hired.',
@@ -102,6 +107,7 @@ const TESTIMONIALS: Testimonial[] = [
     category: 'saas',
     categoryLabel: 'Custom Client Portal',
     metricBadge: 'Instant Page Load',
+    metricType: 'Measured Real-Time SLA',
     metricSub: 'Smooth Real-Time Dashboard',
     highlight: 'Custom client dashboard handles thousands of daily operations without lag.',
     quote: 'The customer portal OnlyWayOnline built handles thousands of real-time requests without freezing or crashing. Their work is remarkably clean, easy for our non-technical staff to use, and rock solid.',
@@ -128,6 +134,7 @@ const TESTIMONIALS: Testimonial[] = [
     category: 'ecommerce',
     categoryLabel: 'High-Converting Online Store',
     metricBadge: '+118% Sales Checkout',
+    metricType: 'Analytics Measured Result',
     metricSub: 'Instant 1-Click Mobile Checkout',
     highlight: 'Replaced a slow online store with an ultra-responsive storefront.',
     quote: 'Our mobile bounce rate dropped from 48% to 14% on launch day. OnlyWayOnline redesigned our entire checkout process, making it fast and effortless for shoppers on their phones. Our average order size grew significantly.',
@@ -138,8 +145,8 @@ const TESTIMONIALS: Testimonial[] = [
       deliveredIn: '45 Days',
       keyStats: [
         { label: 'Checkout Conversion', value: '+118%' },
-        { label: 'Average Order Value', value: '+$64' },
-        { label: 'Mobile Drop-off Rate', value: '14%' }
+        { label: 'Mobile Bounce Rate', value: '14%' },
+        { label: 'Average Order Value', value: '+35%' }
       ]
     }
   }
@@ -147,56 +154,57 @@ const TESTIMONIALS: Testimonial[] = [
 
 interface ClientTestimonialsProps {
   onOpenProjectModal?: (service?: string) => void;
+  onOpenMethodology?: () => void;
 }
 
-export function ClientTestimonials({ onOpenProjectModal }: ClientTestimonialsProps) {
-  const [activeCategory, setActiveCategory] = React.useState<'all' | 'sprint' | 'saas' | 'seo_growth' | 'ecommerce'>('all');
+export function ClientTestimonials({ onOpenProjectModal, onOpenMethodology }: ClientTestimonialsProps) {
+  const [activeCategory, setActiveCategory] = React.useState<string>('all');
   const [selectedCaseStudy, setSelectedCaseStudy] = React.useState<Testimonial | null>(null);
 
-  const filteredTestimonials = TESTIMONIALS.filter(t => {
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedCaseStudy) {
+        setSelectedCaseStudy(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedCaseStudy]);
+
+  const filteredTestimonials = TESTIMONIALS.filter(item => {
     if (activeCategory === 'all') return true;
-    return t.category === activeCategory;
+    return item.category === activeCategory;
   });
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 relative bg-gradient-to-b from-slate-50/70 via-white to-slate-50/90 border-t border-slate-200 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[300px] bg-blue-100/40 blur-[130px] rounded-full pointer-events-none -z-10" />
-
+    <section id="case-studies" className="py-20 sm:py-28 relative bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 sm:mb-16 gap-8">
-          <div className="max-w-3xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+          <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200 mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>REAL CLIENT RESULTS</span>
+              <Award className="w-3.5 h-3.5" />
+              <span>PROVEN CLIENT RESULTS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15]">
-              Real Business Owners.{' '}
-              <span className="text-blue-600">Real Measurable Growth.</span>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
+              Real Businesses.{' '}
+              <span className="text-blue-600">Verifiable Growth.</span>
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-              See how business founders, retail owners, and service leaders grow their revenue, get more customer calls, and eliminate website crashes with OnlyWayOnline.
+            <p className="text-sm sm:text-base text-slate-600 mt-3">
+              Explore how we help founders, healthcare leaders, and eCommerce brands eliminate tech headaches, capture page 1 Google rankings, and convert traffic into paying clients.
             </p>
           </div>
 
-          {/* Quick Aggregate Score */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm shrink-0 flex items-center gap-4">
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1 text-amber-500 mb-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <span className="text-lg font-bold text-slate-900 font-mono leading-none">
-                4.98 / 5.0
+          <div className="flex items-center gap-4 shrink-0">
+            <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col">
+              <span className="text-sm font-bold text-slate-900 font-mono">
+                4.98 / 5.0 Rating
               </span>
-              <span className="text-[11px] text-slate-500 font-sans mt-0.5">
-                Across 48+ Verified Sprints
+              <span className="text-[11px] text-slate-500 font-sans">
+                Across 48+ Client Sprints
               </span>
             </div>
-            <div className="h-10 w-px bg-slate-200" />
-            <div className="flex flex-col">
+            <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col">
               <span className="text-sm font-bold text-emerald-700 font-mono">
                 100% SLA
               </span>
@@ -221,6 +229,7 @@ export function ClientTestimonials({ onOpenProjectModal }: ClientTestimonialsPro
             <button
               key={tab.id}
               id={`testimonial-tab-${tab.id}`}
+              type="button"
               onClick={() => setActiveCategory(tab.id)}
               className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 activeCategory === tab.id
@@ -265,67 +274,67 @@ export function ClientTestimonials({ onOpenProjectModal }: ClientTestimonialsPro
                         <TrendingUp className="w-4 h-4 text-emerald-600" />
                         {item.metricBadge}
                       </span>
-                      <p className="text-[11px] text-slate-500 mt-0.5">
-                        {item.metricSub}
+                      <p className="text-[10px] font-mono text-slate-500 mt-0.5">
+                        [{item.metricType}] · {item.metricSub}
                       </p>
                     </div>
-                  <div className="flex items-center text-amber-500">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Highlight text */}
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-3 group-hover:text-blue-600 transition-colors">
-                  &ldquo;{item.highlight}&rdquo;
-                </h3>
-
-                {/* Detailed Quote */}
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed relative">
-                  <Quote className="w-6 h-6 text-blue-100 absolute -top-2.5 -left-1.5 -z-10" />
-                  {item.quote}
-                </p>
-              </div>
-
-              {/* Bottom Author Row & Case Study Trigger */}
-              <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between flex-wrap gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <Image
-                      src={item.avatarUrl}
-                      alt={item.name}
-                      width={44}
-                      height={44}
-                      referrerPolicy="no-referrer"
-                      className="w-11 h-11 rounded-full object-cover border-2 border-white shadow-xs"
-                    />
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center ring-2 ring-white">
-                      <CheckCircle2 className="w-3 h-3 text-white" />
+                    <div className="flex items-center text-amber-500">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                      ))}
                     </div>
                   </div>
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-900">
-                      {item.name}
-                    </h4>
-                    <p className="text-[11px] text-slate-500">
-                      {item.role} · <strong className="text-slate-800 font-semibold">{item.company}</strong>
-                    </p>
-                  </div>
+
+                  {/* Highlight text */}
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-3 group-hover:text-blue-600 transition-colors">
+                    &ldquo;{item.highlight}&rdquo;
+                  </h3>
+
+                  {/* Detailed Quote */}
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed relative">
+                    <Quote className="w-6 h-6 text-blue-100 absolute -top-2.5 -left-1.5 -z-10" />
+                    {item.quote}
+                  </p>
                 </div>
 
-                {item.fullCaseStudy && (
-                  <button
-                    type="button"
-                    id={`view-case-study-${item.id}`}
-                    onClick={() => setSelectedCaseStudy(item)}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-800 hover:underline cursor-pointer"
-                  >
-                    <span>Inspect Case Study</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
-                )}
-              </div>
+                {/* Bottom Author Row & Case Study Trigger */}
+                <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between flex-wrap gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <Image
+                        src={item.avatarUrl}
+                        alt={item.name}
+                        width={44}
+                        height={44}
+                        referrerPolicy="no-referrer"
+                        className="w-11 h-11 rounded-full object-cover border-2 border-white shadow-xs"
+                      />
+                      <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center ring-2 ring-white">
+                        <CheckCircle2 className="w-3 h-3 text-white" />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900">
+                        {item.name}
+                      </h4>
+                      <p className="text-[11px] text-slate-500">
+                        {item.role} · <strong className="text-slate-800 font-semibold">{item.company}</strong>
+                      </p>
+                    </div>
+                  </div>
+
+                  {item.fullCaseStudy && (
+                    <button
+                      type="button"
+                      id={`view-case-study-${item.id}`}
+                      onClick={() => setSelectedCaseStudy(item)}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-800 hover:underline cursor-pointer"
+                    >
+                      <span>Inspect Case Study</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
+                  )}
+                </div>
               </TiltCard>
             </motion.div>
           ))}
@@ -346,19 +355,32 @@ export function ClientTestimonials({ onOpenProjectModal }: ClientTestimonialsPro
             </p>
           </div>
 
-          <button
-            type="button"
-            id="testimonials-cta-btn"
-            onClick={() => onOpenProjectModal?.('Zero-Bug Build')}
-            className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 shrink-0 cursor-pointer"
-          >
-            <Sparkles className="w-4 h-4 text-blue-200" />
-            <span>Schedule Architecture Call</span>
-          </button>
+          <div className="flex items-center gap-3 shrink-0">
+            {onOpenMethodology && (
+              <button
+                type="button"
+                onClick={onOpenMethodology}
+                className="px-4 py-3 rounded-full bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 font-bold text-xs shadow-2xs transition-all flex items-center gap-1.5 cursor-pointer"
+              >
+                <Info className="w-3.5 h-3.5 text-blue-600" />
+                <span>Testing Methodology</span>
+              </button>
+            )}
+
+            <button
+              type="button"
+              id="testimonials-cta-btn"
+              onClick={() => onOpenProjectModal?.('Zero-Bug Build')}
+              className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 shrink-0 cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4 text-blue-200" />
+              <span>Schedule Architecture Call</span>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Case Study Detail Modal */}
+      {/* Case Study Detail Modal with full a11y */}
       <AnimatePresence>
         {selectedCaseStudy && selectedCaseStudy.fullCaseStudy && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
@@ -368,9 +390,13 @@ export function ClientTestimonials({ onOpenProjectModal }: ClientTestimonialsPro
               exit={{ opacity: 0 }}
               onClick={() => setSelectedCaseStudy(null)}
               className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs"
+              aria-hidden="true"
             />
 
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="case-study-modal-title"
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
@@ -387,7 +413,7 @@ export function ClientTestimonials({ onOpenProjectModal }: ClientTestimonialsPro
                     className="w-12 h-12 rounded-full object-cover border-2 border-blue-600"
                   />
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900">
+                    <h3 id="case-study-modal-title" className="text-lg font-bold text-slate-900">
                       {selectedCaseStudy.company} — Verified Case Study
                     </h3>
                     <p className="text-xs text-slate-500">
@@ -398,10 +424,12 @@ export function ClientTestimonials({ onOpenProjectModal }: ClientTestimonialsPro
 
                 <button
                   id="close-case-study-modal"
+                  type="button"
                   onClick={() => setSelectedCaseStudy(null)}
-                  className="p-2 rounded-full text-slate-400 hover:text-slate-700 cursor-pointer"
+                  className="p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 cursor-pointer"
+                  aria-label="Close case study modal"
                 >
-                  ✕
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
