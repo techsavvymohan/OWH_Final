@@ -226,7 +226,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                     Dedicated Principal Engineer & Growth Strategist Assigned
                   </h3>
                   <p className="text-[11px] text-blue-700 mt-0.5">
-                    Your venture profile initializes your personalized Zero-Bug handover protocol and Core Web Vitals telemetry guard.
+                    Your venture profile initializes your personalized Zero-Bug handover protocol and Core Web Vitals speed guard.
                   </p>
                 </div>
               </div>
@@ -447,7 +447,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
               className="space-y-4"
             >
               <div className="text-xs text-slate-600">
-                Connect your existing tools to enable real-time telemetry syncing in the Unified Dashboard. All tokens are encrypted with client-side isolation.
+                Connect your existing tools to enable real-time data syncing in your Client Dashboard. All tokens are encrypted with client-side isolation.
               </div>
 
               <div className="space-y-3">
@@ -536,7 +536,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
               className="space-y-4"
             >
               <div className="flex items-center gap-2 p-1 rounded-2xl bg-slate-100 border border-slate-200">
-                {['Zero-Bug SLA', 'Live Telemetry', '90-Day Roadmap', 'Notification Hub'].map((tab, idx) => (
+                {['Zero-Bug SLA', 'Live Dashboard', '90-Day Roadmap', 'Notification Hub'].map((tab, idx) => (
                   <button
                     key={tab}
                     type="button"
@@ -563,7 +563,7 @@ export function OnboardingModal({ isOpen, onClose, onFinish }: OnboardingModalPr
                       Cross-Device QA & Monitored 90-Day Stability
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
-                      Every code deliverable is tested across 18 physical viewport breakpoints with sub-second execution thresholds. Post-launch, our automated 24/7 telemetry guarantees free engineering fixes within 24 hours.
+                      Every code deliverable is tested across 18 physical viewport breakpoints with sub-second execution thresholds. Post-launch, our automated 24/7 site health monitoring guarantees free engineering fixes within 24 hours.
                     </p>
                   </div>
                 )}

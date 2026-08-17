@@ -610,13 +610,17 @@ function ModalInnerForm({
                 </button>
 
                 {/* Trust Footer */}
-                <div className="mt-3 flex items-center justify-center gap-4 text-[11px] text-slate-500 font-medium">
+                <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-[11px] text-slate-500 font-medium">
                   <span className="flex items-center gap-1">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 100% Free · No Obligation
                   </span>
-                  <span>•</span>
+                  <span className="hidden sm:inline">•</span>
                   <span className="flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5 text-blue-600" /> Fast Response Within 2 Hours
+                  </span>
+                  <span className="hidden sm:inline">•</span>
+                  <span className="flex items-center gap-1 text-slate-700">
+                    <Phone className="w-3 h-3 text-emerald-600" /> Helpline: <a href="tel:+917827701112" className="text-blue-600 font-bold hover:underline">+91 7827701112</a>
                   </span>
                 </div>
               </div>
@@ -671,13 +675,13 @@ function ModalInnerForm({
               {/* Action Buttons */}
               <div className="pt-2 max-w-lg mx-auto flex flex-col sm:flex-row items-center gap-3">
                 <a
-                  href={`https://wa.me/?text=Hi%20OnlyWayOnline%20team,%20I%20just%20requested%20a%20call%20for%20my%20business%20(${encodeURIComponent(name || 'client')})`}
+                  href={`https://wa.me/917827701112?text=Hi%20OnlyWayOnline%20team,%20I%20just%20requested%20a%20call%20for%20my%20business%20(${encodeURIComponent(name || 'client')})`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  <span>Chat on WhatsApp Now</span>
+                  <span>Chat on WhatsApp (+91 7827701112)</span>
                 </a>
 
                 <button

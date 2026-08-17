@@ -15,7 +15,9 @@ import {
   CheckCircle2,
   ChevronDown,
   Lock,
-  Layers
+  Layers,
+  Phone,
+  MessageCircle
 } from 'lucide-react';
 import { ThemeToggle } from './ui/theme-toggle';
 import { NotificationCenter } from './notifications/notification-center';
@@ -240,10 +242,10 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                         </div>
                         <div>
                           <div className="text-xs font-bold text-slate-900 group-hover:text-purple-700">
-                            Telemetry Control Hub
+                            Live Growth & Health Hub
                           </div>
                           <p className="text-[11px] text-slate-500">
-                            Live Infrastructure & Growth Dashboard
+                            Real-Time Website & Marketing Dashboard
                           </p>
                         </div>
                       </a>
@@ -379,10 +381,10 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                               const el = document.getElementById('dashboard');
                               if (el) el.scrollIntoView({ behavior: 'smooth' });
                             }}
-                            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors text-left"
+                            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors text-left cursor-pointer"
                           >
                             <Layers className="w-3.5 h-3.5 text-indigo-600" />
-                            <span>Telemetry Dashboard</span>
+                            <span>Live Client Dashboard</span>
                           </button>
                         </div>
 
@@ -609,11 +611,31 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                     setMobileMenuOpen(false);
                     onOpenProjectModal();
                   }}
-                  className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-md shadow-blue-600/20"
+                  className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-md shadow-blue-600/20 cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4 text-blue-200" />
                   <span>Discuss Your Project</span>
                 </button>
+
+                {/* Direct Call & WhatsApp Buttons */}
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href="tel:+917827701112"
+                    className="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-blue-600" />
+                    <span>Call Us</span>
+                  </a>
+                  <a
+                    href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2.5 px-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors border border-emerald-200"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
 
                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1 font-mono text-slate-600">
                   <div className="flex items-center gap-1.5 text-slate-800 font-sans font-semibold">

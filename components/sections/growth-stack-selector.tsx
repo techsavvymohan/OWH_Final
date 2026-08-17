@@ -58,7 +58,7 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
         'Next.js 15 server-first stack for sub-second page loads',
         'Full Google SEO & schema setup so customers find you easily',
         'Target 100/100 Google speed score on mobile & laptop',
-        '30-Day free fix guarantee & 24/7 uptime telemetry',
+        '30-Day free fix guarantee & 24/7 uptime monitoring',
       ],
     },
     {

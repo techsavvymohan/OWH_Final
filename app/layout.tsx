@@ -156,6 +156,7 @@ const jsonLdData = {
       contactPoint: [
         {
           '@type': 'ContactPoint',
+          telephone: '+91-7827701112',
           contactType: 'Customer Support & Project Discovery',
           email: 'info@onlywayonline.com',
           availableLanguage: ['English', 'Hindi'],
@@ -186,7 +187,7 @@ const jsonLdData = {
       name: 'OnlyWayOnline Web Systems & Growth Agency',
       parentOrganization: { '@id': 'https://onlywayonline.com/#organization' },
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80',
-      telephone: '+91-11-49000000',
+      telephone: '+91-7827701112',
       email: 'info@onlywayonline.com',
       url: 'https://onlywayonline.com',
       priceRange: '$$$$',

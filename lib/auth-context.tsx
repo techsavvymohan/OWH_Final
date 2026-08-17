@@ -90,7 +90,7 @@ const DEFAULT_NOTIFICATIONS: NotificationItem[] = [
     timestamp: '10 mins ago',
     read: false,
     badge: '100% Core Web Vitals',
-    actionLabel: 'View Telemetry',
+    actionLabel: 'View Live Health',
   },
   {
     id: 'notif-2',
@@ -242,7 +242,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     
     addNotification({
       title: `Welcome back, ${loggedUser.name}!`,
-      message: 'Your Zero-Bug telemetry and Growth sprint monitors are active.',
+      message: 'Your Zero-Bug guarantee and Growth sprint monitors are active.',
       category: 'system',
       badge: 'Live Session',
     });

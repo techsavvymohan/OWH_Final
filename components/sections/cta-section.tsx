@@ -7,7 +7,9 @@ import {
   ShieldCheck, 
   Mail, 
   CheckCircle2, 
-  Clock 
+  Clock,
+  Phone,
+  MessageCircle
 } from 'lucide-react';
 
 interface CtaSectionProps {
@@ -43,11 +45,11 @@ export function CtaSection({ onOpenProjectModal }: CtaSectionProps) {
           </div>
 
           {/* Action Button Row */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 relative z-10">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 pt-2 relative z-10">
             <button
               id="cta-discuss-project-btn"
               onClick={() => onOpenProjectModal('15-Minute Free Consultation')}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-blue-700 font-extrabold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-xl shadow-slate-900/20 hover:scale-105 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 text-blue-700 font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl shadow-slate-900/20 hover:scale-105 transition-all cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-amber-500 fill-amber-400" />
               <span>Discuss Your Project (Free 15-Min Call)</span>
@@ -55,11 +57,21 @@ export function CtaSection({ onOpenProjectModal }: CtaSectionProps) {
             </button>
 
             <a
-              href="mailto:info@onlywayonline.com?subject=Project%20Inquiry%20%E2%80%94%20OnlyWayOnline"
-              className="w-full sm:w-auto px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm"
+              href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-emerald-900/30"
             >
-              <Mail className="w-4 h-4 text-sky-200" />
-              <span>info@onlywayonline.com</span>
+              <MessageCircle className="w-4 h-4" />
+              <span>WhatsApp: +91 7827701112</span>
+            </a>
+
+            <a
+              href="tel:+917827701112"
+              className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm"
+            >
+              <Phone className="w-4 h-4 text-sky-200" />
+              <span>Call +91 7827701112</span>
             </a>
           </div>
 

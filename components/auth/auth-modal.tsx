@@ -194,7 +194,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', onSuccess }:
               {mode === 'reset' && 'Reset your Password'}
             </h2>
             <p className="text-sm text-slate-600 mt-1">
-              {mode === 'login' && 'Access real-time Zero-Bug telemetry, growth dashboards, and sprint deliverables.'}
+              {mode === 'login' && 'Access your live site health, growth dashboards, and sprint deliverables.'}
               {mode === 'signup' && 'Deploy verified web systems, track SEO growth sprints, and guarantee SLA uptime.'}
               {mode === 'reset' && 'Enter your verified work email to receive password reset instructions.'}
             </p>

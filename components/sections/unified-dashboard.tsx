@@ -72,7 +72,7 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
             <span className="text-blue-600">One Real-Time Dashboard.</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed">
-            Eliminate the confusion of logging into disjointed portals or chasing unaccountable contractors. Monitor infrastructure health, Google search rankings, multi-channel social impressions, and paid media ROI in a single live telemetry hub.
+            Eliminate the confusion of logging into disjointed portals or chasing unaccountable contractors. Monitor infrastructure health, Google search rankings, multi-channel social impressions, and paid media ROI in a single live client dashboard.
           </p>
         </motion.div>
 
@@ -163,7 +163,7 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                     </div>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-mono font-bold border border-emerald-200">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                      100% Operational Telemetry
+                      100% Live Site Health
                     </span>
                   </div>
 

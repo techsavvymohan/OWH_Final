@@ -9,7 +9,9 @@ import {
   Globe, 
   ArrowUp, 
   Sparkles, 
-  ExternalLink 
+  ExternalLink,
+  Phone,
+  MessageCircle
 } from 'lucide-react';
 import { ThemeToggle } from './ui/theme-toggle';
 
@@ -138,6 +140,23 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-blue-400 shrink-0" />
                 <a href="mailto:info@onlywayonline.com" className="text-blue-400 hover:underline font-semibold">
                   info@onlywayonline.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                <a href="tel:+917827701112" className="text-slate-300 hover:text-white transition-colors font-medium">
+                  +91 7827701112
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                <a
+                  href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 hover:underline font-semibold"
+                >
+                  WhatsApp: +91 7827701112
                 </a>
               </div>
             </div>
