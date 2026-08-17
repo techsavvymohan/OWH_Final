@@ -76,18 +76,18 @@ export function LiveStatusDock({ onOpenProjectModal }: LiveStatusDockProps) {
             {/* Direct Connect Buttons */}
             <div className="pt-1 space-y-1.5">
               <a
-                href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
+                href="https://wa.me/916398638176?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
               >
                 <WhatsAppIcon className="w-4 h-4" />
-                <span>WhatsApp (+91 7827701112)</span>
+                <span>Chat on WhatsApp</span>
               </a>
 
               <div className="grid grid-cols-2 gap-1.5">
                 <a
-                  href="tel:+917827701112"
+                  href="tel:+916398638176"
                   className="py-1.5 px-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 hover:text-white font-semibold text-[11px] flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <PhoneCallIcon className="w-3.5 h-3.5" />

@@ -55,21 +55,21 @@ export function CtaSection({ onOpenProjectModal }: CtaSectionProps) {
             </button>
 
             <a
-              href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
+              href="https://wa.me/916398638176?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-lg shadow-emerald-900/30"
             >
               <WhatsAppIcon className="w-5 h-5" />
-              <span>WhatsApp: +91 7827701112</span>
+              <span>Chat on WhatsApp</span>
             </a>
 
             <a
-              href="tel:+917827701112"
-              className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-sm"
+              href="tel:+916398638176"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-sm"
             >
               <PhoneCallIcon className="w-5 h-5" />
-              <span>Call +91 7827701112</span>
+              <span>Direct Phone Call</span>
             </a>
           </div>
 

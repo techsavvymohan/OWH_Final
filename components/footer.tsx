@@ -143,19 +143,19 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <PhoneCallIcon className="w-4 h-4 text-blue-400 shrink-0" />
-                <a href="tel:+917827701112" className="text-slate-300 hover:text-white transition-colors font-medium">
-                  +91 7827701112
+                <a href="tel:+916398638176" className="text-slate-300 hover:text-white transition-colors font-medium">
+                  Direct Phone Call
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <WhatsAppIcon className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a
-                  href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
+                  href="https://wa.me/916398638176?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-emerald-400 hover:text-emerald-300 hover:underline font-semibold"
                 >
-                  WhatsApp: +91 7827701112
+                  Chat on WhatsApp
                 </a>
               </div>
             </div>

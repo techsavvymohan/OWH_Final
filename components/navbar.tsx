@@ -619,14 +619,14 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                 {/* Direct Call & WhatsApp Buttons */}
                 <div className="grid grid-cols-2 gap-2">
                   <a
-                    href="tel:+917827701112"
+                    href="tel:+916398638176"
                     className="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
                   >
                     <PhoneCallIcon className="w-4 h-4 text-blue-600" />
                     <span>Call Us</span>
                   </a>
                   <a
-                    href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
+                    href="https://wa.me/916398638176?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-2.5 px-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-semibold flex items-center justify-center gap-2 transition-colors border border-emerald-200"
