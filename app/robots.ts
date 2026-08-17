@@ -24,7 +24,7 @@ export default function robots(): MetadataRoute.Robots {
           'Bingbot',
           'Googlebot',
         ],
-        allow: ['/', '/llms.txt', '/sitemap.xml', '/manifest.webmanifest'],
+        allow: ['/', '/work', '/llms.txt', '/sitemap.xml', '/manifest.webmanifest'],
         disallow: ['/api/private/'],
       },
     ],
