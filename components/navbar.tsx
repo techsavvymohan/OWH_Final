@@ -29,9 +29,16 @@ interface NavbarProps {
   onOpenOnboardingModal?: () => void;
 }
 
-const NAV_LINKS = [
+interface NavLinkItem {
+  name: string;
+  href: string;
+  badge?: string;
+  isRoute?: boolean;
+}
+
+const NAV_LINKS: NavLinkItem[] = [
   { name: 'Solutions', href: '#services', badge: 'Build' },
-  { name: 'Our Work', href: '/work', badge: '3 Builds', isRoute: true },
+  { name: 'Our Work', href: '/work', isRoute: true },
   { name: 'Marketing', href: '#growth', badge: 'Scale' },
   { name: 'Results Dashboard', href: '#dashboard' },
   { name: 'How It Works', href: '#timeline' },
@@ -294,12 +301,9 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
               {/* Our Work Dedicated Direct Nav Link */}
               <Link
                 href="/work"
-                className="relative px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 text-slate-700 hover:text-slate-900 hover:bg-slate-100/60"
+                className="relative px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer flex items-center text-slate-700 hover:text-slate-900 hover:bg-slate-100/60"
               >
                 <span>Our Work</span>
-                <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-bold">
-                  3 Builds
-                </span>
               </Link>
 
               {/* Direct Links */}

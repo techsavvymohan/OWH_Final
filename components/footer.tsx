@@ -65,7 +65,7 @@ export function Footer() {
               <li>
                 <Link href="/work" className="text-blue-400 font-bold hover:underline transition-colors flex items-center gap-1.5">
                   <Sparkles className="w-3 h-3 text-amber-400" />
-                  <span>Our Work (3 Builds)</span>
+                  <span>Our Work</span>
                 </Link>
               </li>
               <li>
