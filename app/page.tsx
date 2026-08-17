@@ -45,6 +45,11 @@ const BeforeAfterSlider = dynamic(
   { ssr: true }
 );
 
+const SelectedWorkShowcase = dynamic(
+  () => import('@/components/sections/selected-work-showcase').then(m => m.SelectedWorkShowcase),
+  { ssr: true }
+);
+
 const PhilosophyStats = dynamic(
   () => import('@/components/sections/philosophy-stats').then(m => m.PhilosophyStats),
   { ssr: true }
@@ -198,12 +203,17 @@ export default function HomePage() {
         <CoreCapabilities onOpenProjectModal={handleOpenProjectModal} />
       </SectionReveal>
 
-      {/* 10. Before / After Comparison Slider */}
+      {/* 10. Flagship Selected Digital Products (PersueKey, GoCoupon, MatchingProp) */}
+      <SectionReveal>
+        <SelectedWorkShowcase onOpenProjectModal={handleOpenProjectModal} />
+      </SectionReveal>
+
+      {/* 11. Before / After Comparison Slider */}
       <SectionReveal>
         <BeforeAfterSlider />
       </SectionReveal>
 
-      {/* 11. Brand Philosophy & Stats (Strategy · Impact · Growth · 100%) */}
+      {/* 12. Brand Philosophy & Stats (Strategy · Impact · Growth · 100%) */}
       <SectionReveal>
         <PhilosophyStats />
       </SectionReveal>

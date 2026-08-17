@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { 
   ShieldCheck, 
   Mail, 
@@ -61,6 +62,12 @@ export function Footer() {
               Revenue Line A · Build
             </h4>
             <ul className="space-y-2">
+              <li>
+                <Link href="/work" className="text-blue-400 font-bold hover:underline transition-colors flex items-center gap-1.5">
+                  <Sparkles className="w-3 h-3 text-amber-400" />
+                  <span>Our Work (3 Builds)</span>
+                </Link>
+              </li>
               <li>
                 <a href="#services" className="text-slate-400 hover:text-blue-400 transition-colors">
                   Websites & Redesign

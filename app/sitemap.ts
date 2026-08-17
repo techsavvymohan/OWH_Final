@@ -13,6 +13,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: [`${baseUrl}/assets/logo.webp`],
     },
     {
+      url: `${baseUrl}/work`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      images: [`${baseUrl}/assets/logo.webp`],
+    },
+    {
       url: `${baseUrl}/llms.txt`,
       lastModified: currentDate,
       changeFrequency: 'weekly',

@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { 
   ArrowRight, 
@@ -115,11 +116,21 @@ export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSecti
           </MagneticButton>
 
           <MagneticButton strength={10}>
+            <Link
+              href="/work"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md"
+            >
+              <span>Explore Our Work</span>
+              <ArrowRight className="w-4 h-4 text-blue-400" />
+            </Link>
+          </MagneticButton>
+
+          <MagneticButton strength={8}>
             <a
               href="#services"
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white border border-slate-300 text-slate-800 font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-slate-50 transition-all cursor-pointer shadow-xs"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white border border-slate-300 text-slate-700 font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-slate-50 transition-all cursor-pointer shadow-xs"
             >
-              <span>See Our Services & Guarantee</span>
+              <span>Services & Guarantee</span>
             </a>
           </MagneticButton>
         </motion.div>

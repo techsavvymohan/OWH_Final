@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Menu,
@@ -30,10 +31,11 @@ interface NavbarProps {
 
 const NAV_LINKS = [
   { name: 'Solutions', href: '#services', badge: 'Build' },
-  { name: 'Marketing', href: '#growth', badge: 'Scale', isNew: true },
+  { name: 'Our Work', href: '/work', badge: '3 Builds', isRoute: true },
+  { name: 'Marketing', href: '#growth', badge: 'Scale' },
   { name: 'Results Dashboard', href: '#dashboard' },
   { name: 'How It Works', href: '#timeline' },
-  { name: 'Pricing', href: '#pricing' },
+  { name: 'Pricing & Plans', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
 ];
 
@@ -96,12 +98,12 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
-      e.preventDefault();
-      setActiveSection(href);
-      setSolutionsDropdownOpen(false);
       const targetId = href.replace('#', '');
       const target = document.getElementById(targetId);
       if (target) {
+        e.preventDefault();
+        setActiveSection(href);
+        setSolutionsDropdownOpen(false);
         const headerOffset = 90;
         const elementPosition = target.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -110,10 +112,14 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
           top: offsetPosition,
           behavior: 'smooth',
         });
-      } else if (href === '#') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // If element is not in DOM (e.g. on /work page), let browser navigate to /#targetId
+        window.location.href = `/${href}`;
       }
       setMobileMenuOpen(false);
+    } else {
+      setMobileMenuOpen(false);
+      setSolutionsDropdownOpen(false);
     }
   };
 
@@ -266,10 +272,35 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                           </p>
                         </div>
                       </a>
+
+                      <div className="pt-2 border-t border-slate-100 mt-1">
+                        <Link
+                          href="/work"
+                          onClick={() => setSolutionsDropdownOpen(false)}
+                          className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 hover:bg-blue-50 text-xs font-bold text-slate-800 hover:text-blue-700 transition-colors group"
+                        >
+                          <span className="flex items-center gap-2">
+                            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                            <span>Selected Work & Case Studies</span>
+                          </span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
+
+              {/* Our Work Dedicated Direct Nav Link */}
+              <Link
+                href="/work"
+                className="relative px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 text-slate-700 hover:text-slate-900 hover:bg-slate-100/60"
+              >
+                <span>Our Work</span>
+                <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-bold">
+                  3 Builds
+                </span>
+              </Link>
 
               {/* Direct Links */}
               {[
@@ -562,25 +593,44 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                 {/* Mobile Links */}
                 <div className="flex flex-col gap-1 mt-4">
                   {NAV_LINKS.map(link => (
-                    <a
-                      key={link.name}
-                      href={link.href}
-                      onClick={e => handleLinkClick(e, link.href)}
-                      className="flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors"
-                    >
-                      <span>{link.name}</span>
-                      {link.badge && (
-                        <span
-                          className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold ${
-                            link.badge === 'Scale'
-                              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                              : 'bg-blue-50 text-blue-700 border border-blue-200'
-                          }`}
-                        >
-                          {link.badge}
+                    link.isRoute ? (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                      >
+                        <span className="flex items-center gap-2">
+                          <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                          <span>{link.name}</span>
                         </span>
-                      )}
-                    </a>
+                        {link.badge && (
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                            {link.badge}
+                          </span>
+                        )}
+                      </Link>
+                    ) : (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        onClick={e => handleLinkClick(e, link.href)}
+                        className="flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors"
+                      >
+                        <span>{link.name}</span>
+                        {link.badge && (
+                          <span
+                            className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold ${
+                              link.badge === 'Scale'
+                                ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                                : 'bg-blue-50 text-blue-700 border border-blue-200'
+                            }`}
+                          >
+                            {link.badge}
+                          </span>
+                        )}
+                      </a>
+                    )
                   ))}
 
                   <button
