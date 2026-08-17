@@ -9,10 +9,9 @@ import {
   Globe, 
   ArrowUp, 
   Sparkles, 
-  ExternalLink,
-  Phone,
-  MessageCircle
+  ExternalLink
 } from 'lucide-react';
+import { WhatsAppIcon, PhoneCallIcon } from '@/components/ui/brand-icons';
 import { ThemeToggle } from './ui/theme-toggle';
 
 export function Footer() {
@@ -143,13 +142,13 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                <PhoneCallIcon className="w-4 h-4 text-blue-400 shrink-0" />
                 <a href="tel:+917827701112" className="text-slate-300 hover:text-white transition-colors font-medium">
                   +91 7827701112
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                <WhatsAppIcon className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a
                   href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
                   target="_blank"

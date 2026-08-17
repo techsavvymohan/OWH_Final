@@ -5,13 +5,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   ShieldCheck, 
   Zap, 
-  MessageCircle, 
-  Phone, 
   Sparkles, 
   X, 
   ChevronUp,
   ExternalLink
 } from 'lucide-react';
+import { WhatsAppIcon, PhoneCallIcon } from '@/components/ui/brand-icons';
 
 interface LiveStatusDockProps {
   onOpenProjectModal: (service?: string) => void;
@@ -82,7 +81,7 @@ export function LiveStatusDock({ onOpenProjectModal }: LiveStatusDockProps) {
                 rel="noopener noreferrer"
                 className="w-full py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
               >
-                <MessageCircle className="w-3.5 h-3.5" />
+                <WhatsAppIcon className="w-4 h-4" />
                 <span>WhatsApp (+91 7827701112)</span>
               </a>
 
@@ -91,7 +90,7 @@ export function LiveStatusDock({ onOpenProjectModal }: LiveStatusDockProps) {
                   href="tel:+917827701112"
                   className="py-1.5 px-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 hover:text-white font-semibold text-[11px] flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                 >
-                  <Phone className="w-3 h-3 text-blue-400" />
+                  <PhoneCallIcon className="w-3.5 h-3.5" />
                   <span>Call Us</span>
                 </a>
 

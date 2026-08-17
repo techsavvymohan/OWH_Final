@@ -5,12 +5,10 @@ import {
   Sparkles, 
   ArrowRight, 
   ShieldCheck, 
-  Mail, 
   CheckCircle2, 
-  Clock,
-  Phone,
-  MessageCircle
+  Clock 
 } from 'lucide-react';
+import { WhatsAppIcon, PhoneCallIcon } from '@/components/ui/brand-icons';
 
 interface CtaSectionProps {
   onOpenProjectModal: (service?: string) => void;
@@ -60,17 +58,17 @@ export function CtaSection({ onOpenProjectModal }: CtaSectionProps) {
               href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-emerald-900/30"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-lg shadow-emerald-900/30"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-5 h-5" />
               <span>WhatsApp: +91 7827701112</span>
             </a>
 
             <a
               href="tel:+917827701112"
-              className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm"
+              className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-sm"
             >
-              <Phone className="w-4 h-4 text-sky-200" />
+              <PhoneCallIcon className="w-5 h-5" />
               <span>Call +91 7827701112</span>
             </a>
           </div>

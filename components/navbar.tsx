@@ -15,10 +15,9 @@ import {
   CheckCircle2,
   ChevronDown,
   Lock,
-  Layers,
-  Phone,
-  MessageCircle
+  Layers
 } from 'lucide-react';
+import { WhatsAppIcon, PhoneCallIcon } from '@/components/ui/brand-icons';
 import { ThemeToggle } from './ui/theme-toggle';
 import { NotificationCenter } from './notifications/notification-center';
 import { useAuth } from '@/lib/auth-context';
@@ -621,18 +620,18 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                 <div className="grid grid-cols-2 gap-2">
                   <a
                     href="tel:+917827701112"
-                    className="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                    className="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5 text-blue-600" />
+                    <PhoneCallIcon className="w-4 h-4 text-blue-600" />
                     <span>Call Us</span>
                   </a>
                   <a
                     href="https://wa.me/917827701112?text=Hi%20OnlyWayOnline,%20I'd%20like%20to%20discuss%20a%20website%20project"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-2.5 px-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors border border-emerald-200"
+                    className="py-2.5 px-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-semibold flex items-center justify-center gap-2 transition-colors border border-emerald-200"
                   >
-                    <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
+                    <WhatsAppIcon className="w-4 h-4" />
                     <span>WhatsApp</span>
                   </a>
                 </div>
