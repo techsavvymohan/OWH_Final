@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { motion } from 'motion/react';
 import {
   Sparkles,
@@ -32,26 +31,10 @@ import { BlurText } from '@/components/ui/blur-text';
 import { SelectedWorkShowcase, FEATURED_PROJECTS } from '@/components/sections/selected-work-showcase';
 import { PageScrollProgress } from '@/components/ui/section-reveal';
 
-// Dynamic client components for overlays
-const LiveStatusDock = dynamic(
-  () => import('@/components/ui/live-status-dock').then(m => m.LiveStatusDock),
-  { ssr: false }
-);
-
-const ProjectModal = dynamic(
-  () => import('@/components/project-modal').then(m => m.ProjectModal),
-  { ssr: false }
-);
-
-const AuthModal = dynamic(
-  () => import('@/components/auth/auth-modal').then(m => m.AuthModal),
-  { ssr: false }
-);
-
-const OnboardingModal = dynamic(
-  () => import('@/components/onboarding-modal').then(m => m.OnboardingModal),
-  { ssr: false }
-);
+import { LiveStatusDock } from '@/components/ui/live-status-dock';
+import { ProjectModal } from '@/components/project-modal';
+import { AuthModal } from '@/components/auth/auth-modal';
+import { OnboardingModal } from '@/components/onboarding-modal';
 
 const CORE_PILLARS = [
   {

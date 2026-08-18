@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import { motion } from 'motion/react';
 import { Navbar } from '@/components/navbar';
 import { HeroSection } from '@/components/sections/hero-section';
@@ -9,121 +9,30 @@ import { ZeroBugBand } from '@/components/sections/zero-bug-band';
 import { PartnerMarquee } from '@/components/sections/partner-marquee';
 import { SectionReveal, PageScrollProgress } from '@/components/ui/section-reveal';
 
-// Dynamic code splitting for below-the-fold sections to optimize initial mobile payload & TBT
-const BuildBento = dynamic(
-  () => import('@/components/sections/build-bento').then(m => m.BuildBento),
-  { ssr: true }
-);
-
-const SaaSModularScene = dynamic(
-  () => import('@/components/visuals/saas-modular-scene').then(m => m.SaaSModularScene),
-  { ssr: true }
-);
-
-const EcommerceStudioScene = dynamic(
-  () => import('@/components/visuals/ecommerce-studio-scene').then(m => m.EcommerceStudioScene),
-  { ssr: true }
-);
-
-const SEORankingScene = dynamic(
-  () => import('@/components/visuals/seo-ranking-scene').then(m => m.SEORankingScene),
-  { ssr: true }
-);
-
-const LaunchBlueprintScene = dynamic(
-  () => import('@/components/visuals/launch-blueprint-scene').then(m => m.LaunchBlueprintScene),
-  { ssr: true }
-);
-
-const SignatureBrandMonolith = dynamic(
-  () => import('@/components/visuals/signature-brand-monolith').then(m => m.SignatureBrandMonolith),
-  { ssr: true }
-);
-
-const GrowthBento = dynamic(
-  () => import('@/components/sections/growth-bento').then(m => m.GrowthBento),
-  { ssr: true }
-);
-
-const FeatureMarquee = dynamic(
-  () => import('@/components/sections/feature-marquee').then(m => m.FeatureMarquee),
-  { ssr: true }
-);
-
-const UnifiedDashboard = dynamic(
-  () => import('@/components/sections/unified-dashboard').then(m => m.UnifiedDashboard),
-  { ssr: true }
-);
-
-const ProofTimeline = dynamic(
-  () => import('@/components/sections/proof-timeline').then(m => m.ProofTimeline),
-  { ssr: true }
-);
-
-const CoreCapabilities = dynamic(
-  () => import('@/components/sections/core-capabilities').then(m => m.CoreCapabilities),
-  { ssr: true }
-);
-
-const BeforeAfterSlider = dynamic(
-  () => import('@/components/sections/before-after-slider').then(m => m.BeforeAfterSlider),
-  { ssr: true }
-);
-
-const InteractiveSpeedVisualizer = dynamic(
-  () => import('@/components/sections/interactive-speed-visualizer').then(m => m.InteractiveSpeedVisualizer),
-  { ssr: true }
-);
-
-const PhilosophyStats = dynamic(
-  () => import('@/components/sections/philosophy-stats').then(m => m.PhilosophyStats),
-  { ssr: true }
-);
-
-const GrowthStackSelector = dynamic(
-  () => import('@/components/sections/growth-stack-selector').then(m => m.GrowthStackSelector),
-  { ssr: true }
-);
-
-const FaqSection = dynamic(
-  () => import('@/components/sections/faq-section').then(m => m.FaqSection),
-  { ssr: true }
-);
-
-const CtaSection = dynamic(
-  () => import('@/components/sections/cta-section').then(m => m.CtaSection),
-  { ssr: true }
-);
-
-const Footer = dynamic(
-  () => import('@/components/footer').then(m => m.Footer),
-  { ssr: true }
-);
-
-const LiveStatusDock = dynamic(
-  () => import('@/components/ui/live-status-dock').then(m => m.LiveStatusDock),
-  { ssr: false }
-);
-
-const ProjectModal = dynamic(
-  () => import('@/components/project-modal').then(m => m.ProjectModal),
-  { ssr: false }
-);
-
-const AuthModal = dynamic(
-  () => import('@/components/auth/auth-modal').then(m => m.AuthModal),
-  { ssr: false }
-);
-
-const OnboardingModal = dynamic(
-  () => import('@/components/onboarding-modal').then(m => m.OnboardingModal),
-  { ssr: false }
-);
-
-const MethodologyModal = dynamic(
-  () => import('@/components/ui/methodology-modal').then(m => m.MethodologyModal),
-  { ssr: false }
-);
+// Direct component imports for complete static HTML prerendering and SEO indexing
+import { BuildBento } from '@/components/sections/build-bento';
+import { SaaSModularScene } from '@/components/visuals/saas-modular-scene';
+import { EcommerceStudioScene } from '@/components/visuals/ecommerce-studio-scene';
+import { SEORankingScene } from '@/components/visuals/seo-ranking-scene';
+import { LaunchBlueprintScene } from '@/components/visuals/launch-blueprint-scene';
+import { SignatureBrandMonolith } from '@/components/visuals/signature-brand-monolith';
+import { GrowthBento } from '@/components/sections/growth-bento';
+import { FeatureMarquee } from '@/components/sections/feature-marquee';
+import { UnifiedDashboard } from '@/components/sections/unified-dashboard';
+import { ProofTimeline } from '@/components/sections/proof-timeline';
+import { CoreCapabilities } from '@/components/sections/core-capabilities';
+import { BeforeAfterSlider } from '@/components/sections/before-after-slider';
+import { InteractiveSpeedVisualizer } from '@/components/sections/interactive-speed-visualizer';
+import { PhilosophyStats } from '@/components/sections/philosophy-stats';
+import { GrowthStackSelector } from '@/components/sections/growth-stack-selector';
+import { FaqSection } from '@/components/sections/faq-section';
+import { CtaSection } from '@/components/sections/cta-section';
+import { Footer } from '@/components/footer';
+import { LiveStatusDock } from '@/components/ui/live-status-dock';
+import { ProjectModal } from '@/components/project-modal';
+import { AuthModal } from '@/components/auth/auth-modal';
+import { OnboardingModal } from '@/components/onboarding-modal';
+import { MethodologyModal } from '@/components/ui/methodology-modal';
 
 export default function HomePage() {
   const [isProjectModalOpen, setIsProjectModalOpen] = React.useState(false);

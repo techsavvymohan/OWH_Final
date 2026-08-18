@@ -20,7 +20,8 @@ import {
   Sparkles,
   ArrowRight,
   Zap,
-  FileText
+  FileText,
+  AlertCircle
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { GoogleMeetIcon, PhoneCallIcon, WhatsAppIcon } from '@/components/ui/brand-icons';
@@ -128,6 +129,8 @@ function resolveInitialGoal(service?: string): ProjectGoal {
   return 'website';
 }
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 function ModalInnerForm({
   onClose,
   initialService,
@@ -146,8 +149,10 @@ function ModalInnerForm({
   const [company, setCompany] = React.useState('');
   const [website, setWebsite] = React.useState('');
   const [details, setDetails] = React.useState('');
+  const [botcheck, setBotcheck] = React.useState('');
 
   const [errors, setErrors] = React.useState<Record<string, string>>({});
+  const [serverError, setServerError] = React.useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
@@ -169,21 +174,77 @@ function ModalInnerForm({
       errs.phone = 'Please provide either a phone/WhatsApp number or email';
     } else if (phone.trim() && phone.replace(/\D/g, '').length < 7) {
       errs.phone = 'Please enter a valid phone number (at least 7 digits)';
-    } else if (email.trim() && !email.includes('@')) {
-      errs.email = 'Please enter a valid email address';
+    } else if (email.trim() && !EMAIL_REGEX.test(email.trim())) {
+      errs.email = 'Please enter a valid email address (e.g. name@domain.com)';
     }
 
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const selectedGoalObj = GOAL_OPTIONS.find(g => g.id === goal) || GOAL_OPTIONS[0];
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setServerError(null);
+
     if (!validate()) return;
 
+    // Honeypot spam check - silent ignore
+    if (botcheck) {
+      setIsSubmitted(true);
+      return;
+    }
+
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '';
+    const selectedGoalLabel = selectedGoalObj.title;
+    const selectedContactLabel = CONTACT_MODES.find(m => m.id === contactMode)?.label || contactMode;
+    const selectedTimeLabel = TIME_PREFERENCES.find(t => t.id === preferredTime)?.label || preferredTime;
+    const selectedBudgetLabel = lane === 'rfp' 
+      ? `${BUDGET_TIERS.find(b => b.id === budgetTier)?.label} (${BUDGET_TIERS.find(b => b.id === budgetTier)?.range})`
+      : 'Express 15-Min Strategy Call';
+
+    const payload = {
+      access_key: accessKey,
+      subject: `🚀 New Project Consultation Request: ${name.trim()} (${selectedGoalLabel})`,
+      from_name: 'OnlyWayOnline Web Portal',
+      name: name.trim(),
+      phone: phone.trim() || 'Not provided',
+      email: email.trim() || 'Not provided',
+      company: company.trim() || 'Not specified',
+      website: website.trim() || 'Not specified',
+      project_goal: selectedGoalLabel,
+      contact_mode: selectedContactLabel,
+      preferred_time: selectedTimeLabel,
+      budget_tier: selectedBudgetLabel,
+      intake_lane: lane === 'express' ? 'Express (15-Min Call)' : 'Custom Scope (RFP)',
+      project_details: details.trim() || 'Standard 15-minute roadmap consultation requested',
+      botcheck: '',
+    };
+
+    try {
+      if (accessKey) {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await response.json();
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || 'We could not submit your request automatically. Please try again or message us directly on WhatsApp.');
+        }
+      } else {
+        // Fallback for demo / development environment before access key is populated
+        await new Promise(resolve => setTimeout(resolve, 600));
+      }
+
       setIsSubmitted(true);
       try {
         confetti({
@@ -194,10 +255,12 @@ function ModalInnerForm({
       } catch {
         // safe fallback
       }
-    }, 500);
+    } catch (err: any) {
+      setServerError(err?.message || 'Network error occurred. Please check your connection or connect directly on WhatsApp.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
-  const selectedGoalObj = GOAL_OPTIONS.find(g => g.id === goal) || GOAL_OPTIONS[0];
 
   return (
     <motion.div
@@ -587,6 +650,45 @@ function ModalInnerForm({
                 </div>
               </div>
 
+              {/* Anti-Spam Honeypot (Invisible to human visitors) */}
+              <input
+                type="text"
+                name="botcheck"
+                value={botcheck}
+                onChange={e => setBotcheck(e.target.value)}
+                className="hidden"
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+
+              {/* Server / Network Error Alert */}
+              {serverError && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-start gap-2.5"
+                  role="alert"
+                >
+                  <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <p className="font-semibold">{serverError}</p>
+                    <p className="text-[11px] text-rose-600 mt-1">
+                      Direct WhatsApp Helpline:{' '}
+                      <a
+                        href="https://wa.me/917827701112"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-bold underline text-rose-700 hover:text-rose-900"
+                      >
+                        +91 7827701112
+                      </a>
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
               {/* Submit CTA */}
               <div className="pt-2">
                 <button
@@ -597,7 +699,7 @@ function ModalInnerForm({
                   {isSubmitting ? (
                     <span className="inline-flex items-center gap-2">
                       <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Reserving Your Strategy Call…
+                      Submitting Your Project Details…
                     </span>
                   ) : (
                     <>
