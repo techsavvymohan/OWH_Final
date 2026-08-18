@@ -190,13 +190,13 @@ export function PhilosophyStats() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <TiltCard maxTilt={5} className="rounded-3xl neo-card-hover p-6 sm:p-8 flex flex-col justify-between h-full group">
+                <TiltCard maxTilt={5} className="rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:border-blue-300 hover:shadow-lg transition-all duration-200 p-6 sm:p-8 flex flex-col justify-between h-full group">
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-[11px] font-mono font-bold tracking-widest text-slate-500">
                         {stat.prefix}
                       </span>
-                      <div className={`p-2 rounded-xl ${stat.accentBg} neo-pill group-hover:scale-110 transition-transform`}>
+                      <div className={`p-2 rounded-xl ${stat.accentBg} border border-slate-200/60 group-hover:scale-110 transition-transform`}>
                         <Icon className={`w-4 h-4 ${stat.color}`} />
                       </div>
                     </div>

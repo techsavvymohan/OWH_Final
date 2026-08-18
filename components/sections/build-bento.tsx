@@ -74,8 +74,8 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="md:col-span-12 lg:col-span-5 rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+            whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+            className="md:col-span-12 lg:col-span-5 rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-colors transition-shadow duration-200"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -97,92 +97,64 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
               </p>
             </div>
 
-            {/* Full-Length Authentic Smartphone Device Frame - Pure White Light Luxury Theme */}
-            <div className="relative mx-auto w-full max-w-[270px] sm:max-w-[285px] h-[470px] sm:h-[500px] bg-slate-50 rounded-[44px] p-3 border-[6px] border-slate-300 shadow-2xl flex flex-col justify-between overflow-hidden group/phone hover:border-blue-400 transition-all duration-300">
-              {/* Silver Metallic Side Hardware Buttons */}
-              <div className="absolute -left-[9px] top-24 w-[3px] h-8 bg-slate-300 rounded-l-md" />
-              <div className="absolute -left-[9px] top-36 w-[3px] h-10 bg-slate-300 rounded-l-md" />
-              <div className="absolute -right-[9px] top-28 w-[3px] h-12 bg-slate-300 rounded-r-md" />
-
-              {/* Top Status Bar & Dynamic Island */}
-              <div className="space-y-1 shrink-0 pt-1">
-                <div className="flex items-center justify-between text-[10px] font-mono text-slate-700 px-3 font-semibold">
-                  <span>9:41</span>
-                  {/* Dynamic Island Pill */}
-                  <div className="w-18 h-4 bg-slate-900 rounded-full flex items-center justify-center gap-1.5 px-2 shadow-inner">
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <div className="w-1 h-1 rounded-full bg-blue-400" />
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span className="text-[9px] font-bold">5G</span>
-                    <div className="w-3.5 h-2 rounded-xs border border-slate-700 p-[0.5px]">
-                      <div className="h-full w-2.5 bg-slate-900 rounded-2xs" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Aesthetic White Screen Display */}
-              <div className="my-auto space-y-2.5 p-3 rounded-2xl bg-white border border-slate-200/90 shadow-sm text-slate-900 font-mono">
-                {/* App Screen Top Header */}
-                <div className="flex items-center justify-between text-[11px] pb-2 border-b border-slate-100">
+            {/* Responsive Multi-Device Visual Graphics Canvas */}
+            <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[360px] pt-4 pb-2 flex flex-col justify-center items-center">
+              {/* Main Desktop Browser Mockup */}
+              <div className="w-full rounded-2xl bg-white border border-slate-200/90 shadow-lg p-3 space-y-2.5">
+                {/* Browser Header Bar */}
+                <div className="flex items-center justify-between pb-2 border-b border-slate-100">
                   <div className="flex items-center gap-1.5">
-                    <div className="w-4 h-4 rounded-md bg-blue-600 text-white flex items-center justify-center text-[9px] font-bold">
-                      OW
-                    </div>
-                    <span className="font-bold text-slate-900 font-sans text-xs">OnlyWay Studio</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
                   </div>
-                  <span className="inline-flex items-center gap-1 text-[9px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    VERIFIED
-                  </span>
-                </div>
-
-                {/* Score Gauge Highlight Box */}
-                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50/80 via-white to-emerald-50/80 border border-slate-200 text-center shadow-2xs">
-                  <span className="text-[10px] text-slate-500 block font-sans font-medium">Google Core Web Vitals Benchmark</span>
-                  <span className="text-2xl font-bold font-mono text-emerald-700 tracking-tight block my-0.5">
-                    100 / 100
-                  </span>
-                  <span className="text-[9px] font-mono text-blue-700 font-bold bg-blue-100/70 px-2 py-0.5 rounded-full inline-block">
-                    ⚡ Instant Sub-Second Load
-                  </span>
-                </div>
-
-                {/* Performance Metrics Breakdown */}
-                <div className="space-y-1.5 text-[10px]">
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">
-                    <div>
-                      <span className="text-slate-900 font-semibold block font-sans">Page Load Speed</span>
-                      <span className="text-[8px] text-slate-400">LCP 0.52s · Instant Paint</span>
-                    </div>
-                    <span className="text-emerald-700 font-bold">Passed ✓</span>
+                  <div className="text-[10px] font-mono px-3 py-0.5 rounded-md bg-slate-50 border border-slate-200 text-slate-500 truncate max-w-[160px]">
+                    https://your-brand.com
                   </div>
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">
-                    <div>
-                      <span className="text-slate-900 font-semibold block font-sans">Screen Stability</span>
-                      <span className="text-[8px] text-slate-400">CLS 0.000 · No accidental taps</span>
-                    </div>
-                    <span className="text-emerald-700 font-bold">Zero Shift ✓</span>
-                  </div>
-                  <div className="flex items-center justify-between p-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">
-                    <div>
-                      <span className="text-slate-900 font-semibold block font-sans">Tap Response</span>
-                      <span className="text-[8px] text-slate-400">INP 14ms · Ultra-low latency</span>
-                    </div>
-                    <span className="text-emerald-700 font-bold">Instant ✓</span>
+                  <div className="text-[9px] font-mono font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                    100 Vitals
                   </div>
                 </div>
 
-                {/* Playwright QA & Stability Badge */}
-                <div className="p-2 rounded-xl bg-blue-50/80 border border-blue-200 text-[10px] text-center text-blue-800 font-sans font-semibold">
-                  ✓ Tested on 18 screen sizes before launch
+                {/* Simulated Content Wireframe */}
+                <div className="space-y-2 py-1">
+                  <div className="h-3 w-3/4 rounded-md bg-slate-900" />
+                  <div className="h-2 w-full rounded-md bg-slate-200" />
+                  <div className="h-2 w-5/6 rounded-md bg-slate-100" />
+                  
+                  {/* Visual Speed Badge */}
+                  <div className="flex items-center justify-between p-2 rounded-xl bg-blue-50/70 border border-blue-100 mt-2">
+                    <div className="flex items-center gap-1.5 text-xs text-blue-900 font-bold">
+                      <Zap className="w-3.5 h-3.5 text-blue-600" />
+                      <span>0.42s LCP Instant Paint</span>
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-blue-700">18 Screens Tested</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Bottom Screen Home Bar */}
-              <div className="shrink-0 pt-1 pb-0.5 text-center">
-                <div className="w-24 h-1 bg-slate-400 rounded-full mx-auto" />
+              {/* Overlapping Mobile Device Pill */}
+              <div className="w-[85%] -mt-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-300 shadow-xl p-3 z-10 space-y-2">
+                <div className="flex items-center justify-between text-[11px] font-mono">
+                  <span className="font-bold text-slate-800">Mobile Adaptation</span>
+                  <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    60fps Smooth
+                  </span>
+                </div>
+                <div className="grid grid-cols-3 gap-1.5 text-center font-mono text-[9px]">
+                  <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
+                    <span className="text-slate-400 block">LCP</span>
+                    <span className="font-bold text-emerald-700">0.42s</span>
+                  </div>
+                  <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
+                    <span className="text-slate-400 block">INP</span>
+                    <span className="font-bold text-blue-700">14ms</span>
+                  </div>
+                  <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
+                    <span className="text-slate-400 block">CLS</span>
+                    <span className="font-bold text-emerald-700">0.00</span>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -193,8 +165,8 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="md:col-span-12 lg:col-span-7 rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+            whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+            className="md:col-span-12 lg:col-span-7 rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-colors transition-shadow duration-200"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -216,55 +188,76 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
               </p>
             </div>
 
-            {/* Interactive Node Graph in Dark Graphite Console */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 text-white shadow-md">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 relative">
+            {/* Interactive Node Graph in Dark Graphite Console with Animated Pipeline Beams */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 text-white shadow-md relative overflow-hidden">
+              {/* Subtle Background Circuit Grid */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-20 pointer-events-none" />
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 relative z-10">
                 {/* Node 1 */}
                 <div
                   onClick={() => setActiveNode(1)}
-                  className={`p-4 rounded-2xl border text-center transition-all cursor-pointer ${
+                  className={`p-4 rounded-2xl border text-center transition-all cursor-pointer relative group/node ${
                     activeNode === 1
-                      ? 'bg-blue-600 text-white border-blue-500 shadow-lg shadow-blue-600/30 scale-105 font-bold'
+                      ? 'bg-blue-600 text-white border-blue-400 shadow-lg shadow-blue-600/40 scale-105 font-bold'
                       : 'bg-slate-800/90 text-slate-300 border-slate-700 hover:border-slate-600 hover:bg-slate-800'
                   }`}
                 >
-                  <Code2 className="w-5 h-5 mx-auto mb-1.5 text-blue-300" />
+                  <Code2 className="w-5 h-5 mx-auto mb-1.5 text-blue-300 transition-transform group-hover/node:scale-110" />
                   <div className="text-xs font-bold">Fast Modern Core</div>
                   <div className={`text-[10px] font-mono mt-1 ${activeNode === 1 ? 'text-blue-100' : 'text-slate-400'}`}>
-                    Next.js & React 19
+                    Next.js 15 & React 19
                   </div>
+                  {activeNode === 1 && (
+                    <span className="absolute -top-1.5 -right-1.5 flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-400" />
+                    </span>
+                  )}
                 </div>
 
                 {/* Node 2 */}
                 <div
                   onClick={() => setActiveNode(2)}
-                  className={`p-4 rounded-2xl border text-center transition-all cursor-pointer ${
+                  className={`p-4 rounded-2xl border text-center transition-all cursor-pointer relative group/node ${
                     activeNode === 2
-                      ? 'bg-blue-600 text-white border-blue-500 shadow-lg shadow-blue-600/30 scale-105 font-bold'
+                      ? 'bg-blue-600 text-white border-blue-400 shadow-lg shadow-blue-600/40 scale-105 font-bold'
                       : 'bg-slate-800/90 text-slate-300 border-slate-700 hover:border-slate-600 hover:bg-slate-800'
                   }`}
                 >
-                  <ShieldCheck className="w-5 h-5 mx-auto mb-1.5 text-emerald-400" />
+                  <ShieldCheck className="w-5 h-5 mx-auto mb-1.5 text-emerald-400 transition-transform group-hover/node:scale-110" />
                   <div className="text-xs font-bold">Zero-Bug Testing</div>
                   <div className={`text-[10px] font-mono mt-1 ${activeNode === 2 ? 'text-blue-100' : 'text-slate-400'}`}>
-                    Multi-Device QA
+                    Multi-Device QA (18 Screens)
                   </div>
+                  {activeNode === 2 && (
+                    <span className="absolute -top-1.5 -right-1.5 flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400" />
+                    </span>
+                  )}
                 </div>
 
                 {/* Node 3 */}
                 <div
                   onClick={() => setActiveNode(3)}
-                  className={`p-4 rounded-2xl border text-center transition-all cursor-pointer ${
+                  className={`p-4 rounded-2xl border text-center transition-all cursor-pointer relative group/node ${
                     activeNode === 3
-                      ? 'bg-blue-600 text-white border-blue-500 shadow-lg shadow-blue-600/30 scale-105 font-bold'
+                      ? 'bg-blue-600 text-white border-blue-400 shadow-lg shadow-blue-600/40 scale-105 font-bold'
                       : 'bg-slate-800/90 text-slate-300 border-slate-700 hover:border-slate-600 hover:bg-slate-800'
                   }`}
                 >
-                  <Globe className="w-5 h-5 mx-auto mb-1.5 text-sky-300" />
+                  <Globe className="w-5 h-5 mx-auto mb-1.5 text-sky-300 transition-transform group-hover/node:scale-110" />
                   <div className="text-xs font-bold">Worldwide Delivery</div>
                   <div className={`text-[10px] font-mono mt-1 ${activeNode === 3 ? 'text-blue-100' : 'text-slate-400'}`}>
-                    Global Edge Network
+                    Global Edge Multi-Region
                   </div>
+                  {activeNode === 3 && (
+                    <span className="absolute -top-1.5 -right-1.5 flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-300 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-400" />
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -310,8 +303,8 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="md:col-span-6 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+            whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+            className="md:col-span-6 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-colors transition-shadow duration-200"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -388,8 +381,8 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="md:col-span-6 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+            whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+            className="md:col-span-6 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-colors transition-shadow duration-200"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -440,8 +433,8 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="md:col-span-12 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+            whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+            className="md:col-span-12 lg:col-span-4 rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-blue-400 hover:shadow-lg transition-colors transition-shadow duration-200"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -457,22 +450,22 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 Your Website Stays Online & Protected, 24/7
               </h3>
               <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                Bank-level security protection against hacking and data theft, with automated edge failovers and live health checks.
+                Hardened SSL encryption, automated DDoS filtering, and continuous health monitoring to keep your site fast and secure.
               </p>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs text-slate-700">
               <div className="flex items-center justify-between">
-                <span className="text-slate-600 font-sans">Bank-Grade Encryption:</span>
-                <span className="text-blue-700 font-bold font-mono">Grade A+ (SSL Strict)</span>
+                <span className="text-slate-600 font-sans">HTTPS & SSL Encryption:</span>
+                <span className="text-blue-700 font-bold font-mono">Grade A+ (Strict TLS)</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-slate-600 font-sans">Threat Defense:</span>
-                <span className="text-emerald-700 font-bold font-mono">Hacker & Spam Gated</span>
+                <span className="text-slate-600 font-sans">Automated DDoS Defense:</span>
+                <span className="text-emerald-700 font-bold font-mono">Cloudflare Edge Gated</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-slate-600 font-sans">Live Health Watch:</span>
-                <span className="text-slate-900 font-bold font-mono">24/7 Monitored Ping</span>
+                <span className="text-slate-600 font-sans">Uptime Health Watch:</span>
+                <span className="text-slate-900 font-bold font-mono">24/7 Real-Time Ping</span>
               </div>
             </div>
           </motion.div>

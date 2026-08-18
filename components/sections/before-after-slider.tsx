@@ -185,69 +185,18 @@ export function BeforeAfterSlider() {
               aria-valuemin={5}
               aria-valuemax={95}
               onKeyDown={handleKeyDown}
-              animate={
-                isDragging
-                  ? { scale: 1.08 }
-                  : {
-                      scale: [1, 1.06, 1],
-                      x: [-4, 4, -4],
-                    }
-              }
-              transition={
-                isDragging
-                  ? { duration: 0.15 }
-                  : {
-                      scale: { repeat: Infinity, duration: 2.2, ease: 'easeInOut' },
-                      x: { repeat: Infinity, duration: 2.4, ease: 'easeInOut' },
-                    }
-              }
-              whileHover={{ scale: 1.12 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative pointer-events-auto cursor-ew-resize select-none focus:outline-none group -ml-0.5"
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.96 }}
+              className="relative pointer-events-auto cursor-ew-resize select-none focus:outline-none -ml-0.5"
             >
-              {/* Outer Pulsing Glow Halo */}
-              <span className="absolute -inset-2.5 rounded-full bg-blue-500/35 blur-md animate-pulse pointer-events-none" />
-              
-              {/* Ripple Ping Ring */}
-              <span className="absolute -inset-1 rounded-full border-2 border-blue-400/70 animate-ping opacity-40 pointer-events-none" />
-
-              {/* Creative "SLIDE ME" Capsule Badge */}
-              <div className="relative px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 text-white font-extrabold text-xs font-mono tracking-wider shadow-[0_8px_24px_rgba(37,99,235,0.45)] border-2 border-white flex items-center gap-1.5 backdrop-blur-md">
-                {/* Left Animated Arrow */}
-                <motion.div
-                  animate={{ x: [-2, 1, -2] }}
-                  transition={{ repeat: Infinity, duration: 1.1, ease: 'easeInOut' }}
-                  className="text-sky-300"
-                >
-                  <ChevronLeft className="w-4 h-4 stroke-[3]" />
-                </motion.div>
-
-                {/* Sparkling Indicator */}
-                <Sparkles className="w-3.5 h-3.5 text-amber-300 fill-amber-300 shrink-0" />
-
-                {/* Creative Text */}
-                <span className="uppercase text-[11px] sm:text-xs font-black tracking-widest text-white drop-shadow-sm whitespace-nowrap">
-                  SLIDE ME
+              {/* Refined Frosted Glass Capsule */}
+              <div className="relative px-3.5 py-2 rounded-full bg-white/95 text-slate-900 font-bold text-xs font-mono tracking-wider shadow-xl border border-slate-300/90 flex items-center gap-2 backdrop-blur-md">
+                <ChevronLeft className="w-3.5 h-3.5 text-slate-500" />
+                <span className="text-[10px] font-mono font-bold tracking-widest text-slate-800 uppercase whitespace-nowrap">
+                  DRAG
                 </span>
-
-                {/* Right Animated Arrow */}
-                <motion.div
-                  animate={{ x: [1, -2, 1] }}
-                  transition={{ repeat: Infinity, duration: 1.1, ease: 'easeInOut' }}
-                  className="text-sky-300"
-                >
-                  <ChevronRight className="w-4 h-4 stroke-[3]" />
-                </motion.div>
+                <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
               </div>
-
-              {/* Little Floating Helper Tooltip at Top */}
-              <motion.div
-                animate={{ y: [-2, 2, -2] }}
-                transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-                className="absolute -top-7 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-slate-950/90 text-slate-200 text-[9px] font-mono font-bold tracking-tight whitespace-nowrap shadow-md border border-slate-700 pointer-events-none flex items-center gap-1"
-              >
-                <span>Drag to Compare</span>
-              </motion.div>
             </motion.div>
           </div>
         </motion.div>

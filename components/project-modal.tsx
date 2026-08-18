@@ -597,7 +597,7 @@ function ModalInnerForm({
                   {isSubmitting ? (
                     <span className="inline-flex items-center gap-2">
                       <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Reserving Your Strategy Call...
+                      Reserving Your Strategy Call…
                     </span>
                   ) : (
                     <>

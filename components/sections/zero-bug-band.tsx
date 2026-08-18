@@ -87,7 +87,7 @@ export function ZeroBugBand({ onOpenProjectModal }: ZeroBugBandProps) {
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-4">
             {/* Guarantee Brand Title */}
             <div className="flex items-center gap-3 shrink-0">
-              <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-200 neo-pill">
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-200/80 shadow-xs">
                 <ShieldCheck className="w-5 h-5" />
                 <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />

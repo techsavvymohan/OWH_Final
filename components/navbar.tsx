@@ -16,7 +16,11 @@ import {
   CheckCircle2,
   ChevronDown,
   Lock,
-  Layers
+  Layers,
+  Code2,
+  TrendingUp,
+  BarChart3,
+  Clock
 } from 'lucide-react';
 import { WhatsAppIcon, PhoneCallIcon } from '@/components/ui/brand-icons';
 import { ThemeToggle } from './ui/theme-toggle';
@@ -194,10 +198,11 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                 <AnimatePresence>
                   {solutionsDropdownOpen && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      initial={{ opacity: 0, y: 8, scale: 0.96 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      transition={{ duration: 0.15 }}
+                      exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                      transition={{ duration: 0.16, ease: [0.23, 1, 0.32, 1] }}
+                      style={{ transformOrigin: 'top left' }}
                       className="absolute left-0 mt-2 w-72 rounded-2xl bg-white border border-slate-200 shadow-xl p-3 z-50 space-y-1"
                     >
                       <div className="px-2 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
@@ -209,8 +214,8 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                         onClick={e => handleLinkClick(e, '#services')}
                         className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-blue-50/80 transition-colors group cursor-pointer"
                       >
-                        <div className="p-1.5 rounded-lg bg-blue-100/80 text-blue-700 font-bold text-xs mt-0.5">
-                          ⚡
+                        <div className="p-2 rounded-xl bg-blue-50 text-blue-600 border border-blue-200/60 mt-0.5 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                          <Code2 className="w-4 h-4" />
                         </div>
                         <div>
                           <div className="text-xs font-bold text-slate-900 group-hover:text-blue-600">
@@ -227,13 +232,13 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                         onClick={e => handleLinkClick(e, '#growth')}
                         className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-emerald-50/80 transition-colors group cursor-pointer"
                       >
-                        <div className="p-1.5 rounded-lg bg-emerald-100/80 text-emerald-700 font-bold text-xs mt-0.5">
-                          📈
+                        <div className="p-2 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 mt-0.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                          <TrendingUp className="w-4 h-4" />
                         </div>
                         <div>
                           <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-700 flex items-center gap-1.5">
                             <span>B2B Growth Engine</span>
-                            <span className="text-[9px] font-mono px-1 rounded bg-emerald-100 text-emerald-800 font-bold">
+                            <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-200">
                               NEW
                             </span>
                           </div>
@@ -246,13 +251,13 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                       <a
                         href="#dashboard"
                         onClick={e => handleLinkClick(e, '#dashboard')}
-                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-purple-50/80 transition-colors group cursor-pointer"
+                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-violet-50/80 transition-colors group cursor-pointer"
                       >
-                        <div className="p-1.5 rounded-lg bg-purple-100/80 text-purple-700 font-bold text-xs mt-0.5">
-                          📊
+                        <div className="p-2 rounded-xl bg-violet-50 text-violet-600 border border-violet-200/60 mt-0.5 group-hover:bg-violet-600 group-hover:text-white transition-colors">
+                          <BarChart3 className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-slate-900 group-hover:text-purple-700">
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-violet-700">
                             Live Growth & Health Hub
                           </div>
                           <p className="text-[11px] text-slate-500">
@@ -264,13 +269,13 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                       <a
                         href="#timeline"
                         onClick={e => handleLinkClick(e, '#timeline')}
-                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-indigo-50/80 transition-colors group cursor-pointer"
+                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-amber-50/80 transition-colors group cursor-pointer"
                       >
-                        <div className="p-1.5 rounded-lg bg-indigo-100/80 text-indigo-700 font-bold text-xs mt-0.5">
-                          ⏱️
+                        <div className="p-2 rounded-xl bg-amber-50 text-amber-600 border border-amber-200/60 mt-0.5 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                          <Clock className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-slate-900 group-hover:text-indigo-700">
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-amber-700">
                             90-Day Sprint Roadmap
                           </div>
                           <p className="text-[11px] text-slate-500">
@@ -328,134 +333,14 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
 
             {/* Right Actions - Grouped for Maximum Elegance */}
             <div className="flex items-center gap-2">
-              {/* Client Onboarding Protocol Trigger */}
-              <button
-                type="button"
-                id="navbar-onboarding-trigger"
-                onClick={onOpenOnboardingModal}
-                className="hidden sm:flex items-center justify-center w-8 h-8 rounded-full bg-slate-100/80 border border-slate-200/90 hover:border-slate-300 text-slate-600 hover:text-blue-600 hover:bg-white transition-all cursor-pointer relative shadow-2xs"
-                title="Client Onboarding Protocol"
-                aria-label="Open client onboarding protocol"
-              >
-                <Compass className="w-4 h-4 text-blue-600" />
-                {!hasCompletedOnboarding && (
-                  <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                )}
-              </button>
-
-              {/* User Authentication Menu / Sign In Button */}
-              {isAuthenticated && user ? (
-                <div className="relative" ref={userDropdownRef}>
-                  <button
-                    type="button"
-                    id="user-profile-menu-btn"
-                    onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                    className="flex items-center gap-2 p-1 pl-1.5 pr-2.5 rounded-full bg-slate-100 border border-slate-200 hover:border-blue-500 transition-all cursor-pointer"
-                  >
-                    <div className="w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-[11px] flex items-center justify-center">
-                      {user.name.charAt(0).toUpperCase()}
-                    </div>
-                    <span className="text-xs font-semibold text-slate-800 max-w-[90px] truncate hidden sm:inline-block">
-                      {user.name}
-                    </span>
-                    <ChevronDown className="w-3 h-3 text-slate-400" />
-                  </button>
-
-                  {/* Dropdown Menu */}
-                  <AnimatePresence>
-                    {userDropdownOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 8, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 8, scale: 0.95 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute right-0 mt-2 w-64 rounded-2xl bg-white border border-slate-200 shadow-xl p-3 z-50 divide-y divide-slate-100"
-                      >
-                        <div className="pb-3 px-2">
-                          <div className="flex items-center justify-between">
-                            <h4 className="text-xs font-bold text-slate-900 truncate">
-                              {user.name}
-                            </h4>
-                            <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-full bg-blue-50 text-blue-700 font-semibold border border-blue-200">
-                              {user.plan}
-                            </span>
-                          </div>
-                          <p className="text-[11px] text-slate-500 truncate">
-                            {user.email}
-                          </p>
-                          <div className="mt-1.5 flex items-center gap-1 text-[10px] font-mono text-emerald-600 font-bold">
-                            <CheckCircle2 className="w-3 h-3" />
-                            <span>Zero-Bug SLA Active</span>
-                          </div>
-                        </div>
-
-                        <div className="py-2 space-y-1">
-                          <button
-                            type="button"
-                            id="menu-open-onboarding"
-                            onClick={() => {
-                              setUserDropdownOpen(false);
-                              onOpenOnboardingModal?.();
-                            }}
-                            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors text-left"
-                          >
-                            <Compass className="w-3.5 h-3.5 text-blue-600" />
-                            <span>Onboarding & Blueprint</span>
-                          </button>
-
-                          <button
-                            type="button"
-                            id="menu-jump-dashboard"
-                            onClick={() => {
-                              setUserDropdownOpen(false);
-                              const el = document.getElementById('dashboard');
-                              if (el) el.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors text-left cursor-pointer"
-                          >
-                            <Layers className="w-3.5 h-3.5 text-indigo-600" />
-                            <span>Live Client Dashboard</span>
-                          </button>
-                        </div>
-
-                        <div className="pt-2">
-                          <button
-                            type="button"
-                            id="navbar-logout-btn"
-                            onClick={() => {
-                              setUserDropdownOpen(false);
-                              logout();
-                            }}
-                            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-xs font-medium text-red-600 hover:bg-red-50 transition-colors text-left"
-                          >
-                            <LogOut className="w-3.5 h-3.5" />
-                            <span>Sign Out</span>
-                          </button>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <button
-                  type="button"
-                  id="navbar-signin-btn"
-                  onClick={() => onOpenAuthModal?.('login')}
-                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 hover:border-blue-500 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-all cursor-pointer"
-                >
-                  <Lock className="w-3 h-3 text-slate-400" />
-                  <span>Sign In</span>
-                </button>
-              )}
-
               {/* Primary CTA (Desktop & Tablet) */}
               <button
                 id="discuss-project-nav-btn"
                 onClick={() => onOpenProjectModal()}
-                className="hidden sm:inline-flex relative items-center justify-center gap-1.5 px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-md shadow-blue-600/20 hover:shadow-blue-600/35 transition-all duration-200 cursor-pointer group"
+                className="hidden sm:inline-flex relative items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-700 active:scale-[0.97] text-white text-xs font-bold shadow-md shadow-blue-600/20 hover:shadow-blue-600/35 transition-all duration-150 cursor-pointer group"
               >
                 <Sparkles className="w-3.5 h-3.5 text-blue-200" />
-                <span>Discuss Project</span>
+                <span>Discuss Your Project</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 hidden xs:inline-block" />
               </button>
 
@@ -478,11 +363,12 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
       <div className="fixed bottom-5 right-4 z-40 sm:hidden">
         <motion.button
           id="mobile-fab-discuss-btn"
-          initial={{ scale: 0, opacity: 0 }}
+          initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
           whileTap={{ scale: 0.95 }}
           onClick={() => onOpenProjectModal()}
-          className="flex items-center gap-2 px-4 py-3 rounded-full bg-blue-600 text-white font-bold text-xs shadow-2xl shadow-blue-600/50 border border-blue-400/40 cursor-pointer backdrop-blur-md active:bg-blue-700"
+          className="flex items-center gap-2 px-4 py-3 rounded-full bg-blue-600 text-white font-bold text-xs shadow-2xl shadow-blue-600/50 border border-blue-400/40 cursor-pointer backdrop-blur-md active:bg-blue-700 active:scale-[0.97] transition-transform"
           aria-label="Discuss Project"
         >
           <span className="relative flex h-2 w-2">
@@ -540,58 +426,8 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                   </button>
                 </div>
 
-                {/* Mobile Auth Status */}
-                <div className="py-4 border-b border-slate-100">
-                  {isAuthenticated && user ? (
-                    <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200">
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center">
-                          {user.name.charAt(0)}
-                        </div>
-                        <div>
-                          <h4 className="text-xs font-bold text-slate-900 truncate max-w-[120px]">
-                            {user.name}
-                          </h4>
-                          <span className="text-[10px] text-emerald-600 font-mono font-bold">
-                            {user.plan}
-                          </span>
-                        </div>
-                      </div>
-                      <button
-                        onClick={logout}
-                        className="text-xs text-red-500 font-semibold hover:underline"
-                      >
-                        Logout
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="grid grid-cols-2 gap-2">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                          onOpenAuthModal?.('login');
-                        }}
-                        className="py-2 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 text-center hover:bg-slate-50"
-                      >
-                        Sign In
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                          onOpenAuthModal?.('signup');
-                        }}
-                        className="py-2 rounded-xl bg-blue-600 text-white text-xs font-semibold text-center shadow-sm"
-                      >
-                        Sign Up
-                      </button>
-                    </div>
-                  )}
-                </div>
-
                 {/* Mobile Links */}
-                <div className="flex flex-col gap-1 mt-4">
+                <div className="flex flex-col gap-1 mt-2">
                   {NAV_LINKS.map(link => (
                     link.isRoute ? (
                       <Link

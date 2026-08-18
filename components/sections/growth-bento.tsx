@@ -156,8 +156,8 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-all duration-300"
+            whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-colors transition-shadow duration-200"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -233,8 +233,8 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-all duration-300"
+            whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-colors transition-shadow duration-200"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -308,8 +308,8 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-all duration-300"
+            whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-colors transition-shadow duration-200"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -366,8 +366,8 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-emerald-200 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-all duration-300"
+            whileHover={{ y: -4, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+            className="md:col-span-12 lg:col-span-6 rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:border-emerald-400 hover:shadow-lg transition-colors transition-shadow duration-200"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -389,7 +389,7 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
               </p>
             </div>
 
-            {/* Interactive ROI Calculator */}
+            {/* Interactive ROI Calculator with Dynamic SVG Curve Visualization */}
             <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
               <div>
                 <div className="flex justify-between text-xs font-mono mb-2">
@@ -414,7 +414,48 @@ export function GrowthBento({ onOpenProjectModal }: GrowthBentoProps) {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-3 pt-2">
+              {/* Dynamic SVG Revenue Growth Area Graph */}
+              <div className="relative h-20 w-full bg-white rounded-xl border border-slate-200 p-2 overflow-hidden shadow-2xs">
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 300 60" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="growthRoiGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#059669" stopOpacity="0.35" />
+                      <stop offset="100%" stopColor="#059669" stopOpacity="0.0" />
+                    </linearGradient>
+                  </defs>
+                  {/* Grid Lines */}
+                  <line x1="0" y1="15" x2="300" y2="15" stroke="#f1f5f9" strokeDasharray="2 2" />
+                  <line x1="0" y1="35" x2="300" y2="35" stroke="#f1f5f9" strokeDasharray="2 2" />
+                  
+                  {/* Dynamic Curve path calculated from adSpend */}
+                  <path
+                    d={`M 0,55 Q 80,45 150,${Math.max(10, 50 - (adSpend / 25000) * 35)} T 300,${Math.max(5, 45 - (adSpend / 25000) * 38)} L 300,60 L 0,60 Z`}
+                    fill="url(#growthRoiGradient)"
+                    className="transition-all duration-300 ease-out"
+                  />
+                  <path
+                    d={`M 0,55 Q 80,45 150,${Math.max(10, 50 - (adSpend / 25000) * 35)} T 300,${Math.max(5, 45 - (adSpend / 25000) * 38)}`}
+                    fill="none"
+                    stroke="#059669"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    className="transition-all duration-300 ease-out"
+                  />
+                  {/* Peak Point Node */}
+                  <circle
+                    cx="300"
+                    cy={Math.max(5, 45 - (adSpend / 25000) * 38)}
+                    r="4"
+                    fill="#059669"
+                    className="transition-all duration-300"
+                  />
+                </svg>
+                <div className="absolute top-1.5 left-3 text-[9px] font-mono text-emerald-800 font-bold bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                  Target ROAS Curve: ~4.2x Multiplier
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 pt-1">
                 <div className="p-3.5 rounded-2xl bg-white border border-slate-200 text-center shadow-2xs">
                   <span className="text-[10px] font-mono text-slate-500 block">Expected Revenue [Modeled ~4.2x]</span>
                   <span className="text-lg sm:text-xl font-bold font-mono text-emerald-700">

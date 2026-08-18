@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { BlurText } from '@/components/ui/blur-text';
+import { Hero3DScene } from '@/components/visuals/hero-3d-scene';
 
 interface HeroSectionProps {
   onOpenProjectModal: (service?: string) => void;
@@ -90,9 +91,7 @@ export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSecti
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
         >
-          Most agencies just build a website and disappear. We stay with you — building a{' '}
-          <strong className="text-slate-900 font-semibold">beautiful, lightning-fast website</strong> that shows up on Google,{' '}
-          brings real customers to your door, and <strong className="text-slate-900 font-semibold">never crashes or slows down</strong>. You don&apos;t need to know anything about technology.
+          Custom websites, SaaS products, and growth systems built to turn attention into qualified demand. We engineer lightning-fast digital experiences with clean code, search ranking architecture, and dedicated ongoing support.
         </motion.p>
 
         {/* Action CTAs with MagneticButton */}
@@ -107,7 +106,7 @@ export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSecti
               id="hero-discuss-project-btn"
               type="button"
               onClick={() => onOpenProjectModal()}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/35 hover:scale-[1.02] transition-all cursor-pointer brand-glow"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 active:scale-[0.97] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/35 hover:scale-[1.02] transition-all duration-150 cursor-pointer brand-glow"
             >
               <Sparkles className="w-4 h-4 text-blue-200" />
               <span>Discuss Your Project</span>
@@ -118,7 +117,7 @@ export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSecti
           <MagneticButton strength={10}>
             <Link
               href="/work"
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 active:scale-[0.97] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-150 cursor-pointer shadow-md"
             >
               <span>Explore Our Work</span>
               <ArrowRight className="w-4 h-4 text-blue-400" />
@@ -128,7 +127,7 @@ export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSecti
           <MagneticButton strength={8}>
             <a
               href="#services"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white border border-slate-300 text-slate-700 font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-slate-50 transition-all cursor-pointer shadow-xs"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white border border-slate-300 active:scale-[0.97] text-slate-700 font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-slate-50 transition-all duration-150 cursor-pointer shadow-xs"
             >
               <span>Services & Guarantee</span>
             </a>
@@ -142,6 +141,13 @@ export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSecti
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mt-8 inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-5 py-2.5 rounded-full bg-white/90 border border-slate-200 shadow-sm text-xs text-slate-600 font-medium"
         >
+          <div className="flex items-center gap-1.5">
+            <Code2 className="w-4 h-4 text-blue-600" />
+            <span className="font-bold text-slate-900">12+ Production Builds Shipped</span>
+          </div>
+
+          <div className="hidden sm:block text-slate-300">•</div>
+
           <button
             type="button"
             onClick={onOpenMethodology}
@@ -157,47 +163,78 @@ export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSecti
 
           <div className="flex items-center gap-1.5">
             <Sparkles className="w-4 h-4 text-slate-700" />
-            <span className="font-bold text-slate-900">90-Day Free Fix Guarantee</span>
-          </div>
-
-          <div className="hidden sm:block text-slate-300">•</div>
-
-          <div className="flex items-center gap-1.5">
-            <Zap className="w-4 h-4 text-blue-600" />
-            <span className="font-bold text-slate-900">Sub-Second Page Delivery</span>
+            <span className="font-bold text-slate-900">90-Day Free Fix Warranty</span>
           </div>
         </motion.div>
 
-        {/* Capability Pills Cloud */}
+        {/* Centerpiece Hero 3D Digital Product Architecture Engine */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-12 sm:mt-16 pt-6 border-t border-slate-200"
+          initial={{ opacity: 0, y: 30, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="text-[11px] font-mono uppercase tracking-widest text-slate-500 mb-4 font-semibold">
-            Everything Your Business Needs — Website + Marketing Under One Roof
+          <Hero3DScene onOpenProjectModal={onOpenProjectModal} />
+        </motion.div>
+
+        {/* Editorial 3-Pillar Architectural Summary Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-12 sm:mt-16 pt-8 border-t border-slate-200/80"
+        >
+          <div className="text-[11px] font-mono uppercase tracking-widest text-slate-500 mb-6 font-semibold">
+            Complete Digital Growth Architecture — Built & Scaled Under One Roof
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-4xl mx-auto">
-            {CAPABILITY_PILLS.map((tile) => {
-              const Icon = tile.icon;
-              return (
-                <div
-                  key={tile.label}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 text-slate-800 shadow-2xs hover:border-slate-400 hover:shadow-xs transition-all hover:scale-105"
-                >
-                  <div className="p-1 rounded-md bg-slate-100 text-slate-700">
-                    <Icon className={`w-3.5 h-3.5 ${tile.color}`} />
-                  </div>
-                  <span>{tile.label}</span>
-                  {tile.type === 'growth' && (
-                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-900 text-white font-bold">
-                      GROW
-                    </span>
-                  )}
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+            {/* Pillar 1 */}
+            <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-blue-300 hover:shadow-sm transition-all duration-200">
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="p-2 rounded-xl bg-blue-50 text-blue-600 border border-blue-200/60">
+                  <Code2 className="w-4 h-4" />
                 </div>
-              );
-            })}
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900">Core Web Engineering</h4>
+                  <span className="text-[10px] font-mono text-blue-600 font-semibold">Next.js 15 · Zero-Bug SLA</span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Sub-second page delivery across every mobile phone and laptop with zero runtime crashes.
+              </p>
+            </div>
+
+            {/* Pillar 2 */}
+            <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-emerald-300 hover:shadow-sm transition-all duration-200">
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="p-2 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60">
+                  <Search className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900">Google Search Dominance</h4>
+                  <span className="text-[10px] font-mono text-emerald-600 font-semibold">100/100 Core Vitals</span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Topic cluster architecture and structured schema so buyers searching for your services find you first.
+              </p>
+            </div>
+
+            {/* Pillar 3 */}
+            <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-violet-300 hover:shadow-sm transition-all duration-200">
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="p-2 rounded-xl bg-violet-50 text-violet-600 border border-violet-200/60">
+                  <BarChart3 className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900">High-ROAS Acquisition</h4>
+                  <span className="text-[10px] font-mono text-violet-600 font-semibold">Tracked Ad Return</span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Targeted Google & Meta ad campaigns engineered to turn clicks into inbound phone calls and booked revenue.
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

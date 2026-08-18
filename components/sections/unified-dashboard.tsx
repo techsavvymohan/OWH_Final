@@ -114,7 +114,7 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                     role="tab"
                     aria-selected={isCurrent}
                     onClick={() => setActiveTab(idx)}
-                    className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all cursor-pointer ${
+                    className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold active:scale-[0.97] transition-all duration-150 cursor-pointer ${
                       isCurrent
                         ? 'bg-blue-600 text-white shadow-md font-bold'
                         : 'text-slate-300 hover:text-white hover:bg-slate-700/60'

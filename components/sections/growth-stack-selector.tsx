@@ -27,6 +27,8 @@ interface PlanItem {
   id: string;
   name: string;
   badge?: string;
+  whoItsFor: string;
+  timeline: string;
   priceUSD: string;
   priceINR: string;
   priceBilling: string;
@@ -45,11 +47,13 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'build-website',
       name: 'Custom Business Website',
       badge: 'Dedicated Sprint',
+      whoItsFor: 'Established businesses replacing slow agency templates with a high-converting presence.',
+      timeline: '3–4 Weeks to Launch',
       priceUSD: 'From $2,450',
       priceINR: 'From ₹1,85,000',
       priceBilling: 'Fixed Milestone Delivery',
-      priceNote: 'Zero hidden fees · 3-4 week handover',
-      description: 'You get a completely bespoke, ultra-fast website that loads in under 1 second, looks stunning on every phone and laptop, and ranks on Google — with 30 days of free fixes included.',
+      priceNote: 'Zero hidden fees · Full code handover',
+      description: 'You get a bespoke, ultra-fast website that loads in under 1 second, looks stunning on every phone and laptop, and ranks on Google — with 30 days of free fixes included.',
       slaDays: 30,
       accent: 'blue',
       ctaLabel: 'Discuss Website Build',
@@ -65,11 +69,13 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'build-saas',
       name: 'Custom Software & Client Portal',
       badge: 'Most Comprehensive',
+      whoItsFor: 'Founders and businesses requiring custom client portals, calculators, or workflows.',
+      timeline: '4–6 Weeks to Launch',
       priceUSD: 'From $4,900',
       priceINR: 'From ₹3,75,000',
       priceBilling: 'Sprint-Based Architecture',
       priceNote: 'Fixed scope · Full IP & code handover',
-      description: 'You get a full-scale web application or customer portal with secure user logins, easy-to-use dashboards, and bank-level protection — built to grow smoothly with your business.',
+      description: 'You get a full-scale web application or customer portal with secure user logins, easy-to-use dashboards, and hardened security — built to grow smoothly with your business.',
       popular: true,
       slaDays: 60,
       accent: 'blue',
@@ -78,7 +84,7 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
         'Custom web application built for your business operations',
         'Secure customer login and private member portal',
         'Easy-to-use controls that look great in light and dark mode',
-        'Bank-grade SSL encryption and automated daily backups',
+        'Hardened SSL encryption and automated daily backups',
         '60-Day free fix guarantee & dedicated technical support',
       ],
     },
@@ -86,6 +92,8 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'build-ecommerce',
       name: 'High-Converting Online Store',
       badge: 'High Conversion',
+      whoItsFor: 'D2C and B2B brands wanting fast, frictionless checkout on mobile and desktop.',
+      timeline: '3–5 Weeks to Launch',
       priceUSD: 'From $3,800',
       priceINR: 'From ₹2,90,000',
       priceBilling: 'Turnkey E-Commerce Store',
@@ -108,6 +116,8 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'bundle-starter',
       name: 'Website + Growth Starter',
       badge: 'Website + Marketing',
+      whoItsFor: 'Companies launching a new site who want immediate SEO traffic and inbound leads.',
+      timeline: '60-Day Sprint (Launch Wk 4)',
       priceUSD: 'From $1,450',
       priceINR: 'From ₹1,10,000',
       priceBilling: '/ month (60-Day Sprint)',
@@ -128,6 +138,8 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'bundle-fullstack',
       name: '90-Day Complete Launch & Growth',
       badge: 'RECOMMENDED · HIGHEST VALUE',
+      whoItsFor: 'Ambitious businesses looking for a complete engineering + search + ads acquisition engine.',
+      timeline: '90-Day All-in-One Sprint',
       priceUSD: 'From $2,850',
       priceINR: 'From ₹2,15,000',
       priceBilling: '/ month (90-Day Sprint)',
@@ -149,6 +161,8 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'bundle-enterprise',
       name: 'Full Dedicated Team Partner',
       badge: 'Dedicated Team',
+      whoItsFor: 'Growing companies needing an embedded engineering and growth marketing squad.',
+      timeline: 'Ongoing Dedicated Squad',
       priceUSD: 'From $5,500',
       priceINR: 'From ₹4,20,000',
       priceBilling: '/ month (Dedicated Squad)',
@@ -171,6 +185,8 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'grow-seo',
       name: 'Monthly Google SEO Growth',
       badge: 'Google Rank Authority',
+      whoItsFor: 'Existing sites wanting to capture high-intent commercial search traffic on Google.',
+      timeline: 'Monthly Ongoing Retainer',
       priceUSD: 'From $1,250',
       priceINR: 'From ₹95,000',
       priceBilling: '/ month (Monthly Retainer)',
@@ -191,6 +207,8 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'grow-social',
       name: 'Social Media Management',
       badge: 'Brand Reputation',
+      whoItsFor: 'B2B and lifestyle brands seeking consistent thought-leadership and social authority.',
+      timeline: 'Monthly Ongoing Retainer',
       priceUSD: 'From $950',
       priceINR: 'From ₹75,000',
       priceBilling: '/ month (Monthly Retainer)',
@@ -212,6 +230,8 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       id: 'grow-ads',
       name: 'Google & Facebook Ads Management',
       badge: 'Profitable Returns',
+      whoItsFor: 'Businesses ready to scale paid customer acquisition profitably on Google and Meta.',
+      timeline: 'Monthly Ongoing Retainer',
       priceUSD: 'From $1,650',
       priceINR: 'From ₹1,25,000',
       priceBilling: '/ month + Media Spend',
@@ -219,13 +239,13 @@ const PLANS_DATA: Record<StackMode, PlanItem[]> = {
       description: 'For businesses with an existing website: we set up and manage Google and Facebook ad campaigns with lead tracking so every dollar spent brings real customer calls and orders.',
       slaDays: 30,
       accent: 'emerald',
-      ctaLabel: 'Activate Paid Ads Retainer',
+      ctaLabel: 'Activate Ads Retainer',
       deliverables: [
-        'Setting up Google Search and Facebook/Instagram ad campaigns',
-        'Writing compelling ad text and designing graphic banners',
-        'Targeting the exact people most likely to buy from you',
-        'Connecting ads to your website for smooth customer inquiries',
-        'Monthly return-on-ad-spend report showing exact cost per lead',
+        'High-converting ad copy and professionally tested graphics',
+        'Landing page tweaks to get more leads from the same ad budget',
+        'Full setup of Google & Meta tracking pixels and phone call tracking',
+        'Weekly optimizations to reduce cost per lead and cut wasted spend',
+        'Clear monthly report showing cost per lead and total return',
       ],
     },
   ],
@@ -377,7 +397,7 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
                   </h3>
 
                   {/* Price Block */}
-                  <div className="mb-4 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+                  <div className="mb-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
                     <div className="flex items-baseline gap-1.5">
                       <span className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900">
                         {price}
@@ -388,6 +408,18 @@ export function GrowthStackSelector({ onOpenProjectModal }: GrowthStackSelectorP
                     </div>
                     <div className="text-[11px] text-slate-500 font-mono mt-1">
                       {plan.priceNote}
+                    </div>
+                  </div>
+
+                  {/* Who It's For & Timeline Pill Box */}
+                  <div className="mb-4 p-3 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-2 text-xs">
+                    <div className="flex items-start gap-2">
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-400 shrink-0 mt-0.5">Best For:</span>
+                      <span className="text-slate-800 font-medium text-[11px] leading-tight">{plan.whoItsFor}</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-1.5 border-t border-slate-100">
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-400">Timeline:</span>
+                      <span className="text-blue-700 font-bold font-mono text-[11px]">{plan.timeline}</span>
                     </div>
                   </div>
 

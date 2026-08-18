@@ -15,6 +15,31 @@ const BuildBento = dynamic(
   { ssr: true }
 );
 
+const SaaSModularScene = dynamic(
+  () => import('@/components/visuals/saas-modular-scene').then(m => m.SaaSModularScene),
+  { ssr: true }
+);
+
+const EcommerceStudioScene = dynamic(
+  () => import('@/components/visuals/ecommerce-studio-scene').then(m => m.EcommerceStudioScene),
+  { ssr: true }
+);
+
+const SEORankingScene = dynamic(
+  () => import('@/components/visuals/seo-ranking-scene').then(m => m.SEORankingScene),
+  { ssr: true }
+);
+
+const LaunchBlueprintScene = dynamic(
+  () => import('@/components/visuals/launch-blueprint-scene').then(m => m.LaunchBlueprintScene),
+  { ssr: true }
+);
+
+const SignatureBrandMonolith = dynamic(
+  () => import('@/components/visuals/signature-brand-monolith').then(m => m.SignatureBrandMonolith),
+  { ssr: true }
+);
+
 const GrowthBento = dynamic(
   () => import('@/components/sections/growth-bento').then(m => m.GrowthBento),
   { ssr: true }
@@ -42,6 +67,11 @@ const CoreCapabilities = dynamic(
 
 const BeforeAfterSlider = dynamic(
   () => import('@/components/sections/before-after-slider').then(m => m.BeforeAfterSlider),
+  { ssr: true }
+);
+
+const InteractiveSpeedVisualizer = dynamic(
+  () => import('@/components/sections/interactive-speed-visualizer').then(m => m.InteractiveSpeedVisualizer),
   { ssr: true }
 );
 
@@ -168,10 +198,27 @@ export default function HomePage() {
         <PartnerMarquee />
       </SectionReveal>
 
+      {/* 3D Visual Breathing Room 1: Modular SaaS Architecture */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <SectionReveal>
+          <SaaSModularScene onOpenProjectModal={handleOpenProjectModal} />
+        </SectionReveal>
+      </div>
+
       {/* 4. Build Capabilities Bento Grid (5-Card Asymmetric Grid) */}
       <SectionReveal>
         <BuildBento onOpenProjectModal={handleOpenProjectModal} />
       </SectionReveal>
+
+      {/* 3D Visual Breathing Room 2: E-Commerce & SEO Ranking Architecture */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-4">
+        <SectionReveal>
+          <EcommerceStudioScene onOpenProjectModal={handleOpenProjectModal} />
+        </SectionReveal>
+        <SectionReveal>
+          <SEORankingScene onOpenProjectModal={handleOpenProjectModal} />
+        </SectionReveal>
+      </div>
 
       {/* 5. Growth Services Bento Grid (4-Card Asymmetric Grid in Emerald) */}
       <SectionReveal>
@@ -188,6 +235,13 @@ export default function HomePage() {
         <UnifiedDashboard onOpenProjectModal={handleOpenProjectModal} />
       </SectionReveal>
 
+      {/* 3D Visual Breathing Room 3: 90-Day Launch Blueprint */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <SectionReveal>
+          <LaunchBlueprintScene onOpenProjectModal={handleOpenProjectModal} />
+        </SectionReveal>
+      </div>
+
       {/* 8. Proof Timeline (90-Day Launch & Growth Sprint) */}
       <SectionReveal>
         <ProofTimeline onOpenProjectModal={handleOpenProjectModal} />
@@ -203,13 +257,24 @@ export default function HomePage() {
         <BeforeAfterSlider />
       </SectionReveal>
 
-      {/* 11. Brand Philosophy & Stats (Strategy · Impact · Growth · 100%) */}
+      {/* 11. Interactive Speed & Performance Simulator */}
+      <SectionReveal>
+        <InteractiveSpeedVisualizer onOpenProjectModal={handleOpenProjectModal} />
+      </SectionReveal>
+
+      {/* 12. Signature Brand Monolith (Strategy · Velocity · Growth) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <SectionReveal>
+          <SignatureBrandMonolith onOpenProjectModal={handleOpenProjectModal} />
+        </SectionReveal>
+      </div>
+
+      {/* 13. Brand Philosophy & Stats (Strategy · Impact · Growth · 100%) */}
       <SectionReveal>
         <PhilosophyStats />
       </SectionReveal>
 
-
-      {/* 13. Growth Stack Selector (3-Way Segmented Control Pricing & Plans) */}
+      {/* 14. Growth Stack Selector (3-Way Segmented Control Pricing & Plans) */}
       <SectionReveal>
         <GrowthStackSelector onOpenProjectModal={handleOpenProjectModal} />
       </SectionReveal>

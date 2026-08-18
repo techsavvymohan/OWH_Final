@@ -258,7 +258,7 @@ export function SelectedWorkShowcase({
                 key={cat.id}
                 type="button"
                 onClick={() => setActiveFilter(cat.id)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold active:scale-[0.97] transition-all duration-150 cursor-pointer ${
                   activeFilter === cat.id
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
                     : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
@@ -275,11 +275,12 @@ export function SelectedWorkShowcase({
           {filteredProjects.map((project, idx) => (
             <motion.article
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.55, delay: idx * 0.1 }}
-              className={`rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-900/5 hover:shadow-2xl transition-all duration-300 overflow-hidden group ${project.visualTheme.borderGlow}`}
+              transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.23, 1, 0.32, 1] }}
+              whileHover={{ y: -3, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }}
+              className={`rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-900/5 hover:shadow-2xl transition-colors transition-shadow duration-200 overflow-hidden group ${project.visualTheme.borderGlow}`}
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-10">
                 

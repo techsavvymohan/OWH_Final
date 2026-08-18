@@ -90,7 +90,7 @@ export function FaqSection({ onOpenProjectModal }: FaqSectionProps) {
               name="faq_search"
               type="text"
               aria-label="Search frequently asked questions"
-              placeholder="Search answers (e.g. Zero-Bug, retainers, SEO, timeline)..."
+              placeholder="Search answers (e.g. Zero-Bug, retainers, SEO, timeline)…"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs"

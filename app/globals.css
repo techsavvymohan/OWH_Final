@@ -3,37 +3,39 @@
 
 @layer base {
   :root {
-    /* Pure Light Luxury Palette: White + Black + Blue + Grey */
-    --background: #ffffff;
-    --foreground: #090d16;
+    /* Aesthetic Light Luxury Palette: Crisp White + Oyster + Cobalt + Slate */
+    --background: #fafbfc;
+    --foreground: #0f172a;
     --card: #ffffff;
-    --card-foreground: #090d16;
-    --muted: #f8fafc;
+    --card-foreground: #0f172a;
+    --muted: #f1f5f9;
     --muted-foreground: #475569;
     --border: #e2e8f0;
     --input: #e2e8f0;
     --ring: #2563eb;
     
-    /* Royal Cobalt Blue Accent */
+    /* Vibrant Purposeful Accents */
     --brand: #2563eb;
-    --brand-foreground: #1d4ed8;
+    --brand-foreground: #ffffff;
     --brand-light: #eff6ff;
-    --brand-dark: #1e40af;
+    --brand-dark: #1d4ed8;
 
-    /* Luxury Cool Greys */
-    --grey-platinum: #f8fafc;
-    --grey-silver: #f1f5f9;
-    --grey-border: #e2e8f0;
-    --grey-slate: #cbd5e1;
-    --grey-muted: #64748b;
-    --grey-charcoal: #334155;
-    --grey-graphite: #1e293b;
-    --grey-obsidian: #090d16;
-
-    /* Growth Accent (Used sparingly for metric indicators) */
-    --growth: #059669;
-    --growth-foreground: #047857;
+    --growth: #10b981;
+    --growth-foreground: #ffffff;
     --growth-light: #ecfdf5;
+    
+    --creative: #8b5cf6;
+    --creative-light: #f5f3ff;
+
+    /* Architectural Surfaces & Shadows */
+    --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.03), 0 10px 30px -4px rgba(15, 23, 42, 0.04);
+    --shadow-elevated: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 24px 48px -12px rgba(37, 99, 235, 0.07);
+    --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -4px rgba(15, 23, 42, 0.03);
+
+    /* Emil Kowalski Craft Easing Tokens */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   /* Force luxury light palette across all components */
@@ -219,6 +221,28 @@
   box-shadow: 0 4px 20px -2px rgba(37, 99, 235, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
 }
 
+.visual-glass-glow {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 10px 40px -10px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+.mesh-radial-blue {
+  background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.12) 0%, rgba(56, 189, 248, 0.05) 50%, transparent 80%);
+}
+
+.mesh-radial-emerald {
+  background: radial-gradient(circle at 50% 50%, rgba(5, 150, 105, 0.12) 0%, rgba(16, 185, 129, 0.05) 50%, transparent 80%);
+}
+
+.telemetry-matrix {
+  background-size: 24px 24px;
+  background-image: linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+}
+
 .glass-pill {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
@@ -282,7 +306,7 @@
   background: linear-gradient(145deg, #ffffff, #f8fafc);
   box-shadow: 4px 4px 12px rgba(15, 23, 42, 0.05), -4px -4px 12px rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(226, 232, 240, 0.9);
-  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
 }
 
 .neo-button:hover {
@@ -292,7 +316,7 @@
 
 .neo-button:active {
   box-shadow: inset 2px 2px 5px rgba(15, 23, 42, 0.08), inset -2px -2px 5px rgba(255, 255, 255, 0.9);
-  transform: translateY(0px);
+  transform: scale(0.97);
 }
 
 .neo-card {
@@ -305,7 +329,7 @@
   background: #ffffff;
   box-shadow: 4px 4px 16px rgba(15, 23, 42, 0.035), -4px -4px 16px rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(226, 232, 240, 0.9);
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out), border-color 200ms var(--ease-out);
 }
 
 .neo-card-hover:hover {
@@ -314,8 +338,34 @@
   border-color: rgba(37, 99, 235, 0.3);
 }
 
+.neo-card-hover:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
 .neo-thumb {
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25), inset 1px 1px 2px rgba(255, 255, 255, 0.8), -2px -2px 6px rgba(255, 255, 255, 0.9);
+}
+
+/* Accessibility & Reduced Motion (Emil Kowalski / Apple Standards) */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-slow,
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .brand-glow,
+  .growth-glow,
+  .animate-shimmer {
+    animation: none !important;
+  }
+}
+
+/* Touch Device False Hover Suppression */
+@media (hover: none) and (pointer: coarse) {
+  .neo-button:hover,
+  .neo-card-hover:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
 }
 
 /* Shimmer sweep animation */
