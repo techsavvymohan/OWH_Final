@@ -1,0 +1,24 @@
+User-Agent: *
+Allow: /
+Disallow: /api/private/
+Disallow: /_next/
+
+User-Agent: GPTBot
+User-Agent: ChatGPT-User
+User-Agent: PerplexityBot
+User-Agent: ClaudeBot
+User-Agent: Google-Extended
+User-Agent: Applebot-Extended
+User-Agent: Amazonbot
+User-Agent: cohere-ai
+User-Agent: Bingbot
+User-Agent: Googlebot
+Allow: /
+Allow: /work
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /manifest.webmanifest
+Disallow: /api/private/
+
+Host: https://onlywayonline.com
+Sitemap: https://onlywayonline.com/sitemap.xml

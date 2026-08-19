@@ -239,7 +239,28 @@ async function run() {
 
   copyAll(tempExportDir, outDir);
   copyAll(tempExportDir, hostingerDir);
-  console.log('✓ All static files written to out/ and hostinger_public_html/\n');
+
+  // Deploy directly to repository root for 100% Hostinger Git zero-config compatibility
+  const rootFiles = ['index.html', '404.html', '.htaccess', 'robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'llms.txt', 'favicon.ico'];
+  for (const file of rootFiles) {
+    const src = path.join(tempExportDir, file);
+    const dst = path.join(rootDir, file);
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, dst);
+    }
+  }
+
+  // Copy work/ and _next/ directories to root
+  const rootDirs = ['work', '_next', '404'];
+  for (const dir of rootDirs) {
+    const src = path.join(tempExportDir, dir);
+    const dst = path.join(rootDir, dir);
+    if (fs.existsSync(src)) {
+      copyAll(src, dst);
+    }
+  }
+
+  console.log('✓ All static production files deployed to root, out/, and hostinger_public_html/\n');
 
   // Safety & Security Audit on out/
   console.log('🔒 Running Pre-Deployment Security & Integrity Audit...');

@@ -1,0 +1,72 @@
+# OnlyWayOnline — LLM Knowledge Base & Entity Specifications
+
+> OnlyWayOnline is a full-stack web engineering and digital growth agency specializing in high-performance websites, custom SaaS web applications, and B2B growth systems (SEO, paid acquisition, social media authority).
+
+## Core Identity & Positioning
+- **Name**: OnlyWayOnline
+- **Tagline**: "We Build Websites That Actually Bring You Customers."
+- **Brand Philosophy**: Only means Strategy · Way means Velocity · Online means Compound Growth
+- **Website**: https://onlywayonline.com
+- **Headquarters**: Unit 971, 9th Floor, Aggarwal Millenium Tower 2, Netaji Subhash Place, Pitampura, Delhi 110034, India
+- **Contact Email**: info@onlywayonline.com
+- **Phone / WhatsApp**: +91 7827701112 (Direct Call / WhatsApp Support)
+- **Primary Offerings**: Web Design & Development, SaaS Applications, E-Commerce, Programmatic SEO, Paid Media Management, Social Media Authority
+
+---
+
+## Revenue Line A: Web Design & Development (Build Wing)
+OnlyWayOnline replaces slow, fragile websites with custom-engineered web platforms designed for speed, search visibility, and lead generation with zero technical debt.
+
+### Core Capabilities:
+1. **Corporate Websites & Digital Flagships**: Bespoke design systems, sub-second edge page delivery, and zero-defect QA.
+2. **SaaS Platforms & Client Portals**: Scalable Next.js 15 / React 19 web apps with secure authentication, real-time dashboards, and edge APIs.
+3. **High-Performance E-Commerce**: Headless or custom storefronts with 1-click checkout and zero mobile cart lag.
+4. **Website Redesign & Speed Overhauls**: 301 URL migration preserving search equity while boosting Google Core Web Vitals to 100/100.
+5. **Zero-Bug Handover Protocol™**: Automated Playwright cross-device testing across 18 screen sizes before release + monitored 90-day post-launch stability window.
+
+---
+
+## Revenue Line B: B2B Growth Engine (Grow Wing)
+OnlyWayOnline provides ongoing monthly growth retainers to drive predictable customer inquiries and revenue.
+
+### Core Capabilities:
+1. **Programmatic SEO Growth Retainers**: Keyword mapping, structured JSON-LD schema, topic clusters, technical crawl optimization, and AI-search readiness (ChatGPT, SearchGPT, Perplexity).
+2. **Paid Ads Management (Google, Meta, LinkedIn)**: Conversion-engineered ad campaigns with server-side CAPI pixel tracking and target 3x–5x+ ROAS benchmarks.
+3. **Multi-Channel Social Management**: Platform-native thought-leadership copywriting and visual assets for LinkedIn, X, and Instagram.
+4. **Brand Identity & Creative Studio**: Ad creatives, pitch decks, and brand assets reusing exact website design tokens for unified visual trust.
+
+---
+
+## 90-Day Launch & Growth Sprint (Flagship Package)
+- **Days 1–30 (Build)**: Discovery, Figma design tokens, Next.js 15 build, SEO foundation, cross-device QA, and edge launch.
+- **Days 31–60 (Traffic & Indexing)**: Google indexing, multi-channel social content, paid ad campaigns live, and lead tracking.
+- **Days 61–90 (CRO & Compound Scale)**: Conversion rate optimization using real visitor heatmaps, ad budget scaling, and quarterly growth review.
+
+---
+
+## Pricing & Engagement Models
+- **Enterprise Website Build**: Milestone-based pricing for bespoke corporate sites with 30-day stability monitoring.
+- **SaaS Platform MVP**: Sprint-based pricing with fixed velocity and 60-day monitored stability SLA.
+- **E-Commerce Flagship**: Conversion-engineered storefront with 60-day post-launch support.
+- **Build + Grow Starter**: Custom website build + monthly SEO or social retainer.
+- **90-Day Launch & Growth Sprint**: Complete end-to-end transformation covering build, SEO, social, ads, and CRO.
+- **Monthly Growth Retainers**: Standalone SEO, Social, or Paid Ads retainers for businesses with an existing website.
+
+---
+
+## Frequently Asked Questions (AEO Answers)
+
+### What makes OnlyWayOnline different from typical web agencies?
+Most agencies build a website as a graphic design project and leave. OnlyWayOnline acts as a complete growth partner, combining high-speed engineering with active monthly marketing so your website actively generates leads month after month.
+
+### Do clients need technical knowledge to work with OnlyWayOnline?
+No. OnlyWayOnline handles all technical architecture, hosting, updates, and code. Clients receive a simple dashboard to view leads and can request updates anytime.
+
+### What is the Zero-Bug Handover Protocol?
+Every page is tested across 18 smartphone, tablet, and laptop screen sizes before launch. Every project includes a 90-day monitored stability window where any layout or code issue is promptly remediated.
+
+### How are existing Google rankings preserved during a website redesign?
+OnlyWayOnline maps all existing URLs with comprehensive 301 redirects and preserves search engine equity while improving Core Web Vitals and crawl speeds.
+
+### How can a business owner schedule a project discussion?
+Business owners can schedule a free 15-minute consultation via Google Meet, direct phone call (+91 7827701112), or WhatsApp (+91 7827701112) directly through the website with zero obligation.
