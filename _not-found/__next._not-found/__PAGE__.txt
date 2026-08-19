@@ -1,0 +1,34 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/16bc7yfq1rh8g.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+7:I[97367,["/_next/static/chunks/16bc7yfq1rh8g.js"],"ViewportBoundary"]
+8:I[97367,["/_next/static/chunks/16bc7yfq1rh8g.js"],"MetadataBoundary"]
+6:X
+19:X
+19:C
+0:{"buildId":"v2KumPhRdkN6hPbZfcN-b","data":[{"rsc":["$","$1","c",{"children":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L7",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L8",null,{"children":["$","$3",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"OnlyWayOnline — Websites That Actually Bring You Customers"}],["$","meta","1",{"name":"description","content":"We build beautiful, lightning-fast websites and complete marketing systems that rank on Google, bring real customer leads, and never crash — backed by a 90-day free fix guarantee."}],["$","link","2",{"rel":"author","href":"https://onlywayonline.com"}],["$","meta","3",{"name":"author","content":"OnlyWayOnline Team"}],["$","link","4",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","5",{"name":"keywords","content":"Website Design Company,Custom Web Development India,Fast Next.js Websites,Google SEO Agency,Google Ads Management,Facebook Ads Agency,E-Commerce Website Builder,High Speed Website Overhaul,Website Developer Delhi,OnlyWayOnline Growth Partner,Website Redesign Without Losing SEO,Mobile Friendly Web Development"}],["$","meta","6",{"name":"creator","content":"OnlyWayOnline"}],["$","meta","7",{"name":"publisher","content":"OnlyWayOnline Studio"}],["$","meta","8",{"name":"robots","content":"index, follow"}],["$","meta","9",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","10",{"name":"category","content":"technology"}],["$","meta","11",{"name":"geo.region","content":"IN-DL"}],["$","meta","12",{"name":"geo.placename","content":"New Delhi, Pitampura"}],["$","meta","13",{"name":"geo.position","content":"28.6924;77.1517"}],["$","meta","14",{"name":"ICBM","content":"28.6924, 77.1517"}],["$","link","15",{"rel":"canonical","href":"https://onlywayonline.com/"}],["$","meta","16",{"property":"og:title","content":"OnlyWayOnline — Websites That Actually Bring You Customers"}],["$","meta","17",{"property":"og:description","content":"We replace slow, fragile websites with lightning-fast platforms designed to capture leads, rank on Google, and grow your business with zero technical stress."}],["$","meta","18",{"property":"og:url","content":"https://onlywayonline.com/"}],["$","meta","19",{"property":"og:site_name","content":"OnlyWayOnline"}],["$","meta","20",{"property":"og:locale","content":"en_US"}],["$","meta","21",{"property":"og:image","content":"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80"}],["$","meta","22",{"property":"og:image:width","content":"1200"}],["$","meta","23",{"property":"og:image:height","content":"630"}],["$","meta","24",{"property":"og:image:alt","content":"OnlyWayOnline Web Systems and Growth Platform"}],["$","meta","25",{"property":"og:type","content":"website"}],"$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14"]}]}]}],"$L15"]}],"isPartial":"$@16","staleTime":"$6","varyParams":null},{"rsc":"$L17","isPartial":"$@18","staleTime":"$6","varyParams":"$19"}],"isUpgradeableISRFallback":false,"a":"$@1a","rootVaryParams":null,"needsRuntimeRequest":"$@1b"}
+1c:I[27201,["/_next/static/chunks/16bc7yfq1rh8g.js"],"IconMark"]
+1d:I[39756,["/_next/static/chunks/16bc7yfq1rh8g.js"],"default"]
+1e:I[37457,["/_next/static/chunks/16bc7yfq1rh8g.js"],"default"]
+4:null
+9:["$","meta","26",{"name":"twitter:card","content":"summary_large_image"}]
+a:["$","meta","27",{"name":"twitter:creator","content":"@onlywayonline"}]
+b:["$","meta","28",{"name":"twitter:title","content":"OnlyWayOnline — Websites That Actually Bring You Customers"}]
+c:["$","meta","29",{"name":"twitter:description","content":"Lightning-fast websites, Google search ranking, and high-return advertising funnels for your business."}]
+d:["$","meta","30",{"name":"twitter:image","content":"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80"}]
+e:["$","link","31",{"rel":"icon","href":"/favicon.ico?favicon.1dbmxt101r3n-.ico","sizes":"48x48","type":"image/x-icon"}]
+f:["$","link","32",{"rel":"icon","href":"/favicon.ico","sizes":"any"}]
+10:["$","link","33",{"rel":"icon","href":"/favicon-32x32.webp","type":"image/webp","sizes":"32x32"}]
+11:["$","link","34",{"rel":"icon","href":"/favicon-16x16.webp","type":"image/webp","sizes":"16x16"}]
+12:["$","link","35",{"rel":"icon","href":"/icon-192.webp","type":"image/webp","sizes":"192x192"}]
+13:["$","link","36",{"rel":"apple-touch-icon","href":"/apple-touch-icon.webp","sizes":"180x180","type":"image/webp"}]
+14:["$","$L1c","37",{}]
+15:["$","meta",null,{"name":"next-size-adjust","content":""}]
+17:["$","$1","c",{"children":[null,["$","$L1d",null,{"parallelRouterKey":"children","template":["$","$L1e",null,{}]}]]}]
+1b:true
+6:300
+6:C
+1a:0
+16:"$undefined"
+18:"$undefined"
+5:"$undefined"
