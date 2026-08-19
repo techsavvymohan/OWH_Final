@@ -10,11 +10,11 @@ interface SaaSModularSceneProps {
 }
 
 const MODULE_NODES = [
-  { icon: KeyRound, label: 'User Auth & RBAC', desc: 'Enterprise JWT, OAuth & Session Isolation', color: 'text-blue-600', bg: 'bg-blue-50' },
-  { icon: Database, label: 'Postgres & Edge DB', desc: 'Strict Schema, Sub-10ms Global Reads', color: 'text-indigo-600', bg: 'bg-indigo-50' },
-  { icon: Webhook, label: 'API & Micro-Services', desc: 'Type-Safe Endpoints, Zero Runtime Errors', color: 'text-violet-600', bg: 'bg-violet-50' },
-  { icon: BarChart3, label: 'Real-Time Telemetry', desc: 'Live Ingestion, Cohort Analytics & Logs', color: 'text-emerald-600', bg: 'bg-emerald-50' },
-  { icon: Receipt, label: 'Automated Billing', desc: 'Stripe, Invoicing & Subscription Sync', color: 'text-amber-600', bg: 'bg-amber-50' },
+  { icon: KeyRound, label: 'Secure User Accounts', desc: 'Seamless login, Google / Apple Auth & role permissions', color: 'text-blue-600', bg: 'bg-blue-50' },
+  { icon: Database, label: 'Fast Scalable Database', desc: 'Fast, secure storage built to handle thousands of users', color: 'text-indigo-600', bg: 'bg-indigo-50' },
+  { icon: Webhook, label: 'Automations & Integrations', desc: 'Connect directly to WhatsApp, CRM, and email marketing', color: 'text-violet-600', bg: 'bg-violet-50' },
+  { icon: BarChart3, label: 'Real-Time Sales Analytics', desc: 'Live customer activity, revenue metrics & reports', color: 'text-emerald-600', bg: 'bg-emerald-50' },
+  { icon: Receipt, label: 'Automated Subscriptions & Billing', desc: 'Stripe, UPI & automated recurring payment invoices', color: 'text-amber-600', bg: 'bg-amber-50' },
 ];
 
 export function SaaSModularScene({ onOpenProjectModal }: SaaSModularSceneProps) {
@@ -30,23 +30,23 @@ export function SaaSModularScene({ onOpenProjectModal }: SaaSModularSceneProps) 
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200/80 mb-3">
             <Cpu className="w-3.5 h-3.5" />
-            <span>MODULAR SOFTWARE ARCHITECTURE</span>
+            <span>MODULAR DIGITAL PLATFORMS</span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            We Engineer Complete Digital Systems, Not Just Pages.
+            We Engineer Complete Digital Systems, Not Just Static Pages.
           </h3>
           <p className="text-sm text-slate-600 mt-2 max-w-2xl leading-relaxed">
-            From secure multi-tenant authentication and high-throughput databases to automated recurring billing and live telemetry, every module is built to scale smoothly under load.
+            From secure user logins and scalable customer databases to automated recurring billing and live business analytics, every component is built to scale smoothly as your business grows.
           </p>
         </div>
 
         <button
           type="button"
           onClick={() => onOpenProjectModal?.('Custom SaaS Architecture')}
-          className="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs font-mono flex items-center gap-2 shadow-md hover:scale-105 transition-all self-start md:self-auto cursor-pointer"
+          className="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-2 shadow-md hover:scale-105 transition-all self-start md:self-auto cursor-pointer"
         >
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Discuss SaaS Build</span>
+          <span>Discuss Web Platform</span>
           <ArrowRight className="w-3.5 h-3.5" />
         </button>
       </div>
@@ -57,13 +57,13 @@ export function SaaSModularScene({ onOpenProjectModal }: SaaSModularSceneProps) 
         <div className="lg:col-span-7 relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/9] border border-slate-200 shadow-sm group">
           <Image
             src="/assets/visuals/saas-modular-core-3d.jpg"
-            alt="3D Modular SaaS Software Core Architecture"
+            alt="Modular Software & Web Platform Core"
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-center group-hover:scale-102 transition-transform duration-700"
           />
           <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[10px] font-mono font-bold text-slate-800 shadow-xs">
-            Studio PBR Render: Connected Core Engine
+            Connected Digital Platform Architecture
           </div>
         </div>
 

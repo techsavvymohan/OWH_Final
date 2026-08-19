@@ -195,12 +195,12 @@ export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSecti
                   <Code2 className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">Core Web Engineering</h4>
-                  <span className="text-[10px] font-mono text-blue-600 font-semibold">Next.js 15 · Zero-Bug SLA</span>
+                  <h4 className="text-xs font-bold text-slate-900">Custom Website Build</h4>
+                  <span className="text-[10px] font-mono text-blue-600 font-semibold">Fast · 90-Day Free Fix Guarantee</span>
                 </div>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Sub-second page delivery across every mobile phone and laptop with zero runtime crashes.
+                Sub-second page delivery across every mobile phone and laptop with zero broken layouts.
               </p>
             </div>
 
@@ -211,12 +211,12 @@ export function HeroSection({ onOpenProjectModal, onOpenMethodology }: HeroSecti
                   <Search className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">Google Search Dominance</h4>
-                  <span className="text-[10px] font-mono text-emerald-600 font-semibold">100/100 Core Vitals</span>
+                  <h4 className="text-xs font-bold text-slate-900">Google & AI Search</h4>
+                  <span className="text-[10px] font-mono text-emerald-600 font-semibold">SEO · GEO · AEO Ready</span>
                 </div>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Topic cluster architecture and structured schema so buyers searching for your services find you first.
+                Structured content and schema so buyers searching on Google, ChatGPT, and Perplexity find your business first.
               </p>
             </div>
 

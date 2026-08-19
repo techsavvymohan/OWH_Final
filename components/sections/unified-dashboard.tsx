@@ -171,32 +171,32 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                     <div className="p-4 rounded-2xl neo-card">
                       <span className="text-[11px] text-slate-500 block">Uptime Target</span>
                       <span className="text-2xl font-bold text-emerald-700">99.9%+</span>
-                      <span className="text-[10px] text-slate-500 block mt-1">[ Contractual SLA ]</span>
+                      <span className="text-[10px] text-slate-500 block mt-1">[ Live Availability ]</span>
                     </div>
                     <div className="p-4 rounded-2xl neo-card">
                       <span className="text-[11px] text-slate-500 block">Page Load Latency</span>
                       <span className="text-2xl font-bold text-blue-700">&lt; 200ms</span>
-                      <span className="text-[10px] text-slate-500 block mt-1">[ Edge CDN Target ]</span>
+                      <span className="text-[10px] text-slate-500 block mt-1">[ Instant Loading ]</span>
                     </div>
                     <div className="p-4 rounded-2xl neo-card">
                       <span className="text-[11px] text-slate-500 block">Broken Links</span>
                       <span className="text-2xl font-bold text-emerald-700">0 Faults</span>
-                      <span className="text-[10px] text-slate-500 block mt-1">[ Playwright QA Gate ]</span>
+                      <span className="text-[10px] text-slate-500 block mt-1">[ Tested Clean ]</span>
                     </div>
                     <div className="p-4 rounded-2xl neo-card">
                       <span className="text-[11px] text-slate-500 block">Speed Benchmark</span>
                       <span className="text-2xl font-bold text-emerald-700">100/100</span>
-                      <span className="text-[10px] text-slate-500 block mt-1">[ Target Vitals ]</span>
+                      <span className="text-[10px] text-slate-500 block mt-1">[ Google Mobile Target ]</span>
                     </div>
                   </div>
 
                   <div className="p-4 rounded-2xl glass-panel-subtle border border-blue-200 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2 text-slate-800">
                       <ShieldCheck className="w-4 h-4 text-blue-600" />
-                      <span>Monitored Stability Warranty: <strong>Day 48 of 90</strong> active</span>
+                      <span>Peace-of-Mind Fix Warranty: <strong>Day 48 of 90</strong> active</span>
                     </div>
                     <span className="font-mono text-blue-700 font-bold">
-                      Automated Heartbeat Ping (60s)
+                      24/7 Automatic Health Watch
                     </span>
                   </div>
                 </motion.div>
@@ -250,8 +250,8 @@ export function UnifiedDashboard({ onOpenProjectModal }: UnifiedDashboardProps) 
                       <span>Estimated Impressions</span>
                     </div>
                     <div className="flex justify-between text-slate-800">
-                      <span>/services/headless-web-dev</span>
-                      <span className="font-bold text-emerald-700">11,240 views (Top SERP Target)</span>
+                      <span>/services/custom-web-design</span>
+                      <span className="font-bold text-emerald-700">11,240 views (Page 1 Target)</span>
                     </div>
                   </div>
                 </motion.div>

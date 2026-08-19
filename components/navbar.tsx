@@ -219,10 +219,10 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                         </div>
                         <div>
                           <div className="text-xs font-bold text-slate-900 group-hover:text-blue-600">
-                            Core Web Engineering
+                            Custom Website Development
                           </div>
                           <p className="text-[11px] text-slate-500">
-                            Next.js 15, Zero-Bug SLA & 100/100 Vitals
+                            Fast Modern Build, 90-Day Guarantee & High Speed
                           </p>
                         </div>
                       </a>
@@ -237,13 +237,13 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                         </div>
                         <div>
                           <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-700 flex items-center gap-1.5">
-                            <span>B2B Growth Engine</span>
+                            <span>Marketing & Customer Growth</span>
                             <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-full bg-emerald-100 text-emerald-800 font-bold border border-emerald-200">
                               NEW
                             </span>
                           </div>
                           <p className="text-[11px] text-slate-500">
-                            Programmatic SEO, Paid Media & Social
+                            SEO · GEO · AEO Search, Paid Ads & Social
                           </p>
                         </div>
                       </a>
@@ -522,13 +522,13 @@ export function Navbar({ onOpenProjectModal, onOpenAuthModal, onOpenOnboardingMo
                   </a>
                 </div>
 
-                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1 font-mono text-slate-600">
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1 text-slate-600">
                   <div className="flex items-center gap-1.5 text-slate-800 font-sans font-semibold">
                     <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
-                    <span>Zero-Bug Handover Protocol</span>
+                    <span>Tested on 18 Screen Sizes</span>
                   </div>
                   <p className="text-[11px] text-slate-500">
-                    Automated CI/CD validation + 90-day monitored stability guarantee.
+                    Comprehensive cross-device checks + 90-day free fix guarantee.
                   </p>
                 </div>
               </div>

@@ -12,24 +12,24 @@ const BLUEPRINT_STEPS = [
   {
     step: '01',
     title: 'BUILD (Days 1–30)',
-    sub: 'Foundation & Core Engineering',
-    desc: 'Custom UI design in Figma, Next.js 15 full-stack code, mobile testing across 18 screen sizes, and Zero-Bug handover.',
+    sub: 'Custom Design & High-Speed Build',
+    desc: 'Bespoke UI design, custom clean code, mobile testing across 18 screen sizes, and Zero-Bug handover.',
     badge: 'Month 1',
     accent: 'border-blue-300 text-blue-700 bg-blue-50',
   },
   {
     step: '02',
     title: 'GROW (Days 31–60)',
-    sub: 'Organic Search & Social Distribution',
-    desc: 'Schema.org JSON-LD indexing, technical Google speed tuning, content publishing, and weekly social media brand authority.',
+    sub: 'Google Search & Social Media Distribution',
+    desc: 'Complete SEO setup, AI search readiness, content publishing, and weekly social media brand authority.',
     badge: 'Month 2',
     accent: 'border-indigo-300 text-indigo-700 bg-indigo-50',
   },
   {
     step: '03',
     title: 'OPTIMIZE (Days 61–90)',
-    sub: 'High-ROAS Paid Acquisition & Scaling',
-    desc: 'Targeted Google & Meta ad campaigns with call tracking, conversion rate optimization, and monthly ROI review.',
+    sub: 'Targeted Customer Acquisition & Scaling',
+    desc: 'Targeted Google & Meta ad campaigns with lead tracking, conversion rate optimization, and monthly ROI review.',
     badge: 'Month 3',
     accent: 'border-emerald-300 text-emerald-700 bg-emerald-50',
   },
@@ -59,7 +59,7 @@ export function LaunchBlueprintScene({ onOpenProjectModal }: LaunchBlueprintScen
         <button
           type="button"
           onClick={() => onOpenProjectModal?.('90-Day Complete Launch Sprint')}
-          className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs font-mono flex items-center gap-2 shadow-md hover:scale-105 transition-all self-start md:self-auto cursor-pointer"
+          className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-2 shadow-md hover:scale-105 transition-all self-start md:self-auto cursor-pointer"
         >
           <Sparkles className="w-3.5 h-3.5 text-emerald-200" />
           <span>Apply for 90-Day Sprint</span>
@@ -73,13 +73,13 @@ export function LaunchBlueprintScene({ onOpenProjectModal }: LaunchBlueprintScen
         <div className="lg:col-span-7 relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/9] border border-slate-200 shadow-sm group">
           <Image
             src="/assets/visuals/launch-blueprint-3d.jpg"
-            alt="3D 3-Stage Architectural Assembly Launch Blueprint"
+            alt="3-Stage Assembly & Launch Blueprint"
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-center group-hover:scale-102 transition-transform duration-700"
           />
           <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[10px] font-mono font-bold text-slate-800 shadow-xs">
-            Studio PBR Render: Physical 3-Tier Assembly Blueprint
+            From Design to Paying Customers in 90 Days
           </div>
         </div>
 

@@ -239,10 +239,10 @@ export function InteractiveSpeedVisualizer({ onOpenProjectModal }: InteractiveSp
                   </div>
                   <div>
                     <h3 className="font-extrabold text-slate-900 text-base sm:text-lg">
-                      OnlyWay Engineered Architecture
+                      OnlyWay High-Speed Custom Build
                     </h3>
                     <p className="text-[11px] font-mono text-emerald-700 font-semibold">
-                      Next.js 15 App Router · Global Edge CDN · Zero Bloat
+                      Fast Global Delivery · Clean Custom Code · Zero Bloat
                     </p>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export function InteractiveSpeedVisualizer({ onOpenProjectModal }: InteractiveSp
                   <span className="text-2xl font-black text-emerald-700 block">
                     {currentProfile.onlywayTime}s
                   </span>
-                  <span className="text-[10px] text-slate-400 block font-sans">Instant Paint</span>
+                  <span className="text-[10px] text-slate-400 block font-sans">Instant Load</span>
                 </div>
               </div>
 
@@ -259,7 +259,7 @@ export function InteractiveSpeedVisualizer({ onOpenProjectModal }: InteractiveSp
               <div className="space-y-3 font-mono text-xs">
                 <div className="space-y-1">
                   <div className="flex justify-between text-[11px]">
-                    <span className="text-slate-600">1. Global Edge Multi-Region CDN</span>
+                    <span className="text-slate-600">1. Instant Global Server Response</span>
                     <span className="text-emerald-700 font-bold">&lt; 35ms (Instant)</span>
                   </div>
                   <div className="h-2 rounded-full bg-slate-100 overflow-hidden">
@@ -272,7 +272,7 @@ export function InteractiveSpeedVisualizer({ onOpenProjectModal }: InteractiveSp
 
                 <div className="space-y-1">
                   <div className="flex justify-between text-[11px]">
-                    <span className="text-slate-600">2. Concurrent React 19 Hydration</span>
+                    <span className="text-slate-600">2. Lightweight Clean Code & Images</span>
                     <span className="text-emerald-700 font-bold">~140ms</span>
                   </div>
                   <div className="h-2 rounded-full bg-slate-100 overflow-hidden">
@@ -285,7 +285,7 @@ export function InteractiveSpeedVisualizer({ onOpenProjectModal }: InteractiveSp
 
                 <div className="space-y-1">
                   <div className="flex justify-between text-[11px]">
-                    <span className="text-slate-600">3. Zero Layout Shift (CLS 0.000)</span>
+                    <span className="text-slate-600">3. Zero Visual Jumping / Smooth Scroll</span>
                     <span className="text-emerald-700 font-bold">Flawless Stability ✓</span>
                   </div>
                   <div className="h-2 rounded-full bg-slate-100 overflow-hidden">

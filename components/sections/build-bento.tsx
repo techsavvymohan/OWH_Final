@@ -126,7 +126,7 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                   <div className="flex items-center justify-between p-2 rounded-xl bg-blue-50/70 border border-blue-100 mt-2">
                     <div className="flex items-center gap-1.5 text-xs text-blue-900 font-bold">
                       <Zap className="w-3.5 h-3.5 text-blue-600" />
-                      <span>0.42s LCP Instant Paint</span>
+                      <span>Instant Sub-Second Display</span>
                     </div>
                     <span className="text-[10px] font-mono font-bold text-blue-700">18 Screens Tested</span>
                   </div>
@@ -135,24 +135,24 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
 
               {/* Overlapping Mobile Device Pill */}
               <div className="w-[85%] -mt-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-300 shadow-xl p-3 z-10 space-y-2">
-                <div className="flex items-center justify-between text-[11px] font-mono">
-                  <span className="font-bold text-slate-800">Mobile Adaptation</span>
-                  <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-                    60fps Smooth
+                <div className="flex items-center justify-between text-[11px]">
+                  <span className="font-bold text-slate-800">Mobile Experience</span>
+                  <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">
+                    Ultra Smooth
                   </span>
                 </div>
-                <div className="grid grid-cols-3 gap-1.5 text-center font-mono text-[9px]">
+                <div className="grid grid-cols-3 gap-1.5 text-center text-[10px]">
                   <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
-                    <span className="text-slate-400 block">LCP</span>
-                    <span className="font-bold text-emerald-700">0.42s</span>
+                    <span className="text-slate-500 block text-[9px]">Load Time</span>
+                    <span className="font-bold text-emerald-700">&lt; 0.5s</span>
                   </div>
                   <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
-                    <span className="text-slate-400 block">INP</span>
-                    <span className="font-bold text-blue-700">14ms</span>
+                    <span className="text-slate-500 block text-[9px]">Tap Response</span>
+                    <span className="font-bold text-blue-700">Instant</span>
                   </div>
                   <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
-                    <span className="text-slate-400 block">CLS</span>
-                    <span className="font-bold text-emerald-700">0.00</span>
+                    <span className="text-slate-500 block text-[9px]">Stability</span>
+                    <span className="font-bold text-emerald-700">Zero Jumps</span>
                   </div>
                 </div>
               </div>
@@ -261,35 +261,35 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
                 </div>
               </div>
 
-              {/* Active node detail inspector with Two-Layer explanation */}
+              {/* Active node detail inspector */}
               <div className="mt-4 p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 shadow-inner space-y-1">
                 {activeNode === 1 && (
                   <>
                     <p className="font-semibold text-white">
-                      → Server-First Speed: Dynamic routes built to load in milliseconds without sluggish page reloads.
+                      → Instant Page Delivery: Pages load in milliseconds without sluggish delays.
                     </p>
-                    <p className="text-[10px] font-mono text-slate-400">
-                      Technical Spec: Next.js 15 App Router with TypeScript strict mode, React 19 concurrent hydration, and dynamic route streaming.
+                    <p className="text-[11px] text-slate-400">
+                      Clean modern code structure engineered for maximum speed, security, and search engine ranking.
                     </p>
                   </>
                 )}
                 {activeNode === 2 && (
                   <>
                     <p className="font-semibold text-white">
-                      → Zero-Bug Quality Gate: Automated tests ensure forms, links, and buttons never break on release.
+                      → Zero-Bug Quality Check: Comprehensive pre-launch testing across 18 screen sizes.
                     </p>
-                    <p className="text-[10px] font-mono text-slate-400">
-                      Technical Spec: Automated Playwright end-to-end regression suites, Lighthouse 100 audits, and zero-console-warning gates.
+                    <p className="text-[11px] text-slate-400">
+                      Every form, button, and link is verified before launch so your customers never hit an error.
                     </p>
                   </>
                 )}
                 {activeNode === 3 && (
                   <>
                     <p className="font-semibold text-white">
-                      → Worldwide Delivery: Fast for every visitor, everywhere in the world, not just near your server.
+                      → Worldwide Instant Loading: High-speed delivery across all regions and devices.
                     </p>
-                    <p className="text-[10px] font-mono text-slate-400">
-                      Technical Spec: Global multi-region edge delivery with automatic Brotli compression, smart cache invalidation, and DDoS mitigation.
+                    <p className="text-[11px] text-slate-400">
+                      Global network caching and enterprise-grade security to keep your site live and protected 24/7.
                     </p>
                   </>
                 )}
@@ -343,36 +343,36 @@ export function BuildBento({ onOpenProjectModal }: BuildBentoProps) {
               </p>
             </div>
 
-            {/* Preview vs Code Box */}
-            <div className="h-44 rounded-2xl bg-slate-50 border border-slate-200 p-3 overflow-hidden flex flex-col justify-center">
-              {activeCodeTab === 'preview' ? (
-                <div className="p-3.5 rounded-xl bg-white border border-slate-200 space-y-2.5 shadow-xs text-center">
-                  <span className="text-[11px] font-mono text-slate-500 font-semibold uppercase">Lead Capture Widget</span>
-                  <div className="flex items-center justify-between text-xs font-semibold text-slate-900">
-                    <span>Available Slots This Month:</span>
-                    <span className="text-blue-600 font-mono font-bold">{demoBookingCount} Slots</span>
+              {/* Preview vs Code Box */}
+              <div className="h-44 rounded-2xl bg-slate-50 border border-slate-200 p-3 overflow-hidden flex flex-col justify-center">
+                {activeCodeTab === 'preview' ? (
+                  <div className="p-3.5 rounded-xl bg-white border border-slate-200 space-y-2.5 shadow-xs text-center">
+                    <span className="text-[11px] font-mono text-slate-500 font-semibold uppercase">Lead Capture Widget</span>
+                    <div className="flex items-center justify-between text-xs font-semibold text-slate-900">
+                      <span>Available Slots This Month:</span>
+                      <span className="text-blue-600 font-mono font-bold">{demoBookingCount} Slots</span>
+                    </div>
+                    <button
+                      onClick={() => setDemoBookingCount(prev => (prev > 1 ? prev - 1 : 14))}
+                      className="w-full py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors cursor-pointer shadow-xs"
+                    >
+                      Book a Free Consultation
+                    </button>
                   </div>
-                  <button
-                    onClick={() => setDemoBookingCount(prev => (prev > 1 ? prev - 1 : 14))}
-                    className="w-full py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors cursor-pointer shadow-xs"
-                  >
-                    Book a Free Consultation
-                  </button>
-                </div>
-              ) : (
-                <pre className="text-[10px] font-mono text-slate-800 overflow-x-auto p-2 leading-relaxed bg-white rounded-xl border border-slate-200">
-{`export function CapacitySlot() {
-  const [slots, setSlots] = useState(14);
-  return (
-    <Button onClick={() => setSlots(s => s - 1)}
-      className="bg-blue-600 text-white rounded-xl">
-      Book a Free Consultation
-    </Button>
-  );
-}`}
-                </pre>
-              )}
-            </div>
+                ) : (
+                  <div className="p-3.5 rounded-xl bg-white border border-slate-200 space-y-2 text-xs text-slate-700">
+                    <div className="font-bold text-slate-900 flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                      <span>Conversion Optimization Features:</span>
+                    </div>
+                    <ul className="space-y-1 text-[11px] text-slate-600">
+                      <li>✓ 1-Click WhatsApp & Phone Call triggers</li>
+                      <li>✓ Instant form validation & CRM sync</li>
+                      <li>✓ High-converting mobile layouts</li>
+                    </ul>
+                  </div>
+                )}
+              </div>
           </motion.div>
 
           {/* Card 4 (Span 4/12): Technical SEO 4x100 Gauge Tiles */}

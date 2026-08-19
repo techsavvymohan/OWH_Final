@@ -166,6 +166,9 @@ const jsonLdData = {
       sameAs: [
         'https://twitter.com/onlywayonline',
         'https://linkedin.com/company/onlywayonline',
+        'https://clutch.co/profile/onlywayonline',
+        'https://www.goodfirms.co/company/onlywayonline',
+        'https://instagram.com/onlywayonline',
         'https://github.com/onlywayonline',
       ],
       knowsAbout: [
@@ -400,6 +403,38 @@ const jsonLdData = {
           position: 5,
           name: 'Frequently Asked Questions',
           item: 'https://onlywayonline.com/#faq',
+        },
+      ],
+    },
+
+    // 7. HowTo Schema (for Step-by-Step Google Rich Snippets & AEO)
+    {
+      '@type': 'HowTo',
+      '@id': 'https://onlywayonline.com/#howto-blueprint',
+      name: 'How OnlyWayOnline Takes Your Website from Design to Paying Customers in 90 Days',
+      description: 'A structured 3-phase delivery framework that transforms an idea into a tested website, brings qualified Google searchers, and converts visitors into paying customers.',
+      totalTime: 'P90D',
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Phase 1: Build & Quality Gate (Days 1–30)',
+          text: 'Bespoke UI design in Figma, clean custom modern code, mobile testing across 18 screen sizes, and Zero-Bug handover.',
+          url: 'https://onlywayonline.com/#timeline',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Phase 2: Google & AI Search Growth (Days 31–60)',
+          text: 'Google search indexing, AI search readiness (GEO for ChatGPT and Perplexity), content publishing, and weekly social media brand authority.',
+          url: 'https://onlywayonline.com/#growth',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Phase 3: Targeted Paid Acquisition & Scaling (Days 61–90)',
+          text: 'Targeted Google & Meta ad campaigns with lead tracking, conversion rate optimization, and monthly ROI review.',
+          url: 'https://onlywayonline.com/#growth',
         },
       ],
     },

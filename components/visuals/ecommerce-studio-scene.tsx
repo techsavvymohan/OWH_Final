@@ -48,13 +48,13 @@ export function EcommerceStudioScene({ onOpenProjectModal }: EcommerceStudioScen
         <div className="lg:col-span-7 relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/9] border border-slate-200 shadow-sm group">
           <Image
             src="/assets/visuals/ecommerce-studio-3d.jpg"
-            alt="3D Premium E-Commerce Product Studio & Floating Checkout"
+            alt="High-Converting E-Commerce Product Experience"
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-center group-hover:scale-102 transition-transform duration-700"
           />
           <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[10px] font-mono font-bold text-slate-800 shadow-xs">
-            Studio PBR Render: Luxury Product & 1-Click Pay
+            High-Converting E-Commerce & 1-Click Checkout
           </div>
         </div>
 
@@ -64,10 +64,10 @@ export function EcommerceStudioScene({ onOpenProjectModal }: EcommerceStudioScen
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                 <CreditCard className="w-4 h-4 text-blue-600" />
-                <span>Interactive Checkout Simulator</span>
+                <span>Interactive Checkout Demo</span>
               </span>
-              <span className="text-[10px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-                0.28s Latency
+              <span className="text-[10px] font-mono text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                Instant Process
               </span>
             </div>
 
@@ -89,7 +89,7 @@ export function EcommerceStudioScene({ onOpenProjectModal }: EcommerceStudioScen
             <button
               type="button"
               onClick={() => setIsDemoCheckedOut(prev => !prev)}
-              className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs font-mono transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs ${
+              className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs ${
                 isDemoCheckedOut
                   ? 'bg-emerald-600 text-white shadow-emerald-600/20'
                   : 'bg-slate-900 hover:bg-slate-800 text-white'
@@ -98,7 +98,7 @@ export function EcommerceStudioScene({ onOpenProjectModal }: EcommerceStudioScen
               {isDemoCheckedOut ? (
                 <>
                   <Check className="w-4 h-4 stroke-[3]" />
-                  <span>TRANSACTION VERIFIED (0.28s)</span>
+                  <span>PAYMENT VERIFIED (COMPLETED)</span>
                 </>
               ) : (
                 <>
